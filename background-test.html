@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Test</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .hero-test {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://page.gensparksite.com/v1/base64_upload/6b0fa0934b4f5682f76defa26a5f633a');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 59, 92, 0.7) 0%, rgba(13, 139, 156, 0.6) 50%, rgba(10, 59, 92, 0.8) 100%);
+            z-index: 2;
+        }
+        .content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+        }
+        .content p {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-test">
+        <div class="bg-image"></div>
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>AI Background Test</h1>
+            <p>If you can see AI gears, circuits, and technology elements behind this text, the background is working!</p>
+            <p><strong>Expected elements:</strong> Gears, laptop, brain/head outline, data visualization, circuit patterns</p>
+        </div>
+    </div>
+</body>
+</html>

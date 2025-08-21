@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI automation solutions for healthcare and wellness businesses. Smart appointment booking, patient communication, and automated health management systems.">
+    <meta name="keywords" content="healthcare AI automation, medical practice automation, patient management AI, healthcare chatbot, automated appointment booking, telemedicine solutions">
+    <title>Healthcare AI Solutions | Webanise.me - Smart Medical Practice Automation</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50" id="main-nav">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="Logo.png" alt="WebaniseMe Logo" class="h-12 md:h-14">
+                        <span class="text-xl md:text-xl font-bold"><span class="text-[#0a3b5c]">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
+                    <a href="ai-automation-services.html" class="nav-link text-gray-700 hover:text-[#2A7F83] ml-4 focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
+                    
+                    <!-- Industries Dropdown -->
+                    <div class="relative ml-4 group">
+                        <button class="industries-dropdown-btn text-[#2A7F83] hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors flex items-center font-bold">
+                            <span>Industries</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" style="display: none;">
+                            <div class="py-1" role="menu" aria-orientation="vertical">
+                                <a href="ai-restaurant-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Restaurants & Hospitality</a>
+                                <a href="ai-healthcare-solutions.html" class="block px-4 py-2 text-sm text-[#2A7F83] font-bold bg-gray-100" role="menuitem">Healthcare & Wellness</a>
+                                <a href="ai-professional-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Professional Services</a>
+                                <a href="ai-retail-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Retail & E-commerce</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="web-design-addon.html" class="nav-link text-gray-700 hover:text-[#2A7F83] ml-4 focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Web Design</a>
+                    <a href="index.html#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] ml-4 focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors font-medium">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Home</a>
+                <a href="ai-automation-services.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">AI Solutions</a>
+                <div class="py-2 border-t border-gray-100 mt-2">
+                    <p class="text-sm font-semibold text-gray-500 mb-2 px-1">INDUSTRIES</p>
+                    <a href="ai-restaurant-solutions.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Restaurants & Hospitality</a>
+                    <a href="ai-healthcare-solutions.html" class="block py-2 pl-4 text-[#2A7F83] font-bold">Healthcare & Wellness</a>
+                    <a href="ai-professional-services.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Professional Services</a>
+                    <a href="ai-retail-solutions.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Retail & E-commerce</a>
+                </div>
+                <a href="web-design-addon.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Web Design</a>
+                <a href="index.html#contact" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section wellness-hero text-white py-20">
+        <div class="moving-background" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/8a75ca088449ab1dec79a21defed6f93');"></div>
+        <div class="background-overlay"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-on-scroll hero-headline">
+                AI Automation for <span class="text-[#e6f7ff]">Healthcare & Wellness</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-on-scroll hero-subheadline">
+                Transform your healthcare practice with intelligent automation. From smart appointment booking to patient communication and automated follow-ups, deliver exceptional care while reducing administrative burden.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
+                <a href="index.html#contact" class="primary-cta font-bold py-4 px-8 rounded-full transition duration-300 bg-[#2A7F83] text-white hover:bg-[#236e72]">
+                    <i class="fas fa-heartbeat mr-2"></i>Transform My Practice
+                </a>
+                <a href="#solutions" class="secondary-cta font-bold py-4 px-8 rounded-full transition duration-300 border-2 border-white text-white hover:bg-white hover:text-[#2A7F83]">
+                    <i class="fas fa-stethoscope mr-2"></i>See Healthcare AI
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healthcare AI Solutions -->
+    <section id="solutions" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Smart Healthcare AI Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">Comprehensive AI automation designed specifically for healthcare and wellness practices</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Smart Appointment Booking -->
+                <div class="bg-white rounded-lg shadow-lg p-8 animate-on-scroll hover:shadow-xl transition-all duration-300 border-l-4 border-[#0d8b9c]">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-calendar-plus text-[#0d8b9c] text-brand-teal text-xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-xl font-bold text-[#0d8b9c] text-brand-teal mb-4 text-center">AI Appointment Scheduling</h3>
+                    <p class="text-gray-600 text-center mb-6">Intelligent booking system that handles patient appointments, manages schedules, and optimizes practice capacity with automated confirmations and reminders.</p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-bold text-[#2A7F83] text-brand-green text-center">Key Features:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600 text-center">
+                            <li>• 24/7 online appointment booking</li>
+                            <li>• Automated appointment reminders (SMS/Email)</li>
+                            <li>• Intelligent schedule optimization</li>
+                            <li>• No-show prediction and management</li>
+                            <li>• Wait-list automation</li>
+                            <li>• Multi-provider schedule coordination</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 bg-brand-light-blue p-4 rounded-lg mb-6 text-center">
+                        <h4 class="font-bold text-[#0d8b9c] text-brand-teal mb-2">Business Impact:</h4>
+                        <p class="text-sm text-gray-700">Reduce no-shows by 75% and increase booking efficiency by 60% with intelligent scheduling.</p>
+                    </div>
+                </div>
+
+                <!-- Patient Communication AI -->
+                <div class="bg-white rounded-lg shadow-lg p-8 animate-on-scroll hover:shadow-xl transition-all duration-300 border-l-4 border-[#0d8b9c]">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-comments-medical text-[#0d8b9c] text-xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-xl font-bold text-[#0d8b9c] text-brand-teal mb-4 text-center">AI Patient Communication</h3>
+                    <p class="text-gray-600 text-center mb-6">Intelligent patient engagement system that handles inquiries, provides health information, and manages communication workflows with personalized care.</p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-bold text-[#2A7F83] text-brand-green text-center">Key Features:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600 text-center">
+                            <li>• AI-powered patient chat support</li>
+                            <li>• Symptom assessment questionnaires</li>
+                            <li>• Automated health education delivery</li>
+                            <li>• Prescription reminder systems</li>
+                            <li>• Post-visit follow-up automation</li>
+                            <li>• Multi-language patient support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 bg-brand-light-blue p-4 rounded-lg mb-6 text-center">
+                        <h4 class="font-bold text-[#0d8b9c] text-brand-teal mb-2">Business Impact:</h4>
+                        <p class="text-sm text-gray-700">Improve patient satisfaction by 85% and reduce administrative calls by 70%.</p>
+                    </div>
+                </div>
+
+                <!-- Automated Patient Intake -->
+                <div class="bg-white rounded-lg shadow-lg p-8 animate-on-scroll hover:shadow-xl transition-all duration-300 border-l-4 border-[#0d8b9c]">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-clipboard-check text-[#0d8b9c] text-xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-xl font-bold text-[#0d8b9c] text-brand-teal mb-4 text-center">Smart Patient Intake</h3>
+                    <p class="text-gray-600 text-center mb-6">Automated patient onboarding and intake process that collects information, verifies insurance, and prepares charts before appointments.</p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-bold text-[#2A7F83] text-brand-green text-center">Key Features:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600 text-center">
+                            <li>• Digital health history forms</li>
+                            <li>• Insurance verification automation</li>
+                            <li>• Medical record integration</li>
+                            <li>• Consent form management</li>
+                            <li>• Payment processing automation</li>
+                            <li>• Chart preparation workflows</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 bg-brand-light-blue p-4 rounded-lg mb-6 text-center">
+                        <h4 class="font-bold text-[#0d8b9c] text-brand-teal mb-2">Business Impact:</h4>
+                        <p class="text-sm text-gray-700">Reduce intake time by 80% and eliminate data entry errors by 95%.</p>
+                    </div>
+                </div>
+
+                <!-- Health Monitoring AI -->
+                <div class="bg-white rounded-lg shadow-lg p-8 animate-on-scroll hover:shadow-xl transition-all duration-300 border-l-4 border-[#0d8b9c]">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-heart-pulse text-[#0d8b9c] text-xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-xl font-bold text-[#0d8b9c] text-brand-teal mb-4 text-center">AI Health Monitoring</h3>
+                    <p class="text-gray-600 text-center mb-6">Intelligent monitoring system that tracks patient health metrics, identifies trends, and provides automated alerts for proactive care management.</p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-bold text-[#2A7F83] text-brand-green text-center">Key Features:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600 text-center">
+                            <li>• Automated vital signs tracking</li>
+                            <li>• Chronic condition monitoring</li>
+                            <li>• Medication adherence tracking</li>
+                            <li>• Health trend analysis</li>
+                            <li>• Risk assessment algorithms</li>
+                            <li>• Care plan automation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 bg-brand-light-blue p-4 rounded-lg mb-6 text-center">
+                        <h4 class="font-bold text-[#0d8b9c] text-brand-teal mb-2">Business Impact:</h4>
+                        <p class="text-sm text-gray-700">Improve patient outcomes by 40% and reduce emergency interventions by 55%.</p>
+                    </div>
+                </div>
+
+                <!-- Practice Management AI -->
+                <div class="bg-white rounded-lg shadow-lg p-8 animate-on-scroll hover:shadow-xl transition-all duration-300 border-l-4 border-[#0d8b9c]">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-hospital text-[#0d8b9c] text-xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-xl font-bold text-[#0d8b9c] text-brand-teal mb-4 text-center">AI Practice Management</h3>
+                    <p class="text-gray-600 text-center mb-6">Comprehensive practice automation that manages operations, optimizes workflows, and provides intelligent insights for better practice management.</p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-bold text-[#2A7F83] text-brand-green text-center">Key Features:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600 text-center">
+                            <li>• Staff scheduling optimization</li>
+                            <li>• Revenue cycle automation</li>
+                            <li>• Compliance monitoring</li>
+                            <li>• Performance analytics dashboard</li>
+                            <li>• Inventory management</li>
+                            <li>• Financial reporting automation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 bg-brand-light-blue p-4 rounded-lg mb-6 text-center">
+                        <h4 class="font-bold text-[#0d8b9c] text-brand-teal mb-2">Business Impact:</h4>
+                        <p class="text-sm text-gray-700">Increase practice efficiency by 50% and reduce operational costs by 30%.</p>
+                    </div>
+                </div>
+
+                <!-- Telemedicine Integration -->
+                <div class="bg-white rounded-lg shadow-lg p-8 animate-on-scroll hover:shadow-xl transition-all duration-300 border-l-4 border-[#0d8b9c]">
+                    <div class="w-16 h-16 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i class="fas fa-video text-[#0d8b9c] text-xl"></i>
+                    </div>
+                    <h3 class="text-xl md:text-xl font-bold text-[#0d8b9c] text-brand-teal mb-4 text-center">AI Telemedicine Platform</h3>
+                    <p class="text-gray-600 text-center mb-6">Intelligent virtual care platform that automates telemedicine workflows, manages virtual appointments, and provides AI-assisted consultations.</p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <h4 class="font-bold text-[#2A7F83] text-brand-green text-center">Key Features:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600 text-center">
+                            <li>• Automated virtual appointment setup</li>
+                            <li>• AI pre-consultation screening</li>
+                            <li>• Digital prescription management</li>
+                            <li>• Virtual waiting room automation</li>
+                            <li>• Session recording and transcription</li>
+                            <li>• Post-consultation care plans</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 bg-brand-light-blue p-4 rounded-lg mb-6 text-center">
+                        <h4 class="font-bold text-[#0d8b9c] text-brand-teal mb-2">Business Impact:</h4>
+                        <p class="text-sm text-gray-700">Expand patient reach by 200% and reduce consultation preparation time by 65%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-500 to-teal-500 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4 animate-on-scroll">Ready to Transform Your Healthcare Practice?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto animate-on-scroll">
+                Join healthcare professionals who are already providing better patient care with AI automation.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
+                <a href="index.html#contact" class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition duration-300">
+                    <i class="fas fa-calendar-check mr-2"></i>Book Free Healthcare Consultation
+                </a>
+                <a href="ai-automation-services.html" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-cogs mr-2"></i>View All AI Solutions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e3a5f] text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="Logo.png" alt="WebaniseMe Logo" class="h-12 sm:h-12 h-8 w-auto min-w-8 max-w-8 sm:min-w-12 sm:max-w-12">
+                        <h3 class="text-xl font-bold sm:text-xl text-base whitespace-nowrap"><span class="text-white">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Transforming healthcare practices with intelligent AI automation solutions.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#0d8b9c]">Healthcare AI</h4>
+                    <div class="text-sm space-y-2">
+                        <p class="text-gray-300">Smart Appointment Booking</p>
+                        <p class="text-gray-300">Patient Communication</p>
+                        <p class="text-gray-300">Health Monitoring</p>
+                        <p class="text-gray-300">Telemedicine Integration</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#0d8b9c]">Other Industries</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="ai-restaurant-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Restaurants</a>
+                        <a href="ai-professional-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Professional Services</a>
+                        <a href="ai-retail-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Retail</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#0d8b9c]">Get Started</h4>
+                    <p class="text-gray-300 mb-6">Ready to automate your healthcare practice?</p>
+                    <a href="index.html#contact" class="inline-block bg-[#2A7F83] text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                        <i class="fas fa-heartbeat mr-2"></i>Healthcare Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

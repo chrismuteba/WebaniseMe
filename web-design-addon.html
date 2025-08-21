@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional web design services as an add-on to our AI automation solutions. Custom websites that showcase your AI-powered business capabilities.">
+    <meta name="keywords" content="web design, website development, AI business websites, professional web design, responsive websites, custom web development">
+    <title>Web Design Services | Webanise.me - Complement Your AI Solutions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50" id="main-nav">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-2">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="Logo.png" alt="WebaniseMe Logo" class="h-12 md:h-14">
+                        <span class="text-xl md:text-xl font-bold"><span class="text-[#0a3b5c]">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
+                    <a href="ai-automation-services.html" class="nav-link text-gray-700 hover:text-[#2A7F83] ml-4 focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
+                    
+                    <!-- Industries Dropdown -->
+                    <div class="relative ml-4 group">
+                        <button class="industries-dropdown-btn text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors flex items-center">
+                            <span>Industries</span>
+                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" style="display: none;">
+                            <div class="py-1" role="menu" aria-orientation="vertical">
+                                <a href="ai-restaurant-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Restaurants & Hospitality</a>
+                                <a href="ai-healthcare-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Healthcare & Wellness</a>
+                                <a href="ai-professional-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Professional Services</a>
+                                <a href="ai-retail-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Retail & E-commerce</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="web-design-addon.html" class="nav-link text-[#2A7F83] ml-4 focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-bold">Web Design</a>
+                    <a href="index.html#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] ml-4 focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors font-medium">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="index.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Home</a>
+                <a href="ai-automation-services.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">AI Solutions</a>
+                <div class="py-2 border-t border-gray-100 mt-2">
+                    <p class="text-sm font-semibold text-gray-500 mb-2 px-1">INDUSTRIES</p>
+                    <a href="ai-restaurant-solutions.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Restaurants & Hospitality</a>
+                    <a href="ai-healthcare-solutions.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Healthcare & Wellness</a>
+                    <a href="ai-professional-services.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Professional Services</a>
+                    <a href="ai-retail-solutions.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Retail & E-commerce</a>
+                </div>
+                <a href="web-design-addon.html" class="nav-link block py-2 text-[#2A7F83] font-bold">Web Design</a>
+                <a href="index.html#contact" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20">
+        <div class="moving-background" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80');"></div>
+        <div class="background-overlay"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-on-scroll hero-headline">
+                Web Design <span class="text-accent">That Powers AI</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-on-scroll hero-subheadline">
+                Professional website development designed to showcase and integrate seamlessly with your AI automation solutions. Perfect complement to your intelligent business systems.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
+                <a href="index.html#contact" class="primary-cta font-bold py-4 px-8 rounded-full transition duration-300 bg-[#2A7F83] text-white hover:bg-[#236e72]">
+                    <i class="fas fa-code mr-2"></i>Discuss Your Website
+                </a>
+                <a href="#features" class="secondary-cta font-bold py-4 px-8 rounded-full transition duration-300 border-2 border-white text-white hover:bg-white hover:text-[#2A7F83]">
+                    <i class="fas fa-eye mr-2"></i>View Features
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+                    <div class="bg-accent rounded-xl p-8 shadow-lg">
+                        <h2 class="text-3xl font-bold mb-6 text-gray-800">Web Design as an Add-On Service</h2>
+                        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                            While our core expertise lies in AI automation, we understand that your intelligent business systems need a professional web presence to truly shine.
+                        </p>
+                        <p class="text-xl text-gray-700 leading-relaxed">
+                            Our web design service is specifically crafted to complement your AI solutions, creating a cohesive digital experience that showcases your business's innovative capabilities.
+                        </p>
+                    </div>
+                    
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="AI-integrated website design" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">AI-Integrated Web Design Features</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">Websites designed to work perfectly with your AI automation systems</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- AI Chatbot Integration -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
+                        <i class="fas fa-robot text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">AI Chatbot Integration</h3>
+                    <p class="text-gray-600 text-center">Seamlessly integrate your AI customer support chatbots with elegant, user-friendly interfaces that enhance customer interactions.</p>
+                </div>
+                
+                <!-- API-Ready Architecture -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0a3b5c, #0d8b9c);">
+                        <i class="fas fa-plug text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">API-Ready Architecture</h3>
+                    <p class="text-gray-600 text-center">Built with modern architecture that easily connects to your AI systems, automation workflows, and third-party integrations.</p>
+                </div>
+                
+                <!-- Performance Optimized -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
+                        <i class="fas fa-tachometer-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Lightning Fast Performance</h3>
+                    <p class="text-gray-600 text-center">Optimized for speed and efficiency to handle AI-powered features without compromising user experience or load times.</p>
+                </div>
+                
+                <!-- Mobile-First Design -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
+                        <i class="fas fa-mobile-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Mobile-First Responsive</h3>
+                    <p class="text-gray-600 text-center">Fully responsive design that works flawlessly across all devices, ensuring your AI features are accessible everywhere.</p>
+                </div>
+                
+                <!-- Analytics Integration -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0a3b5c, #0d8b9c);">
+                        <i class="fas fa-chart-bar text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">AI Analytics Dashboard</h3>
+                    <p class="text-gray-600 text-center">Built-in dashboards and reporting interfaces to visualize your AI automation performance and business insights.</p>
+                </div>
+                
+                <!-- Security & Compliance -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Enterprise Security</h3>
+                    <p class="text-gray-600 text-center">Advanced security measures and compliance features to protect your AI systems and customer data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Approach -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Our Web Design Approach</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">We combine aesthetic excellence with technical integration for AI-powered businesses</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- AI-First Design -->
+                <div class="rounded-lg shadow-lg overflow-hidden" style="background: linear-gradient(to bottom right, #0d8b9c, #0a3b5c);">
+                    <div class="p-8 text-white">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-brain text-3xl mr-4"></i>
+                            <h3 class="text-xl md:text-xl font-bold">AI-First Design Philosophy</h3>
+                        </div>
+                        <p class="mb-6">Every design decision considers how it will integrate with and showcase your AI automation capabilities.</p>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check mr-2"></i>AI interface design patterns</li>
+                            <li><i class="fas fa-check mr-2"></i>Automated content management</li>
+                            <li><i class="fas fa-check mr-2"></i>Intelligent user journeys</li>
+                            <li><i class="fas fa-check mr-2"></i>Data visualization ready</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Technical Excellence -->
+                <div class="rounded-lg shadow-lg overflow-hidden" style="background: linear-gradient(to bottom right, #0a3b5c, #0d8b9c);">
+                    <div class="p-8 text-white">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-code text-3xl mr-4"></i>
+                            <h3 class="text-xl md:text-xl font-bold">Technical Excellence</h3>
+                        </div>
+                        <p class="mb-6">Hand-coded websites built with modern technologies that support advanced AI integrations.</p>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check mr-2"></i>Clean, semantic HTML5 structure</li>
+                            <li><i class="fas fa-check mr-2"></i>Modern CSS3 and JavaScript</li>
+                            <li><i class="fas fa-check mr-2"></i>RESTful API integration ready</li>
+                            <li><i class="fas fa-check mr-2"></i>SEO optimized for AI businesses</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- User Experience Focus -->
+                <div class="rounded-lg shadow-lg overflow-hidden" style="background: linear-gradient(to bottom right, #0d8b9c, #0a3b5c);">
+                    <div class="p-8 text-white">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-users text-3xl mr-4"></i>
+                            <h3 class="text-xl md:text-xl font-bold">User Experience Focus</h3>
+                        </div>
+                        <p class="mb-6">Intuitive interfaces that make AI interactions feel natural and engaging for your customers.</p>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check mr-2"></i>Conversational UI design</li>
+                            <li><i class="fas fa-check mr-2"></i>Progressive enhancement</li>
+                            <li><i class="fas fa-check mr-2"></i>Accessibility compliance</li>
+                            <li><i class="fas fa-check mr-2"></i>Cross-browser compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Business Integration -->
+                <div class="rounded-lg shadow-lg overflow-hidden" style="background: linear-gradient(to bottom right, #0a3b5c, #0d8b9c);">
+                    <div class="p-8 text-white">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-building text-3xl mr-4"></i>
+                            <h3 class="text-xl md:text-xl font-bold">Business Integration</h3>
+                        </div>
+                        <p class="mb-6">Seamless connection with your existing AI automation systems and business processes.</p>
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check mr-2"></i>CRM and automation tool integration</li>
+                            <li><i class="fas fa-check mr-2"></i>Payment gateway compatibility</li>
+                            <li><i class="fas fa-check mr-2"></i>Analytics and tracking setup</li>
+                            <li><i class="fas fa-check mr-2"></i>Content management systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Web Development Process</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">Streamlined development that aligns with your AI automation timeline</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Planning & Strategy -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-3">Planning & Strategy</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>AI integration requirements analysis</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>User experience wireframing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>Technical architecture planning</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Design & Prototyping -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-3">Design & Prototyping</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>AI-integrated visual design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>Interactive prototypes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>Client feedback and revisions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Development & Integration -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-3">Development & Integration</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>Custom code development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>AI system integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>Quality assurance testing</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Launch & Support -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="flex items-start">
+                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-3">Launch & Support</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>Deployment and go-live</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>Training and documentation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>Ongoing maintenance support</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-accent p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-12 animate-on-scroll">
+                <p class="text-lg flex items-start">
+                    <span class="text-primary mr-2">🚀</span>
+                    <span><strong>Coordinated Timeline:</strong> Web development runs parallel to AI implementation, ensuring both systems launch together seamlessly.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Web Design -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Why Choose Our Web Design Service</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">The perfect complement to your AI automation investment</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Deep AI Integration -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-link text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Deep AI Integration Understanding</h3>
+                    <p class="text-gray-600 text-center">Unlike generic web designers, we understand how AI systems work and design interfaces that enhance their capabilities.</p>
+                </div>
+                
+                <!-- Unified Project Management -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-project-diagram text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Unified Project Management</h3>
+                    <p class="text-gray-600 text-center">Single point of contact for both AI automation and web design, ensuring perfect coordination and timing.</p>
+                </div>
+                
+                <!-- Cost-Effective Bundle -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-piggy-bank text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Cost-Effective Bundle</h3>
+                    <p class="text-gray-600 text-center">Better value when combined with our AI services, eliminating integration costs between separate vendors.</p>
+                </div>
+                
+                <!-- Future-Proof Design -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-rocket text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Future-Proof Architecture</h3>
+                    <p class="text-gray-600 text-center">Built to evolve with AI technology advances and your growing automation needs.</p>
+                </div>
+                
+                <!-- Performance Optimized -->
+                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll md:col-span-2 lg:col-span-1">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-tachometer-alt text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">AI-Optimized Performance</h3>
+                    <p class="text-gray-600 text-center">Websites optimized specifically for AI workloads, ensuring fast response times even with complex automations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Examples -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">AI-Integrated Website Examples</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">See how we combine beautiful design with powerful AI functionality</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Restaurant with AI -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <i class="fas fa-utensils text-4xl mb-4"></i>
+                            <h4 class="text-xl font-bold">Restaurant + AI Ordering</h4>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Smart Restaurant Website</h3>
+                        <p class="text-gray-600 mb-4">Website with integrated AI menu recommendations, voice ordering, and automated reservation system.</p>
+                        <div class="flex items-center text-sm text-primary">
+                            <i class="fas fa-robot mr-2"></i>
+                            <span>AI-Powered Features</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Healthcare with AI -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <i class="fas fa-heartbeat text-4xl mb-4"></i>
+                            <h4 class="text-xl font-bold">Healthcare + AI Booking</h4>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">AI Healthcare Portal</h3>
+                        <p class="text-gray-600 mb-4">Patient portal with AI symptom checker, automated scheduling, and intelligent triage system.</p>
+                        <div class="flex items-center text-sm text-primary">
+                            <i class="fas fa-brain mr-2"></i>
+                            <span>Intelligent Patient Care</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- E-commerce with AI -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+                            <h4 class="text-xl font-bold">E-commerce + AI Recommendations</h4>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-secondary mb-2">Smart E-commerce Site</h3>
+                        <p class="text-gray-600 mb-4">Online store with AI product recommendations, dynamic pricing, and automated customer support.</p>
+                        <div class="flex items-center text-sm text-primary">
+                            <i class="fas fa-chart-line mr-2"></i>
+                            <span>Smart Sales Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4 animate-on-scroll">Ready to Showcase Your AI-Powered Business?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto animate-on-scroll">
+                Combine our AI automation solutions with professional web design for a complete digital transformation.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
+                <a href="index.html#contact" class="bg-white text-primary font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition duration-300">
+                    <i class="fas fa-comments mr-2"></i>Discuss Your Project
+                </a>
+                <a href="ai-automation-services.html" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-primary transition duration-300">
+                    <i class="fas fa-robot mr-2"></i>Start with AI Solutions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e3a5f] text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="Logo.png" alt="WebaniseMe Logo" class="h-12 sm:h-12 h-8 w-auto min-w-8 max-w-8 sm:min-w-12 sm:max-w-12">
+                        <h3 class="text-xl font-bold sm:text-xl text-base whitespace-nowrap"><span class="text-white">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">AI automation solutions with professional web design services for complete digital transformation.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Services</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">AI Automation (Primary)</a>
+                        <a href="web-design-addon.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Web Design (Add-on)</a>
+                        <a href="index.html#contact" class="block text-gray-300 hover:text-white transition-colors duration-300">Consultation</a>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Web Design Features</h4>
+                    <div class="text-sm space-y-2">
+                        <p class="text-gray-300">AI Chatbot Integration</p>
+                        <p class="text-gray-300">API-Ready Architecture</p>
+                        <p class="text-gray-300">Performance Optimized</p>
+                        <p class="text-gray-300">Mobile Responsive</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Get Started</h4>
+                    <p class="text-gray-300 mb-6">Ready for AI automation plus web design?</p>
+                    <a href="index.html#contact" class="inline-block bg-[#2dd4bf] text-[#1e3a5f] font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                        <i class="fas fa-rocket mr-2"></i>Complete Package
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

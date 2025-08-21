@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Color Fix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800 p-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">Card Color Test</h1>
+    
+    <!-- Test Card with Fixed Colors -->
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8 border-l-4 border-[#0d8b9c] border-brand-teal">
+        <div class="w-16 h-16 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+            <i class="fas fa-heart-pulse text-[#0d8b9c] text-brand-teal text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-[#0d8b9c] text-brand-teal mb-4 text-center">AI Test Card</h3>
+        <p class="text-gray-600 text-center mb-6">This card demonstrates the fixed color system with both Tailwind arbitrary values and custom CSS fallbacks.</p>
+        
+        <div class="space-y-4 mb-6">
+            <h4 class="font-bold text-[#2A7F83] text-brand-green text-center">Key Features:</h4>
+            <ul class="space-y-2 text-sm text-gray-600 text-center">
+                <li>• Teal icons (#0d8b9c)</li>
+                <li>• Teal main titles (#0d8b9c)</li>
+                <li>• Green "Key Features" text (#2A7F83)</li>
+                <li>• Light blue impact backgrounds</li>
+            </ul>
+        </div>
+        
+        <div class="bg-blue-50 bg-brand-light-blue p-4 rounded-lg mb-6 text-center">
+            <h4 class="font-bold text-[#0d8b9c] text-brand-teal mb-2">Business Impact:</h4>
+            <p class="text-sm text-gray-700">Colors are now properly applied with both modern Tailwind and CSS fallbacks!</p>
+        </div>
+        
+        <div class="text-center">
+            <a href="#" class="inline-block bg-[#0d8b9c] bg-brand-teal text-white font-bold py-2 px-6 rounded-lg hover:bg-[#0a3b5c] transition duration-300">
+                Test Complete <i class="fas fa-check-circle ml-2"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="mt-8 text-center text-gray-600">
+        <p>If you see teal icons, teal titles, green "Key Features" text, and light blue impact background, the fix is working!</p>
+    </div>
+</body>
+</html>

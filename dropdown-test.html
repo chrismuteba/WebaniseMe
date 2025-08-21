@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Enhanced Industries Dropdown Styling */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 9999;
+            min-width: 240px;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Show dropdown on hover for desktop */
+        @media (min-width: 768px) {
+            .group:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0) scale(1);
+            }
+            
+            .group:hover .industries-dropdown-btn i {
+                transform: rotate(180deg);
+            }
+        }
+
+        /* Active state for dropdown */
+        .dropdown-menu.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) scale(1) !important;
+        }
+
+        /* Dropdown menu items */
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: #4a5568;
+            text-decoration: none;
+            transition: all 0.15s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 0.25rem;
+            margin: 0.125rem 0.5rem;
+        }
+
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
+            background-color: rgba(42, 127, 131, 0.08);
+            color: #2A7F83;
+            transform: translateX(4px);
+        }
+
+        .dropdown-menu a i {
+            width: 16px;
+            font-size: 0.875rem;
+            color: #2A7F83;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown-menu a:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Industries dropdown button styling */
+        .industries-dropdown-btn {
+            cursor: pointer;
+            user-select: none;
+            border: none;
+            background: none;
+            font: inherit;
+        }
+
+        .industries-dropdown-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        /* Mobile dropdown styles */
+        @media (max-width: 767px) {
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                background-color: rgba(248, 250, 252, 0.95);
+                backdrop-filter: none;
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+                min-width: auto;
+                width: 100%;
+                transform: none;
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .dropdown-menu.show {
+                opacity: 1;
+                max-height: 300px;
+                padding: 1rem 0.5rem;
+            }
+            
+            .dropdown-menu a {
+                margin: 0.25rem 0;
+                padding: 0.75rem;
+                border-radius: 0.375rem;
+                font-size: 1rem;
+            }
+            
+            .dropdown-menu a:hover {
+                transform: none;
+            }
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-1px);
+        }
+
+        #mobile-menu {
+            transition: all 0.3s ease;
+        }
+
+        #mobile-menu.visible {
+            display: block !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center text-white font-bold">W</div>
+                        <span class="text-xl md:text-2xl font-bold"><span class="text-[#0a3b5c]">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
+                    
+                    <!-- Industries Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium industries-dropdown-btn flex items-center" aria-expanded="false" aria-haspopup="true">
+                            Industries <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 opacity-0 invisible transform scale-95 transition-all duration-200 ease-out">
+                            <div class="py-1" role="menu" aria-orientation="vertical">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-utensils mr-3 text-[#2A7F83]"></i>Restaurants & Hospitality
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-heartbeat mr-3 text-[#2A7F83]"></i>Healthcare & Wellness
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-briefcase mr-3 text-[#2A7F83]"></i>Professional Services
+                                </a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-shopping-cart mr-3 text-[#2A7F83]"></i>Retail & E-commerce
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Web Design</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="pt-4 space-y-1">
+                    <a href="#home" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Home</a>
+                    <a href="#" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">AI Solutions</a>
+                    
+                    <!-- Mobile Industries -->
+                    <div class="py-2 border-t border-gray-100 mt-3">
+                        <button class="industries-dropdown-btn w-full text-left py-2 px-2 text-sm font-semibold text-gray-500 flex items-center justify-between">
+                            INDUSTRIES <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="block py-2 pl-6 pr-2 text-gray-600 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors">
+                                <i class="fas fa-utensils mr-3 text-[#2A7F83]"></i>Restaurants & Hospitality
+                            </a>
+                            <a href="#" class="block py-2 pl-6 pr-2 text-gray-600 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors">
+                                <i class="fas fa-heartbeat mr-3 text-[#2A7F83]"></i>Healthcare & Wellness
+                            </a>
+                            <a href="#" class="block py-2 pl-6 pr-2 text-gray-600 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors">
+                                <i class="fas fa-briefcase mr-3 text-[#2A7F83]"></i>Professional Services
+                            </a>
+                            <a href="#" class="block py-2 pl-6 pr-2 text-gray-600 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors">
+                                <i class="fas fa-shopping-cart mr-3 text-[#2A7F83]"></i>Retail & E-commerce
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Web Design</a>
+                    <a href="#contact" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <h1 class="text-4xl font-bold text-center mb-8">Dropdown Test Page</h1>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-lg mb-4">Test the Industries dropdown functionality:</p>
+                <ul class="text-left space-y-2">
+                    <li>• <strong>Desktop:</strong> Hover over "Industries" to see the dropdown</li>
+                    <li>• <strong>Mobile:</strong> Click the hamburger menu, then click "INDUSTRIES"</li>
+                    <li>• <strong>Click outside:</strong> Should close the dropdown</li>
+                    <li>• <strong>Keyboard:</strong> Use Tab and Enter keys for accessibility</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enhanced Industries dropdown functionality
+            const industriesDropdowns = document.querySelectorAll('.industries-dropdown-btn');
+            const industriesDropdownMenus = document.querySelectorAll('.dropdown-menu');
+            
+            industriesDropdowns.forEach((industriesDropdown, index) => {
+                const industriesDropdownMenu = industriesDropdownMenus[index];
+                const dropdownContainer = industriesDropdown.closest('.relative, .py-2');
+                
+                if (industriesDropdown && industriesDropdownMenu) {
+                    let isDropdownOpen = false;
+                    let hoverTimeout = null;
+                    
+                    // Set ARIA attributes
+                    industriesDropdown.setAttribute('aria-expanded', 'false');
+                    industriesDropdownMenu.setAttribute('role', 'menu');
+                    
+                    // Function to show dropdown
+                    function showDropdown() {
+                        isDropdownOpen = true;
+                        industriesDropdownMenu.classList.add('show');
+                        industriesDropdown.setAttribute('aria-expanded', 'true');
+                        
+                        // Rotate chevron
+                        const chevron = industriesDropdown.querySelector('i');
+                        if (chevron) {
+                            chevron.style.transform = 'rotate(180deg)';
+                        }
+                    }
+                    
+                    // Function to hide dropdown
+                    function hideDropdown() {
+                        isDropdownOpen = false;
+                        industriesDropdownMenu.classList.remove('show');
+                        industriesDropdown.setAttribute('aria-expanded', 'false');
+                        
+                        // Reset chevron
+                        const chevron = industriesDropdown.querySelector('i');
+                        if (chevron) {
+                            chevron.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                    
+                    // Desktop hover behavior (768px and up)
+                    if (dropdownContainer && dropdownContainer.classList.contains('relative')) {
+                        // Mouse enter - show dropdown on desktop
+                        dropdownContainer.addEventListener('mouseenter', function() {
+                            if (window.innerWidth >= 768) {
+                                clearTimeout(hoverTimeout);
+                                showDropdown();
+                            }
+                        });
+                        
+                        // Mouse leave - hide dropdown on desktop with delay
+                        dropdownContainer.addEventListener('mouseleave', function() {
+                            if (window.innerWidth >= 768) {
+                                hoverTimeout = setTimeout(() => {
+                                    hideDropdown();
+                                }, 150); // Small delay to prevent flickering
+                            }
+                        });
+                    }
+                    
+                    // Click behavior for mobile and desktop
+                    industriesDropdown.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // On mobile, always toggle with click
+                        // On desktop, toggle if not already open from hover
+                        if (window.innerWidth < 768 || !isDropdownOpen) {
+                            if (isDropdownOpen) {
+                                hideDropdown();
+                            } else {
+                                showDropdown();
+                            }
+                        }
+                    });
+                    
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function(e) {
+                        if (dropdownContainer && !dropdownContainer.contains(e.target)) {
+                            hideDropdown();
+                        }
+                    });
+                    
+                    // Close dropdown when clicking on dropdown links
+                    const dropdownLinks = industriesDropdownMenu.querySelectorAll('a');
+                    dropdownLinks.forEach(link => {
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            hideDropdown();
+                            
+                            // Close mobile menu if open
+                            const mobileMenu = document.getElementById('mobile-menu');
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                                const menuBtn = document.getElementById('menu-btn');
+                                if (menuBtn) {
+                                    const icon = menuBtn.querySelector('i');
+                                    if (icon) {
+                                        icon.classList.remove('fa-times');
+                                        icon.classList.add('fa-bars');
+                                    }
+                                }
+                            }
+                        });
+                        
+                        // Add keyboard navigation
+                        link.addEventListener('keydown', function(e) {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                this.click();
+                            }
+                        });
+                    });
+                    
+                    // Close dropdown when pressing Escape key
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape' && isDropdownOpen) {
+                            hideDropdown();
+                            industriesDropdown.focus(); // Return focus to button
+                        }
+                    });
+                    
+                    // Handle window resize - close dropdown and reset behavior
+                    window.addEventListener('resize', function() {
+                        hideDropdown();
+                        clearTimeout(hoverTimeout);
+                    });
+                }
+            });
+            
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('visible');
+                    
+                    // Toggle icon between bars and X
+                    const icon = menuBtn.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('visible');
+                        
+                        const icon = menuBtn.querySelector('i');
+                        if (icon.classList.contains('fa-times')) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
