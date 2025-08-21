@@ -232,14 +232,11 @@
                     <p class="text-gray-300 mb-6 leading-relaxed">Transforming UK small businesses with cutting-edge AI automation solutions that drive growth and efficiency.</p>
                     
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
+                        <a href="https://www.facebook.com/share/1B1i9xa3N6/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
                             <i class="fab fa-facebook-f text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
-                            <i class="fab fa-linkedin-in text-xl"></i>
+                        <a href="https://www.instagram.com/webanise.me?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
                         </a>
                     </div>
                 </div>
@@ -280,7 +277,6 @@
                     
                     <div class="mt-6 text-sm text-gray-300">
                         <p><i class="fas fa-envelope mr-2"></i>info@webanise.me</p>
-                        <p><i class="fas fa-phone mr-2"></i>+44 20 1234 5678</p>
                     </div>
                 </div>
             </div>
@@ -392,16 +388,13 @@
                                 <div class="flex items-center justify-between">
                                     <span class="blog-read-more">Read More →</span>
                                     <div class="flex items-center space-x-2">
-                                        <button onclick="shareOnSocial('${encodeURIComponent(title)}', '${encodeURIComponent(window.location.origin + '/blog-post.html?slug=' + encodeURIComponent(slug))}', 'linkedin'); event.preventDefault(); event.stopPropagation();" class="text-gray-400 hover:text-[#0077b5] transition-colors" title="Share on LinkedIn">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </button>
-                                        <button onclick="shareOnSocial('${encodeURIComponent(title)}', '${encodeURIComponent(window.location.origin + '/blog-post.html?slug=' + encodeURIComponent(slug))}', 'twitter'); event.preventDefault(); event.stopPropagation();" class="text-gray-400 hover:text-[#1da1f2] transition-colors" title="Share on Twitter">
-                                            <i class="fab fa-twitter"></i>
-                                        </button>
-                                        <button onclick="shareOnWhatsApp('${encodeURIComponent(title)}', '${encodeURIComponent(window.location.origin + '/blog-post.html?slug=' + encodeURIComponent(slug))}'); event.preventDefault(); event.stopPropagation();" class="text-gray-400 hover:text-[#25d366] transition-colors" title="Share on WhatsApp">
-                                            <i class="fab fa-whatsapp"></i>
-                                        </button>
-                                    </div>
+                                       <button onclick="shareOnSocial('${encodeURIComponent(title)}', '${encodeURIComponent(window.location.origin + '/blog-post.html?slug=' + encodeURIComponent(slug))}', 'facebook'); event.preventDefault(); event.stopPropagation();" class="text-gray-400 hover:text-[#1877f2] transition-colors" title="Share on Facebook">
+                                           <i class="fab fa-facebook-f"></i>
+                                       </button>
+                                       <button onclick="shareOnWhatsApp('${encodeURIComponent(title)}', '${encodeURIComponent(window.location.origin + '/blog-post.html?slug=' + encodeURIComponent(slug))}'); event.preventDefault(); event.stopPropagation();" class="text-gray-400 hover:text-[#25d366] transition-colors" title="Share on WhatsApp">
+                                           <i class="fab fa-whatsapp"></i>
+                                       </button>
+                                   </div>
                                 </div>
                             </div>
                         </a>
@@ -420,11 +413,8 @@
             let shareUrl = '';
             
             switch(platform) {
-                case 'linkedin':
-                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
-                    break;
-                case 'twitter':
-                    shareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}&via=webaniseme`;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
                     break;
             }
             
