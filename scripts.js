@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Test Contentful API access
     const testContentfulAccess = async () => {
         try {
-            const spaceId = '7rdix4olosoz';
-            const accessToken = 'mGfX5V-d5lT1htDzVHimXxJ4eEJ4vn3M8OPtXcdL4as';
+            const spaceId = '05xlhdzrkv93';
+            const accessToken = 'YmzWsiU6I-8dCtI63Ipk9P1lTxGx1baY7tr4DkkoIOc';
             const url = `https://cdn.contentful.com/spaces/${spaceId}?access_token=${accessToken}`;
             
             console.log('Testing Contentful API access...');
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Test content types
     const testContentTypes = async () => {
         try {
-            const spaceId = '7rdix4olosoz';
-            const accessToken = 'mGfX5V-d5lT1htDzVHimXxJ4eEJ4vn3M8OPtXcdL4as';
+            const spaceId = '05xlhdzrkv93';
+            const accessToken = 'YmzWsiU6I-8dCtI63Ipk9P1lTxGx1baY7tr4DkkoIOc';
             const url = `https://cdn.contentful.com/spaces/${spaceId}/content_types?access_token=${accessToken}`;
             
             console.log('Fetching content types...');
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Test for any entries
     const testEntries = async () => {
         try {
-            const spaceId = '7rdix4olosoz';
-            const accessToken = 'mGfX5V-d5lT1htDzVHimXxJ4eEJ4vn3M8OPtXcdL4as';
+            const spaceId = '05xlhdzrkv93';
+            const accessToken = 'YmzWsiU6I-8dCtI63Ipk9P1lTxGx1baY7tr4DkkoIOc';
             const url = `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?access_token=${accessToken}`;
             
             console.log('Fetching all entries...');
@@ -201,6 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
     industriesDropdowns.forEach((industriesDropdown, index) => {
         const industriesDropdownMenu = industriesDropdownMenus[index];
         const dropdownContainer = industriesDropdown.closest('.relative, .py-2');
+        const isMobileDropdown = dropdownContainer && dropdownContainer.classList.contains('py-2');
         
         if (industriesDropdown && industriesDropdownMenu) {
             let isDropdownOpen = false;
@@ -214,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
             function showDropdown() {
                 isDropdownOpen = true;
                 industriesDropdownMenu.classList.add('show');
+                industriesDropdownMenu.style.display = 'block';
                 industriesDropdown.setAttribute('aria-expanded', 'true');
                 
                 // Rotate chevron
@@ -227,6 +229,9 @@ document.addEventListener('DOMContentLoaded', function() {
             function hideDropdown() {
                 isDropdownOpen = false;
                 industriesDropdownMenu.classList.remove('show');
+                if (isMobileDropdown) {
+                    industriesDropdownMenu.style.display = 'none';
+                }
                 industriesDropdown.setAttribute('aria-expanded', 'false');
                 
                 // Reset chevron
@@ -234,6 +239,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (chevron) {
                     chevron.style.transform = 'rotate(0deg)';
                 }
+            }
+            
+            // Initialize mobile dropdown as hidden
+            if (isMobileDropdown) {
+                industriesDropdownMenu.style.display = 'none';
             }
             
             // Desktop hover behavior (768px and up) - only for desktop dropdown
@@ -935,8 +945,8 @@ function setupBlog() {
     // Fetch blog posts from Contentful
     async function fetchBlogPosts(page = 1) {
         try {
-            const spaceId = '7rdix4olosoz';
-            const accessToken = 'mGfX5V-d5lT1htDzVHimXxJ4eEJ4vn3M8OPtXcdL4as';
+            const spaceId = '05xlhdzrkv93';
+            const accessToken = 'YmzWsiU6I-8dCtI63Ipk9P1lTxGx1baY7tr4DkkoIOc';
             const limit = 6;
             const skip = (page - 1) * limit;
             

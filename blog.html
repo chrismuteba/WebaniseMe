@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Latest insights on AI automation, business transformation, and technology trends for UK small businesses.">
+    <meta name="keywords" content="AI automation blog, business automation insights, technology trends, UK SME blog, AI news">
+    <title>Blog | AI Automation Insights - Webanise.me</title>
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="AI Automation Blog - Webanise.me">
+    <meta property="og:description" content="Latest insights on AI automation, business transformation, and technology trends for UK small businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://webanise.me/blog.html">
+    <meta property="og:image" content="https://webanise.me/Logo.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webaniseme">
+    <meta name="twitter:title" content="AI Automation Blog - Webanise.me">
+    <meta name="twitter:description" content="Latest insights on AI automation, business transformation, and technology trends for UK small businesses.">
+    <meta name="twitter:image" content="https://webanise.me/Logo.png">
+    
+    <!-- Schema.org markup for blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Webanise.me AI Automation Blog",
+      "description": "Latest insights on AI automation, business transformation, and technology trends for UK small businesses.",
+      "url": "https://webanise.me/blog.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Webanise.me",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://webanise.me/Logo.png"
+        }
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="Logo.png" alt="WebaniseMe Logo" class="h-12 md:h-14">
+                        <span class="text-xl md:text-2xl font-bold"><span class="text-[#0a3b5c]">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
+                    <a href="ai-automation-services.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
+                    
+                    <!-- Industries Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium industries-dropdown-btn flex items-center" aria-expanded="false" aria-haspopup="true">
+                            Industries <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 opacity-0 invisible transform scale-95 transition-all duration-200 ease-out">
+                            <div class="py-1" role="menu" aria-orientation="vertical">
+                                <a href="ai-restaurant-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-utensils mr-3 text-[#2A7F83]"></i>Restaurants & Hospitality
+                                </a>
+                                <a href="ai-healthcare-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-heartbeat mr-3 text-[#2A7F83]"></i>Healthcare & Wellness
+                                </a>
+                                <a href="ai-professional-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-briefcase mr-3 text-[#2A7F83]"></i>Professional Services
+                                </a>
+                                <a href="ai-retail-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-shopping-cart mr-3 text-[#2A7F83]"></i>Retail & E-commerce
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="web-design-addon.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Web Design</a>
+                    <a href="blog.html" class="nav-link text-[#2A7F83] hover:text-[#236e72] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Blog</a>
+                    <a href="index.html#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="pt-4 space-y-1">
+                    <a href="index.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Home</a>
+                    <a href="ai-automation-services.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">AI Solutions</a>
+                    <!-- Mobile Industries Dropdown -->
+                    <div class="py-2 border-t border-gray-100 mt-3">
+                        <button class="industries-dropdown-btn w-full text-left py-2 px-2 text-sm font-semibold text-gray-500 flex items-center justify-between">
+                            INDUSTRIES <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="ai-restaurant-solutions.html" class="block py-2 pl-6 pr-2 text-gray-600 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors">
+                                <i class="fas fa-utensils mr-3 text-[#2A7F83]"></i>Restaurants & Hospitality
+                            </a>
+                            <a href="ai-healthcare-solutions.html" class="block py-2 pl-6 pr-2 text-gray-600 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors">
+                                <i class="fas fa-heartbeat mr-3 text-[#2A7F83]"></i>Healthcare & Wellness
+                            </a>
+                            <a href="ai-professional-services.html" class="block py-2 pl-6 pr-2 text-gray-600 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors">
+                                <i class="fas fa-briefcase mr-3 text-[#2A7F83]"></i>Professional Services
+                            </a>
+                            <a href="ai-retail-solutions.html" class="block py-2 pl-6 pr-2 text-gray-600 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors">
+                                <i class="fas fa-shopping-cart mr-3 text-[#2A7F83]"></i>Retail & E-commerce
+                            </a>
+                        </div>
+                    </div>
+                    <a href="web-design-addon.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Web Design</a>
+                    <a href="blog.html" class="nav-link block py-3 px-2 text-[#2A7F83] hover:text-[#236e72] hover:bg-gray-50 rounded-md transition-colors font-medium">Blog</a>
+                    <a href="index.html#contact" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20">
+        <!-- Moving Background Image -->
+        <div class="moving-background" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');"></div>
+        
+        <!-- Background Overlay -->
+        <div class="background-overlay"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-on-scroll hero-headline">
+                AI Automation <span class="text-accent">Insights & Trends</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-on-scroll hero-subheadline">
+                Stay ahead of the curve with expert insights on AI automation, business transformation, and the latest technology trends that matter to UK small businesses.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
+                <a href="#blog-posts" class="primary-cta font-bold py-4 px-8 rounded-full transition duration-300 bg-[#2A7F83] text-white hover:bg-[#236e72] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2">
+                    <i class="fas fa-blog mr-2"></i>Read Latest Posts
+                </a>
+                <a href="index.html#contact" class="secondary-cta font-bold py-4 px-8 rounded-full transition duration-300 border-2 border-white text-white hover:bg-white hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
+                    <i class="fas fa-robot mr-2"></i>Get AI Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Latest AI Automation Insights</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">Discover how AI is transforming businesses and learn actionable strategies for your own automation journey.</p>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="blog-loading" class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#2A7F83]"></div>
+                <p class="mt-4 text-gray-600">Loading latest blog posts...</p>
+            </div>
+            
+            <!-- Blog Posts Grid -->
+            <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" style="display: none;">
+                <!-- Blog posts will be dynamically loaded here -->
+            </div>
+            
+            <!-- No Posts Message -->
+            <div id="no-posts-message" class="text-center py-12" style="display: none;">
+                <div class="bg-gray-50 rounded-lg p-8 max-w-2xl mx-auto">
+                    <i class="fas fa-blog text-4xl text-gray-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Coming Soon!</h3>
+                    <p class="text-gray-600 mb-6">We're working on exciting AI automation content for you. Check back soon for the latest insights and trends.</p>
+                    <a href="index.html#contact" class="inline-flex items-center bg-[#2A7F83] text-white px-6 py-3 rounded-lg hover:bg-[#236e72] transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Get Notified When We Publish
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div id="blog-pagination" class="mt-12 flex justify-center" style="display: none;">
+                <div class="flex space-x-2">
+                    <button id="prev-page" class="px-4 py-2 bg-gray-200 text-gray-600 rounded-lg hover:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-chevron-left mr-2"></i>Previous
+                    </button>
+                    <span id="page-info" class="px-4 py-2 text-gray-600"></span>
+                    <button id="next-page" class="px-4 py-2 bg-gray-200 text-gray-600 rounded-lg hover:bg-gray-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        Next<i class="fas fa-chevron-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Stay Updated on AI Trends</h2>
+                <p class="text-xl text-gray-600 mb-8 animate-on-scroll">Get the latest AI automation insights delivered straight to your inbox.</p>
+                
+                <form id="newsletter-form" class="max-w-lg mx-auto animate-on-scroll">
+                    <div class="flex gap-4">
+                        <input type="email" placeholder="Enter your email address" required class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2A7F83] focus:border-transparent">
+                        <button type="submit" class="bg-[#2A7F83] text-white px-6 py-3 rounded-lg hover:bg-[#236e72] transition-colors font-semibold">
+                            <i class="fas fa-paper-plane mr-2"></i>Subscribe
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">No spam, unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e3a5f] text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: Company Info -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="Logo.png" alt="WebaniseMe Logo" class="h-12 sm:h-12 h-8 w-auto min-w-8 max-w-8 sm:min-w-12 sm:max-w-12">
+                        <h3 class="text-xl font-bold sm:text-xl text-base whitespace-nowrap"><span class="text-white">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Transforming UK small businesses with cutting-edge AI automation solutions that drive growth and efficiency.</p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: AI Solutions -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">AI Solutions</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">AI Customer Support</a>
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Workflow Automation</a>
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Predictive Analytics</a>
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Marketing Automation</a>
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Voice AI Solutions</a>
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Document Intelligence</a>
+                    </div>
+                </div>
+                
+                <!-- Column 3: Industries -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Industries</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="ai-restaurant-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Restaurants & Hospitality</a>
+                        <a href="ai-healthcare-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Healthcare & Wellness</a>
+                        <a href="ai-professional-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Professional Services</a>
+                        <a href="ai-retail-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Retail & E-commerce</a>
+                        <a href="web-design-addon.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Web Design Services</a>
+                        <a href="blog.html" class="block text-gray-300 hover:text-white transition-colors duration-300">AI Insights Blog</a>
+                    </div>
+                </div>
+                
+                <!-- Column 4: Contact -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Get Started</h4>
+                    <p class="text-gray-300 mb-6">Ready to revolutionize your business with AI automation?</p>
+                    <a href="index.html#contact" class="inline-block bg-[#2dd4bf] text-[#1e3a5f] font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                        <i class="fas fa-robot mr-2"></i>Free AI Consultation
+                    </a>
+                    
+                    <div class="mt-6 text-sm text-gray-300">
+                        <p><i class="fas fa-envelope mr-2"></i>info@webanise.me</p>
+                        <p><i class="fas fa-phone mr-2"></i>+44 20 1234 5678</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 WEBANISE.ME - AI Automation Solutions for UK SMBs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Initialize blog functionality when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeBlog();
+        });
+
+        async function initializeBlog() {
+            const blogPostsContainer = document.getElementById('blog-posts-container');
+            const blogLoading = document.getElementById('blog-loading');
+            const noPostsMessage = document.getElementById('no-posts-message');
+            
+            try {
+                const { posts, assets } = await fetchBlogPosts();
+                
+                blogLoading.style.display = 'none';
+                
+                if (posts && posts.length > 0) {
+                    renderBlogPosts(posts, assets);
+                    blogPostsContainer.style.display = 'grid';
+                } else {
+                    noPostsMessage.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                blogLoading.style.display = 'none';
+                noPostsMessage.style.display = 'block';
+            }
+        }
+
+        async function fetchBlogPosts() {
+            const spaceId = '05xlhdzrkv93';
+            const accessToken = 'YmzWsiU6I-8dCtI63Ipk9P1lTxGx1baY7tr4DkkoIOc';
+            
+            // Fetch blog posts
+            const postsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?access_token=${accessToken}&content_type=blogPost&order=-sys.createdAt`);
+            const postsData = await postsResponse.json();
+            
+            // Fetch assets
+            const assetsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/environments/master/assets?access_token=${accessToken}`);
+            const assetsData = await assetsResponse.json();
+            
+            return {
+                posts: postsData.items || [],
+                assets: assetsData.items || []
+            };
+        }
+
+        function renderBlogPosts(posts, assets) {
+            const container = document.getElementById('blog-posts-container');
+            
+            const postsHTML = posts.map(post => {
+                const fields = post.fields;
+                const title = fields.title || 'Untitled Post';
+                const slug = fields.slug || '';
+                const excerpt = fields.excerpt || 'Read this insightful article about AI automation and business transformation.';
+                const date = new Date(post.sys.createdAt);
+                
+                // Find featured image
+                let imageUrl = 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                let imageAlt = 'AI Automation Blog Post';
+                
+                if (fields.featuredImage && fields.featuredImage.sys) {
+                    const imageId = fields.featuredImage.sys.id;
+                    const imageAsset = assets.find(asset => asset.sys.id === imageId);
+                    
+                    if (imageAsset && imageAsset.fields) {
+                        imageUrl = imageAsset.fields.file.url.startsWith('//') 
+                            ? `https:${imageAsset.fields.file.url}` 
+                            : imageAsset.fields.file.url;
+                        imageAlt = imageAsset.fields.title || imageAlt;
+                    }
+                }
+                
+                const formattedDate = date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                return `
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 blog-post">
+                        <a href="blog-post.html?slug=${encodeURIComponent(slug)}" class="block">
+                            <div class="h-48 overflow-hidden">
+                                <img src="${imageUrl}" alt="${imageAlt}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="blog-category">AI Automation</span>
+                                    <span class="blog-date">${formattedDate}</span>
+                                </div>
+                                <h3 class="blog-title">${title}</h3>
+                                <p class="blog-excerpt">${excerpt}</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="blog-read-more">Read More →</span>
+                                    <div class="flex items-center space-x-2">
+                                        <button onclick="shareOnSocial('${encodeURIComponent(title)}', '${encodeURIComponent(window.location.origin + '/blog-post.html?slug=' + encodeURIComponent(slug))}', 'linkedin'); event.preventDefault(); event.stopPropagation();" class="text-gray-400 hover:text-[#0077b5] transition-colors" title="Share on LinkedIn">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </button>
+                                        <button onclick="shareOnSocial('${encodeURIComponent(title)}', '${encodeURIComponent(window.location.origin + '/blog-post.html?slug=' + encodeURIComponent(slug))}', 'twitter'); event.preventDefault(); event.stopPropagation();" class="text-gray-400 hover:text-[#1da1f2] transition-colors" title="Share on Twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </button>
+                                        <button onclick="shareOnWhatsApp('${encodeURIComponent(title)}', '${encodeURIComponent(window.location.origin + '/blog-post.html?slug=' + encodeURIComponent(slug))}'); event.preventDefault(); event.stopPropagation();" class="text-gray-400 hover:text-[#25d366] transition-colors" title="Share on WhatsApp">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                `;
+            }).join('');
+            
+            container.innerHTML = postsHTML;
+        }
+
+        // Social media sharing functions
+        function shareOnSocial(title, url, platform) {
+            const encodedTitle = encodeURIComponent(title);
+            const encodedUrl = encodeURIComponent(url);
+            
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}&via=webaniseme`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+
+        function shareOnWhatsApp(title, url) {
+            const text = encodeURIComponent(`${title} - ${url}`);
+            const whatsappUrl = `https://wa.me/?text=${text}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>

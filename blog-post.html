@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI automation insights and business transformation strategies for UK small businesses.">
+    <meta name="keywords" content="AI automation, business automation, technology trends, UK SME">
+    <title id="page-title">Blog Post - Webanise.me</title>
+    
+    <!-- Open Graph Meta Tags (will be updated dynamically) -->
+    <meta property="og:title" content="Blog Post - Webanise.me" id="og-title">
+    <meta property="og:description" content="AI automation insights and business transformation strategies for UK small businesses." id="og-description">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="" id="og-url">
+    <meta property="og:image" content="https://webanise.me/Logo.png" id="og-image">
+    
+    <!-- Twitter Card Meta Tags (will be updated dynamically) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@webaniseme">
+    <meta name="twitter:title" content="Blog Post - Webanise.me" id="twitter-title">
+    <meta name="twitter:description" content="AI automation insights and business transformation strategies for UK small businesses." id="twitter-description">
+    <meta name="twitter:image" content="https://webanise.me/Logo.png" id="twitter-image">
+    
+    <!-- Schema.org markup (will be updated dynamically) -->
+    <script type="application/ld+json" id="schema-markup">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Blog Post",
+      "description": "AI automation insights and business transformation strategies for UK small businesses.",
+      "author": {
+        "@type": "Organization",
+        "name": "Webanise.me"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Webanise.me",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://webanise.me/Logo.png"
+        }
+      },
+      "datePublished": "",
+      "dateModified": "",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": ""
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="Logo.png" alt="WebaniseMe Logo" class="h-12 md:h-14">
+                        <span class="text-xl md:text-2xl font-bold"><span class="text-[#0a3b5c]">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
+                    <a href="ai-automation-services.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
+                    
+                    <!-- Industries Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium industries-dropdown-btn flex items-center" aria-expanded="false" aria-haspopup="true">
+                            Industries <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 opacity-0 invisible transform scale-95 transition-all duration-200 ease-out">
+                            <div class="py-1" role="menu" aria-orientation="vertical">
+                                <a href="ai-restaurant-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-utensils mr-3 text-[#2A7F83]"></i>Restaurants & Hospitality
+                                </a>
+                                <a href="ai-healthcare-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-heartbeat mr-3 text-[#2A7F83]"></i>Healthcare & Wellness
+                                </a>
+                                <a href="ai-professional-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-briefcase mr-3 text-[#2A7F83]"></i>Professional Services
+                                </a>
+                                <a href="ai-retail-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
+                                    <i class="fas fa-shopping-cart mr-3 text-[#2A7F83]"></i>Retail & E-commerce
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="web-design-addon.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Web Design</a>
+                    <a href="blog.html" class="nav-link text-[#2A7F83] hover:text-[#236e72] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Blog</a>
+                    <a href="index.html#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="pt-4 space-y-1">
+                    <a href="index.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Home</a>
+                    <a href="ai-automation-services.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">AI Solutions</a>
+                    <a href="web-design-addon.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Web Design</a>
+                    <a href="blog.html" class="nav-link block py-3 px-2 text-[#2A7F83] hover:text-[#236e72] hover:bg-gray-50 rounded-md transition-colors font-medium">Blog</a>
+                    <a href="index.html#contact" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] hover:bg-gray-50 rounded-md transition-colors font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div id="post-loading" class="min-h-screen flex items-center justify-center">
+        <div class="text-center">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#2A7F83]"></div>
+            <p class="mt-4 text-gray-600">Loading blog post...</p>
+        </div>
+    </div>
+
+    <!-- Error State -->
+    <div id="post-error" class="min-h-screen flex items-center justify-center" style="display: none;">
+        <div class="text-center max-w-md mx-auto px-6">
+            <i class="fas fa-exclamation-triangle text-4xl text-yellow-500 mb-4"></i>
+            <h1 class="text-2xl font-bold text-gray-800 mb-4">Post Not Found</h1>
+            <p class="text-gray-600 mb-6">Sorry, we couldn't find the blog post you're looking for.</p>
+            <a href="blog.html" class="bg-[#2A7F83] text-white px-6 py-3 rounded-lg hover:bg-[#236e72] transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Blog
+            </a>
+        </div>
+    </div>
+
+    <!-- Blog Post Content -->
+    <main id="post-content" style="display: none;">
+        <!-- Breadcrumb -->
+        <section class="bg-gray-50 py-4 mt-20">
+            <div class="container mx-auto px-6">
+                <nav class="text-sm" aria-label="Breadcrumb">
+                    <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                            <a href="index.html" class="text-gray-500 hover:text-[#2A7F83] transition-colors">Home</a>
+                            <i class="fas fa-chevron-right mx-2 text-gray-400 text-xs"></i>
+                        </li>
+                        <li class="flex items-center">
+                            <a href="blog.html" class="text-gray-500 hover:text-[#2A7F83] transition-colors">Blog</a>
+                            <i class="fas fa-chevron-right mx-2 text-gray-400 text-xs"></i>
+                        </li>
+                        <li class="text-gray-700" id="breadcrumb-title">Blog Post</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Featured Image -->
+        <section id="featured-image-section" class="relative h-96 overflow-hidden">
+            <img id="featured-image" src="" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Article Header -->
+                    <header class="mb-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="blog-category">AI Automation</span>
+                            <span class="blog-date" id="post-date"></span>
+                        </div>
+                        <h1 id="post-title" class="text-4xl md:text-5xl font-bold text-gray-900 mb-6"></h1>
+                        <p id="post-excerpt" class="text-xl text-gray-600 leading-relaxed"></p>
+                    </header>
+
+                    <!-- Social Sharing -->
+                    <div class="sticky top-24 float-left mr-8 mb-8">
+                        <div class="bg-white rounded-lg shadow-lg p-4 space-y-3">
+                            <p class="text-sm font-semibold text-gray-700 mb-3">Share this post</p>
+                            <button onclick="shareOnLinkedIn()" class="w-full flex items-center justify-center px-4 py-2 bg-[#0077b5] text-white rounded-lg hover:bg-[#005885] transition-colors" title="Share on LinkedIn">
+                                <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
+                            </button>
+                            <button onclick="shareOnTwitter()" class="w-full flex items-center justify-center px-4 py-2 bg-[#1da1f2] text-white rounded-lg hover:bg-[#0d8bd9] transition-colors" title="Share on Twitter">
+                                <i class="fab fa-twitter mr-2"></i>Twitter
+                            </button>
+                            <button onclick="shareOnWhatsApp()" class="w-full flex items-center justify-center px-4 py-2 bg-[#25d366] text-white rounded-lg hover:bg-[#128c7e] transition-colors" title="Share on WhatsApp">
+                                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                            </button>
+                            <button onclick="copyToClipboard()" class="w-full flex items-center justify-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors" title="Copy link">
+                                <i class="fas fa-link mr-2"></i>Copy Link
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <div id="post-body" class="prose prose-lg max-w-none">
+                        <!-- Content will be loaded here -->
+                    </div>
+
+                    <!-- Mobile Social Sharing -->
+                    <div class="md:hidden mt-8 pt-8 border-t border-gray-200">
+                        <p class="text-lg font-semibold text-gray-700 mb-4">Share this post</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button onclick="shareOnLinkedIn()" class="flex items-center justify-center px-4 py-3 bg-[#0077b5] text-white rounded-lg hover:bg-[#005885] transition-colors">
+                                <i class="fab fa-linkedin-in mr-2"></i>LinkedIn
+                            </button>
+                            <button onclick="shareOnTwitter()" class="flex items-center justify-center px-4 py-3 bg-[#1da1f2] text-white rounded-lg hover:bg-[#0d8bd9] transition-colors">
+                                <i class="fab fa-twitter mr-2"></i>Twitter
+                            </button>
+                            <button onclick="shareOnWhatsApp()" class="flex items-center justify-center px-4 py-3 bg-[#25d366] text-white rounded-lg hover:bg-[#128c7e] transition-colors">
+                                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                            </button>
+                            <button onclick="copyToClipboard()" class="flex items-center justify-center px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
+                                <i class="fas fa-link mr-2"></i>Copy Link
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Related Posts -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Related Posts</h2>
+                    <div id="related-posts" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Related posts will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-[#2A7F83] text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business with AI?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Get started with a free consultation and discover how AI automation can revolutionize your operations.</p>
+                <a href="index.html#contact" class="bg-white text-[#2A7F83] font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-robot mr-2"></i>Get Free AI Consultation
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e3a5f] text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Column 1: Company Info -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="Logo.png" alt="WebaniseMe Logo" class="h-12">
+                        <h3 class="text-xl font-bold"><span class="text-white">WEBANISE</span><span class="text-[#0d8b9c]">.ME</span></h3>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">Transforming UK small businesses with cutting-edge AI automation solutions that drive growth and efficiency.</p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: AI Solutions -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">AI Solutions</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">AI Customer Support</a>
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Workflow Automation</a>
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Predictive Analytics</a>
+                    </div>
+                </div>
+                
+                <!-- Column 3: Industries -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Industries</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="ai-restaurant-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Restaurants & Hospitality</a>
+                        <a href="ai-healthcare-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Healthcare & Wellness</a>
+                        <a href="ai-professional-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Professional Services</a>
+                        <a href="blog.html" class="block text-gray-300 hover:text-white transition-colors duration-300">AI Insights Blog</a>
+                    </div>
+                </div>
+                
+                <!-- Column 4: Contact -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Get Started</h4>
+                    <p class="text-gray-300 mb-6">Ready to revolutionize your business with AI automation?</p>
+                    <a href="index.html#contact" class="inline-block bg-[#2dd4bf] text-[#1e3a5f] font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
+                        <i class="fas fa-robot mr-2"></i>Free AI Consultation
+                    </a>
+                    
+                    <div class="mt-6 text-sm text-gray-300">
+                        <p><i class="fas fa-envelope mr-2"></i>info@webanise.me</p>
+                        <p><i class="fas fa-phone mr-2"></i>+44 20 1234 5678</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 WEBANISE.ME - AI Automation Solutions for UK SMBs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Global variables for sharing
+        let currentPost = null;
+        let currentUrl = window.location.href;
+
+        // Initialize blog post when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeBlogPost();
+        });
+
+        async function initializeBlogPost() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const slug = urlParams.get('slug');
+            
+            if (!slug) {
+                showError();
+                return;
+            }
+
+            try {
+                const post = await fetchBlogPost(slug);
+                if (post) {
+                    renderBlogPost(post);
+                    loadRelatedPosts();
+                } else {
+                    showError();
+                }
+            } catch (error) {
+                console.error('Error loading blog post:', error);
+                showError();
+            }
+        }
+
+        async function fetchBlogPost(slug) {
+            const spaceId = '05xlhdzrkv93';
+            const accessToken = 'YmzWsiU6I-8dCtI63Ipk9P1lTxGx1baY7tr4DkkoIOc';
+            
+            try {
+                // Fetch the specific blog post by slug
+                const postResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?access_token=${accessToken}&content_type=blogPost&fields.slug=${encodeURIComponent(slug)}&limit=1`);
+                const postData = await postResponse.json();
+                
+                if (postData.items && postData.items.length > 0) {
+                    // Fetch assets
+                    const assetsResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/environments/master/assets?access_token=${accessToken}`);
+                    const assetsData = await assetsResponse.json();
+                    
+                    return {
+                        post: postData.items[0],
+                        assets: assetsData.items || []
+                    };
+                }
+                
+                return null;
+            } catch (error) {
+                console.error('Error fetching blog post:', error);
+                return null;
+            }
+        }
+
+        function renderBlogPost(data) {
+            const { post, assets } = data;
+            const fields = post.fields;
+            
+            currentPost = {
+                title: fields.title || 'Untitled Post',
+                excerpt: fields.excerpt || '',
+                url: currentUrl
+            };
+
+            // Update page title and meta tags
+            const title = fields.title || 'Untitled Post';
+            const excerpt = fields.excerpt || 'AI automation insights and business transformation strategies for UK small businesses.';
+            
+            document.title = `${title} - Webanise.me`;
+            document.getElementById('page-title').textContent = `${title} - Webanise.me`;
+            document.getElementById('og-title').setAttribute('content', title);
+            document.getElementById('og-description').setAttribute('content', excerpt);
+            document.getElementById('og-url').setAttribute('content', currentUrl);
+            document.getElementById('twitter-title').setAttribute('content', title);
+            document.getElementById('twitter-description').setAttribute('content', excerpt);
+            
+            // Update breadcrumb
+            document.getElementById('breadcrumb-title').textContent = title;
+            
+            // Update featured image
+            let imageUrl = 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
+            let imageAlt = 'AI Automation Blog Post';
+            
+            if (fields.featuredImage && fields.featuredImage.sys) {
+                const imageId = fields.featuredImage.sys.id;
+                const imageAsset = assets.find(asset => asset.sys.id === imageId);
+                
+                if (imageAsset && imageAsset.fields) {
+                    imageUrl = imageAsset.fields.file.url.startsWith('//') 
+                        ? `https:${imageAsset.fields.file.url}` 
+                        : imageAsset.fields.file.url;
+                    imageAlt = imageAsset.fields.title || imageAlt;
+                }
+            }
+            
+            const featuredImage = document.getElementById('featured-image');
+            featuredImage.src = imageUrl;
+            featuredImage.alt = imageAlt;
+            
+            // Update Open Graph image
+            document.getElementById('og-image').setAttribute('content', imageUrl);
+            document.getElementById('twitter-image').setAttribute('content', imageUrl);
+            
+            // Update post content
+            document.getElementById('post-title').textContent = title;
+            document.getElementById('post-excerpt').textContent = excerpt;
+            
+            // Update date
+            const date = new Date(post.sys.createdAt);
+            const formattedDate = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('post-date').textContent = formattedDate;
+            
+            // Update post body
+            const content = fields.content || 'This is a sample blog post about AI automation and how it can transform your business. Stay tuned for more insights and practical tips.';
+            document.getElementById('post-body').innerHTML = `<div class="rich-text-content">${formatContent(content)}</div>`;
+            
+            // Update schema markup
+            const schemaMarkup = {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": title,
+                "description": excerpt,
+                "author": {
+                    "@type": "Organization",
+                    "name": "Webanise.me"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Webanise.me",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://webanise.me/Logo.png"
+                    }
+                },
+                "datePublished": post.sys.createdAt,
+                "dateModified": post.sys.updatedAt,
+                "image": imageUrl,
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": currentUrl
+                }
+            };
+            
+            document.getElementById('schema-markup').textContent = JSON.stringify(schemaMarkup);
+            
+            // Show content and hide loading
+            document.getElementById('post-loading').style.display = 'none';
+            document.getElementById('post-content').style.display = 'block';
+        }
+
+        function formatContent(content) {
+            if (typeof content === 'string') {
+                return content.replace(/\n/g, '<br>');
+            }
+            return content || 'This is a sample blog post about AI automation and how it can transform your business. Stay tuned for more insights and practical tips.';
+        }
+
+        function showError() {
+            document.getElementById('post-loading').style.display = 'none';
+            document.getElementById('post-error').style.display = 'flex';
+        }
+
+        async function loadRelatedPosts() {
+            try {
+                const spaceId = '05xlhdzrkv93';
+                const accessToken = 'YmzWsiU6I-8dCtI63Ipk9P1lTxGx1baY7tr4DkkoIOc';
+                
+                // Fetch related posts (excluding current post)
+                const relatedResponse = await fetch(`https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?access_token=${accessToken}&content_type=blogPost&order=-sys.createdAt&limit=3`);
+                const relatedData = await relatedResponse.json();
+                
+                if (relatedData.items && relatedData.items.length > 0) {
+                    const relatedPosts = relatedData.items.slice(0, 2); // Get first 2 posts
+                    renderRelatedPosts(relatedPosts);
+                }
+            } catch (error) {
+                console.error('Error loading related posts:', error);
+            }
+        }
+
+        function renderRelatedPosts(posts) {
+            const container = document.getElementById('related-posts');
+            
+            const postsHTML = posts.map(post => {
+                const fields = post.fields;
+                const title = fields.title || 'Related Post';
+                const slug = fields.slug || '';
+                const excerpt = fields.excerpt || 'Read this related article about AI automation.';
+                const date = new Date(post.sys.createdAt);
+                
+                const formattedDate = date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                return `
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                        <a href="blog-post.html?slug=${encodeURIComponent(slug)}" class="block">
+                            <div class="h-48 bg-gray-200 flex items-center justify-center">
+                                <i class="fas fa-robot text-4xl text-gray-400"></i>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="blog-category">AI Automation</span>
+                                    <span class="blog-date">${formattedDate}</span>
+                                </div>
+                                <h3 class="blog-title">${title}</h3>
+                                <p class="blog-excerpt">${excerpt}</p>
+                                <span class="blog-read-more">Read More →</span>
+                            </div>
+                        </a>
+                    </article>
+                `;
+            }).join('');
+            
+            container.innerHTML = postsHTML;
+        }
+
+        // Social sharing functions
+        function shareOnLinkedIn() {
+            if (!currentPost) return;
+            const url = encodeURIComponent(currentPost.url);
+            const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnTwitter() {
+            if (!currentPost) return;
+            const text = encodeURIComponent(`${currentPost.title} - ${currentPost.excerpt}`);
+            const url = encodeURIComponent(currentPost.url);
+            const shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}&via=webaniseme`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        function shareOnWhatsApp() {
+            if (!currentPost) return;
+            const text = encodeURIComponent(`${currentPost.title} - ${currentPost.url}`);
+            const whatsappUrl = `https://wa.me/?text=${text}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function copyToClipboard() {
+            if (!currentPost) return;
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(currentPost.url).then(() => {
+                    showCopySuccess();
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                    fallbackCopyTextToClipboard(currentPost.url);
+                });
+            } else {
+                fallbackCopyTextToClipboard(currentPost.url);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopySuccess();
+                }
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        function showCopySuccess() {
+            // Create temporary success message
+            const button = event.target.closest('button');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
