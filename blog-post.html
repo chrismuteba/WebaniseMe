@@ -442,8 +442,9 @@
             document.getElementById('post-date').textContent = formattedDate;
             
             // Update post body
-            const content = fields.content || 'This is a sample blog post about AI automation and how it can transform your business. Stay tuned for more insights and practical tips.';
-            document.getElementById('post-body').innerHTML = `<div class="rich-text-content">${formatContent(content)}</div>`;
+            const content = fields.content;
+            console.log('Content from Contentful:', content); // Debug log
+            document.getElementById('post-body').innerHTML = `<div class="rich-text-content">${formatRichTextContent(content)}</div>`;
             
             // Update schema markup
             const schemaMarkup = {
@@ -479,11 +480,138 @@
             document.getElementById('post-content').style.display = 'block';
         }
 
-        function formatContent(content) {
-            if (typeof content === 'string') {
-                return content.replace(/\n/g, '<br>');
+        function formatRichTextContent(content) {
+            console.log('Formatting content:', content); // Debug log
+            
+            if (!content) {
+                return '<p>This is a sample blog post about AI automation and how it can transform your business. Stay tuned for more insights and practical tips.</p>';
             }
-            return content || 'This is a sample blog post about AI automation and how it can transform your business. Stay tuned for more insights and practical tips.';
+            
+            // Handle rich text content from Contentful
+            if (content.content && Array.isArray(content.content)) {
+                const parsed = parseRichTextContent(content.content);
+                console.log('Parsed content:', parsed); // Debug log
+                return parsed;
+            }
+            
+            // Handle plain text content
+            if (typeof content === 'string') {
+                return `<p>${content.replace(/\n/g, '</p><p>')}</p>`;
+            }
+            
+            // If it's an object but not the expected structure, try to extract text
+            if (typeof content === 'object') {
+                try {
+                    const jsonString = JSON.stringify(content, null, 2);
+                    return `<div style="background: #f5f5f5; padding: 1rem; border-radius: 4px; margin: 1rem 0;"><h4>Content Debug Info:</h4><pre style="white-space: pre-wrap; font-size: 0.85em;">${jsonString}</pre></div>`;
+                } catch (e) {
+                    return '<p>Error parsing content. Please check the content format in Contentful.</p>';
+                }
+            }
+            
+            // Fallback for any other format
+            return '<p>This is a sample blog post about AI automation and how it can transform your business. Stay tuned for more insights and practical tips.</p>';
+        }
+        
+        function parseRichTextContent(nodes) {
+            return nodes.map(node => {
+                switch (node.nodeType) {
+                    case 'paragraph':
+                        const text = node.content ? node.content.map(textNode => {
+                            if (textNode.nodeType === 'text') {
+                                let content = textNode.value;
+                                // Apply marks (bold, italic, etc.)
+                                if (textNode.marks) {
+                                    textNode.marks.forEach(mark => {
+                                        switch (mark.type) {
+                                            case 'bold':
+                                                content = `<strong>${content}</strong>`;
+                                                break;
+                                            case 'italic':
+                                                content = `<em>${content}</em>`;
+                                                break;
+                                            case 'underline':
+                                                content = `<u>${content}</u>`;
+                                                break;
+                                        }
+                                    });
+                                }
+                                return content;
+                            } else if (textNode.nodeType === 'hyperlink') {
+                                // Handle hyperlinks
+                                const linkText = textNode.content ? textNode.content.map(linkContent => linkContent.value || '').join('') : '';
+                                const linkUrl = textNode.data ? textNode.data.uri : '#';
+                                return `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="text-[#0d8b9c] hover:text-[#0a3b5c] underline">${linkText}</a>`;
+                            }
+                            return '';
+                        }).join('') : '';
+                        return `<p>${text}</p>`;
+                        
+                    case 'heading-1':
+                        const h1Text = node.content ? node.content.map(textNode => textNode.value || '').join('') : '';
+                        return `<h1>${h1Text}</h1>`;
+                        
+                    case 'heading-2':
+                        const h2Text = node.content ? node.content.map(textNode => textNode.value || '').join('') : '';
+                        return `<h2>${h2Text}</h2>`;
+                        
+                    case 'heading-3':
+                        const h3Text = node.content ? node.content.map(textNode => textNode.value || '').join('') : '';
+                        return `<h3>${h3Text}</h3>`;
+                        
+                    case 'unordered-list':
+                        const listItems = node.content ? node.content.map(listItem => {
+                            const itemText = listItem.content ? listItem.content.map(paragraph => {
+                                return paragraph.content ? paragraph.content.map(textNode => textNode.value || '').join('') : '';
+                            }).join('') : '';
+                            return `<li>${itemText}</li>`;
+                        }).join('') : '';
+                        return `<ul>${listItems}</ul>`;
+                        
+                    case 'ordered-list':
+                        const orderedItems = node.content ? node.content.map(listItem => {
+                            const itemText = listItem.content ? listItem.content.map(paragraph => {
+                                return paragraph.content ? paragraph.content.map(textNode => textNode.value || '').join('') : '';
+                            }).join('') : '';
+                            return `<li>${itemText}</li>`;
+                        }).join('') : '';
+                        return `<ol>${orderedItems}</ol>`;
+                        
+                    case 'blockquote':
+                        const quoteText = node.content ? node.content.map(paragraph => {
+                            return paragraph.content ? paragraph.content.map(textNode => textNode.value || '').join('') : '';
+                        }).join('') : '';
+                        return `<blockquote>${quoteText}</blockquote>`;
+                        
+                    case 'hr':
+                        return '<hr>';
+                        
+                    case 'hyperlink':
+                        // Handle standalone hyperlinks
+                        const linkText = node.content ? node.content.map(linkContent => {
+                            if (linkContent.nodeType === 'text') {
+                                return linkContent.value || '';
+                            }
+                            return '';
+                        }).join('') : '';
+                        const linkUrl = node.data ? node.data.uri : '#';
+                        return `<p><a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="text-[#0d8b9c] hover:text-[#0a3b5c] underline">${linkText}</a></p>`;
+                        
+                    default:
+                        // Handle any unrecognized node types as paragraphs
+                        const defaultText = node.content ? node.content.map(textNode => {
+                            if (textNode.nodeType === 'text') {
+                                return textNode.value || '';
+                            } else if (textNode.nodeType === 'hyperlink') {
+                                const linkText = textNode.content ? textNode.content.map(linkContent => linkContent.value || '').join('') : '';
+                                const linkUrl = textNode.data ? textNode.data.uri : '#';
+                                return `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="text-[#0d8b9c] hover:text-[#0a3b5c] underline">${linkText}</a>`;
+                            }
+                            return '';
+                        }).join('') : '';
+                        return defaultText ? `<p>${defaultText}</p>` : '';
+                }
+            }).join('');
         }
 
         function showError() {
