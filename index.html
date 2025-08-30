@@ -5,17 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI automation & workflow solutions for UK small businesses. Streamline operations, optimize process flows, and enhance efficiency with intelligent automation tailored for SMBs."
     <meta name="keywords" content="AI automation, workflow automation, process flow optimization, artificial intelligence, business automation, UK SME automation, intelligent workflows, AI chatbots, automated customer service, small business AI"
+    
+    <!-- Google Search Console Verification - Replace with your actual verification code -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
+    
+    <!-- Bing Webmaster Tools Verification -->
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE_HERE" />
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="AIniseFlow | AI Automation & Workflow Solutions for UK Businesses" />
+    <meta property="og:description" content="Transform your UK small business with intelligent workflow automation. Optimize process flows, reduce operational friction, and deliver exceptional efficiency with AI-powered solutions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ainiseflow.com/" />
+    <meta property="og:image" content="https://ainiseflow.com/AIniseFlow-Logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="AIniseFlow" />
+    <meta property="og:locale" content="en_GB" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AIniseFlow | AI Automation & Workflow Solutions" />
+    <meta name="twitter:description" content="Transform your UK small business with intelligent workflow automation and AI-powered solutions." />
+    <meta name="twitter:image" content="https://ainiseflow.com/AIniseFlow-Logo.png" />
+    <meta name="twitter:site" content="@AIniseFlow" />
+    <meta name="twitter:creator" content="@AIniseFlow" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="AIniseFlow" />
+    <meta name="publisher" content="AIniseFlow" />
+    <meta name="theme-color" content="#2A7F83" />
+    <link rel="canonical" href="https://ainiseflow.com/" />
+    
     <title>AIniseFlow | AI Automation & Workflow Solutions for UK Small & Medium Businesses</title>
     
-    <!-- Schema.org markup for AI service business -->
+    <!-- Enhanced Schema.org markup for AI service business -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechnologyCompany",
       "name": "AIniseFlow",
+      "alternateName": "AI Workflow Automation Solutions",
       "description": "AI automation solutions and intelligent business process optimization for UK small & medium businesses.",
       "url": "https://ainiseflow.com",
       "email": "info@ainiseflow.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ainiseflow.com/AIniseFlow-Logo.png",
+        "width": 400,
+        "height": 400
+      },
+      "image": "https://ainiseflow.com/AIniseFlow-Logo.png",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "United Kingdom"
@@ -29,6 +71,21 @@
         },
         "geoRadius": "500km"
       },
+      "foundingDate": "2024",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 1,
+        "maxValue": 50
+      },
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Process Automation",
+        "Workflow Optimization",
+        "Business Intelligence",
+        "Machine Learning",
+        "Chatbot Development",
+        "Small Business Solutions"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "AI Automation Services",
@@ -38,7 +95,8 @@
             "itemOffered": {
               "@type": "Service",
               "name": "AI Chatbot Implementation",
-              "description": "Intelligent customer service automation"
+              "description": "24/7 intelligent customer service automation with human-like conversations",
+              "serviceType": "AI Customer Support"
             }
           },
           {
@@ -46,14 +104,72 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Workflow Automation",
-              "description": "AI-powered business process optimization"
+              "description": "AI-powered business process optimization and intelligent workflow orchestration",
+              "serviceType": "Process Flow Automation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Predictive Analytics",
+              "description": "AI-powered insights for customer behavior prediction and business optimization",
+              "serviceType": "Business Intelligence"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Voice AI Solutions",
+              "description": "Voice-enabled AI assistants for appointment booking and customer service",
+              "serviceType": "Voice Automation"
             }
           }
         ]
-      }
+      },
+      "sameAs": [
+        "https://linkedin.com/company/ainiseflow",
+        "https://twitter.com/ainiseflow"
+      ]
     }
     </script>
     
+    <!-- Google Analytics 4 (GA4) Tracking Code -->
+    <!-- Replace GA_MEASUREMENT_ID with your actual Google Analytics 4 Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        send_page_view: true,
+        anonymize_ip: true, // GDPR compliance
+        allow_google_signals: true,
+        custom_map: {
+          'custom_parameter_1': 'business_type',
+          'custom_parameter_2': 'service_interest'
+        }
+      });
+
+      // Enhanced conversion tracking functions
+      function trackContactSubmission(method) {
+        gtag('event', 'contact_form_submit', {
+          'event_category': 'engagement',
+          'event_label': method,
+          'value': 1
+        });
+      }
+
+      function trackCTAClick(cta_name) {
+        gtag('event', 'cta_click', {
+          'event_category': 'conversion',
+          'event_label': cta_name,
+          'value': 1
+        });
+      }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -157,10 +273,10 @@
                 Transform your UK small business with intelligent workflow automation. Optimize process flows, reduce operational friction, and deliver exceptional efficiency with AI-powered solutions designed for seamless business operations.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
-                <a href="#contact" class="primary-cta font-bold py-4 px-8 rounded-full transition duration-300 bg-[#2A7F83] text-white hover:bg-[#236e72] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2">
+                <a href="#contact" class="primary-cta font-bold py-4 px-8 rounded-full transition duration-300 bg-[#2A7F83] text-white hover:bg-[#236e72] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2" onclick="trackCTAClick('start_ai_journey')">
                     <i class="fas fa-robot mr-2"></i>Start Your AI Journey
                 </a>
-                <a href="ai-automation-services.html" class="secondary-cta">
+                <a href="ai-automation-services.html" class="secondary-cta" onclick="trackCTAClick('explore_ai_solutions')">
                     <i class="fas fa-cog"></i>
                     <i class="fas fa-cog"></i>
                     <span>Explore AI Solutions</span>

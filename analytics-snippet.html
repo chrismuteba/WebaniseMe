@@ -1,0 +1,53 @@
+<!-- Google Analytics 4 (GA4) Tracking Code -->
+<!-- Replace GA_MEASUREMENT_ID with your actual Google Analytics 4 Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID', {
+    // Enhanced ecommerce and conversion tracking
+    send_page_view: true,
+    anonymize_ip: true, // GDPR compliance
+    allow_google_signals: true,
+    custom_map: {
+      'custom_parameter_1': 'business_type',
+      'custom_parameter_2': 'service_interest'
+    }
+  });
+
+  // Enhanced conversion tracking for contact forms
+  function trackContactSubmission(method) {
+    gtag('event', 'contact_form_submit', {
+      'event_category': 'engagement',
+      'event_label': method,
+      'value': 1
+    });
+  }
+
+  // Track service page views
+  function trackServiceInterest(service) {
+    gtag('event', 'service_page_view', {
+      'event_category': 'services',
+      'event_label': service,
+      'value': 1
+    });
+  }
+
+  // Track CTA button clicks
+  function trackCTAClick(cta_name) {
+    gtag('event', 'cta_click', {
+      'event_category': 'conversion',
+      'event_label': cta_name,
+      'value': 1
+    });
+  }
+</script>
+
+<!-- Google Tag Manager (GTM) - Alternative/Additional Tracking -->
+<!-- Replace GTM-XXXXXXX with your Google Tag Manager ID -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
