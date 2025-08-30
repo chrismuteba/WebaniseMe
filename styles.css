@@ -124,7 +124,7 @@ html.scrolling #main-nav {
 #menu-btn {
     z-index: 1001 !important;
     position: relative !important;
-    display: flex !important;
+    
     align-items: center !important;
     justify-content: center !important;
     min-width: 44px !important;
@@ -137,14 +137,14 @@ html.scrolling #main-nav {
 /* Mobile menu button visibility fix */
 @media (max-width: 767px) {
     #menu-btn {
-        display: flex !important;
+        
         visibility: visible !important;
         opacity: 1 !important;
         pointer-events: auto !important;
     }
     
     .md\\:hidden {
-        display: flex !important;
+        
     }
 }
 
@@ -2112,6 +2112,371 @@ html {
     }
 }
 
+/* Ensure no page titles are accidentally displayed on screen */
+title {
+    display: none !important;
+}
+
+/* Hide any elements that might accidentally display the title */
+*[content*="AIniseFlow | AI Automation & Workflow Solutions"]::before,
+*[content*="AIniseFlow | AI Automation & Workflow Solutions"]::after {
+    display: none !important;
+}
+
+/* Prevent any title text from appearing below navigation */
+nav + *::before {
+    content: none !important;
+}
+
+body::before,
+body::after {
+    content: none !important;
+}
+
+/* Hide any potential title display elements */
+.page-title,
+.site-title,
+.document-title {
+    display: none !important;
+}
+
+/* Ensure navigation area has proper spacing and no unwanted content */
+#main-nav + * {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Hide any accessibility or SEO elements that might render visually */
+[aria-label*="AIniseFlow | AI Automation"],
+[title*="AIniseFlow | AI Automation"] {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+/* Specifically hide any text that contains the full title */
+*:contains("AIniseFlow | AI Automation & Workflow Solutions") {
+    display: none !important;
+}
+
+/* Hide browser chrome elements if they leak into page */
+iframe,
+embed,
+object {
+    max-height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Force hide any top-level text nodes */
+body > *:first-child:not(nav):not(section):not(header):not(main) {
+    display: none !important;
+}
+
+/* Additional safety nets */
+.browser-ui,
+.page-header,
+.document-header,
+.site-header:not(#main-nav) {
+    display: none !important;
+}
+
+/* Aggressive approach - hide anything at the very top that's not our navigation */
+body > *:first-child:not(nav) {
+    position: relative !important;
+}
+
+body > *:first-child:not(nav):before {
+    content: none !important;
+}
+
+/* Hide any potential browser frame content */
+body:before,
+html:before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Ensure body starts correctly positioned */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* Force navigation to be the topmost element */
+#main-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    height: 80px !important; /* Fixed navigation height */
+}
+
+/* Standardize navigation layout and prevent shifting */
+#main-nav .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+#main-nav .flex {
+    
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 80px !important; /* Consistent height */
+    padding: 0 !important; /* Remove padding variations */
+}
+
+/* Logo container - fixed size and position */
+#main-nav .flex.items-center:first-child {
+    flex-shrink: 0 !important;
+    min-width: fit-content !important;
+}
+
+#main-nav .flex.items-center:first-child a {
+    
+    align-items: center !important;
+    gap: 12px !important; /* Fixed gap */
+    text-decoration: none !important;
+}
+
+/* Logo image - consistent size */
+#main-nav img[alt*="AIniseFlow Logo"] {
+    height: 48px !important; /* Fixed height */
+    width: auto !important;
+    flex-shrink: 0 !important;
+    object-fit: contain !important;
+}
+
+/* Brand text - consistent size and prevent wrapping */
+#main-nav span.font-bold {
+    font-size: 1.5rem !important; /* Fixed font size */
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Navigation links container */
+#main-nav .hidden.md\\:flex {
+    
+    align-items: center !important;
+    gap: 2rem !important; /* Fixed spacing between nav items */
+    flex-shrink: 0 !important;
+}
+
+/* Individual navigation links */
+#main-nav .nav-link {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    padding: 0.5rem 0 !important; /* Consistent vertical padding */
+    line-height: 1 !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Dropdown button consistency */
+#main-nav .industries-dropdown-btn {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    padding: 0.5rem 0 !important;
+    line-height: 1 !important;
+    
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+/* Mobile menu button - consistent sizing */
+#menu-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Prevent layout shifts */
+body {
+    padding-top: 80px !important; /* Account for fixed nav height */
+}
+
+/* Ensure all pages have consistent top spacing */
+.hero-section,
+section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 5rem !important;
+}
+
+/* Prevent any elements from affecting navigation layout */
+* {
+    box-sizing: border-box !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #main-nav img[alt*="AIniseFlow Logo"] {
+        height: 40px !important;
+    }
+    
+    #main-nav span.font-bold {
+        font-size: 1.25rem !important;
+    }
+    
+    body {
+        padding-top: 70px !important;
+    }
+}
+
+/* Additional stability for navigation */
+#main-nav * {
+    flex-shrink: 0 !important;
+}
+
+#main-nav .container > div {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Explore AI Solutions Button Styling */
+.explore-ai-btn {
+    background: linear-gradient(135deg, #0d8b9c 0%, #2A7F83 50%, #0a6b75 100%) !important;
+    border: 2px solid white !important;
+    border-radius: 2rem !important;
+    color: white !important;
+    font-weight: 700 !important;
+    padding: 1rem 2rem !important;
+    
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(42, 127, 131, 0.3) !important;
+}
+
+.explore-ai-btn:hover {
+    background: linear-gradient(135deg, #0a7a8a 0%, #236e72 50%, #085a63 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(42, 127, 131, 0.4) !important;
+}
+
+.explore-ai-btn i {
+    color: white !important;
+    font-size: 1rem !important;
+}
+
+/* Gear icons spacing */
+.explore-ai-btn i.fa-cog:first-of-type {
+    margin-right: 0.25rem !important;
+}
+
+/* Fix mobile menu button visibility - ensure it's hidden on desktop */
+@media (min-width: 768px) {
+    #menu-btn,
+    .md\\:hidden {
+        display: none !important;
+    }
+    
+    /* Ensure desktop navigation is visible */
+    .hidden.md\\:flex {
+        
+    }
+}
+
+/* Mobile menu button should only show on mobile */
+@media (max-width: 767px) {
+    #menu-btn {
+        
+    }
+    
+    /* Hide desktop navigation on mobile */
+    .hidden.md\\:flex {
+        display: none !important;
+    }
+}
+
+/* Explore AI Solutions Button - Match Design */
+.explore-ai-btn {
+    /* Pill shape with specific styling */
+    border-radius: 50px !important;
+    border: 2px solid rgba(255, 255, 255, 0.9) !important;
+    background: rgba(42, 127, 131, 0.6) !important; /* Teal semi-transparent */
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    padding: 16px 32px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(2px) !important;
+    min-width: 240px !important;
+    white-space: nowrap !important;
+}
+
+.explore-ai-btn:hover {
+    background: rgba(42, 127, 131, 0.8) !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(42, 127, 131, 0.3) !important;
+}
+
+.explore-ai-btn i {
+    font-size: 1.1rem !important;
+    color: white !important;
+    flex-shrink: 0 !important;
+}
+
+.explore-ai-btn:focus {
+    outline: none !important;
+    ring: 2px solid rgba(255, 255, 255, 0.5) !important;
+    ring-offset: 2px !important;
+}
+
+/* Ensure consistent styling on different screen sizes */
+@media (max-width: 768px) {
+    .explore-ai-btn {
+        padding: 14px 28px !important;
+        font-size: 0.95rem !important;
+        min-width: 220px !important;
+    }
+}
+
+/* CRITICAL FIX: Mobile menu button should be hidden on desktop */
+@media (min-width: 768px) {
+    #menu-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Ensure desktop nav is visible */
+    nav .hidden.md\\:flex {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #menu-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Hide desktop nav on mobile */  
+    nav .hidden.md\\:flex {
+        display: none !important;
+    }
+}
+
 /* Brand Color Utility Classes - Ensuring proper colors regardless of Tailwind version */
 .text-brand-teal {
     color: #0d8b9c !important; /* Teal for icons and main titles */
@@ -2149,7 +2514,7 @@ html {
 @media (max-width: 767px) {
     /* Ensure mobile menu button is always visible and properly sized */
     #menu-btn {
-        display: flex !important;
+        
         align-items: center;
         justify-content: center;
         width: 44px;
@@ -2386,7 +2751,7 @@ html {
 @media (min-width: 1024px) {
     /* Ensure desktop navigation is properly shown */
     .hidden.md\\:flex {
-        display: flex !important;
+        
     }
     
     .md\\:hidden {

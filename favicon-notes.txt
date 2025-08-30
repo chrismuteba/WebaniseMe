@@ -1,0 +1,33 @@
+FAVICON PLACEHOLDER NOTES FOR AINISEFLOW
+==========================================
+
+BRAND COLORS:
+- Primary: #0a3b5c (dark blue)
+- Secondary: #0d8b9c (teal)
+- Accent: #2dd4bf (bright teal)
+
+FAVICON CONCEPT:
+- Combine "AI" and "Flow" visual elements
+- Use a stylized "A" with flowing lines representing automation workflows
+- Incorporate circuit/connection patterns to represent AI
+- Color scheme: gradient from #0a3b5c to #0d8b9c
+
+RECOMMENDED SIZES:
+- favicon.ico (16x16, 32x32, 48x48)
+- apple-touch-icon.png (180x180)
+- favicon-32x32.png
+- favicon-16x16.png
+- android-chrome-192x192.png
+- android-chrome-512x512.png
+
+DESIGN ELEMENTS:
+1. Letter "A" as the main element (for AInise)
+2. Flowing curved lines emanating from the "A" (representing Flow)
+3. Small dots or nodes connected by lines (representing AI networks)
+4. Modern, clean aesthetic matching the website design
+
+TO IMPLEMENT:
+1. Create SVG version first for scalability
+2. Export to various PNG and ICO formats
+3. Update HTML head sections with proper favicon links
+4. Test on different browsers and devices
