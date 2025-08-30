@@ -1,1 +1,20 @@
 Server running on port 8080
+30/Aug/2025 16:29:08 - "GET / HTTP/1.1" 200 -
+30/Aug/2025 16:29:08 - "GET /AIniseFlow-Logo.png HTTP/1.1" 200 -
+30/Aug/2025 16:29:08 - "GET /styles.css HTTP/1.1" 200 -
+30/Aug/2025 16:29:08 - "GET /scripts.js HTTP/1.1" 200 -
+30/Aug/2025 16:29:09 - code 404, message File not found
+30/Aug/2025 16:29:09 - "GET /favicon.ico HTTP/1.1" 404 -
+30/Aug/2025 16:29:14 - "GET /ai-automation-services.html HTTP/1.1" 200 -
+30/Aug/2025 16:29:54 - "GET /ai-restaurant-solutions.html HTTP/1.1" 200 -
+30/Aug/2025 16:29:54 - "GET /styles.css HTTP/1.1" 304 -
+30/Aug/2025 16:29:54 - "GET /AIniseFlow-Logo.png HTTP/1.1" 304 -
+30/Aug/2025 16:30:01 - "GET /web-design-addon.html HTTP/1.1" 200 -
+30/Aug/2025 16:30:05 - "GET /blog.html HTTP/1.1" 200 -
+30/Aug/2025 16:30:23 - "GET /styles.css HTTP/1.1" 304 -
+30/Aug/2025 16:30:23 - "GET /AIniseFlow-Logo.png HTTP/1.1" 304 -
+30/Aug/2025 16:30:31 - "GET /index.html HTTP/1.1" 200 -
+30/Aug/2025 16:33:11 - "GET /index.html HTTP/1.1" 200 -
+30/Aug/2025 16:33:11 - "GET /styles.css HTTP/1.1" 200 -
+30/Aug/2025 16:33:11 - "GET /AIniseFlow-Logo.png HTTP/1.1" 304 -
+30/Aug/2025 16:33:11 - "GET /scripts.js HTTP/1.1" 304 -

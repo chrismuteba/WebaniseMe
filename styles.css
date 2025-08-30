@@ -2156,6 +2156,64 @@ body::after {
     overflow: hidden !important;
 }
 
+/* Specifically hide any text that contains the full title */
+*:contains("AIniseFlow | AI Automation & Workflow Solutions") {
+    display: none !important;
+}
+
+/* Hide browser chrome elements if they leak into page */
+iframe,
+embed,
+object {
+    max-height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Force hide any top-level text nodes */
+body > *:first-child:not(nav):not(section):not(header):not(main) {
+    display: none !important;
+}
+
+/* Additional safety nets */
+.browser-ui,
+.page-header,
+.document-header,
+.site-header:not(#main-nav) {
+    display: none !important;
+}
+
+/* Aggressive approach - hide anything at the very top that's not our navigation */
+body > *:first-child:not(nav) {
+    position: relative !important;
+}
+
+body > *:first-child:not(nav):before {
+    content: none !important;
+}
+
+/* Hide any potential browser frame content */
+body:before,
+html:before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Ensure body starts correctly positioned */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* Force navigation to be the topmost element */
+#main-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+}
+
 /* Brand Color Utility Classes - Ensuring proper colors regardless of Tailwind version */
 .text-brand-teal {
     color: #0d8b9c !important; /* Teal for icons and main titles */
