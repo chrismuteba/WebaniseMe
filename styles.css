@@ -417,6 +417,40 @@ body > footer i {
     box-shadow: 0 0 0 3px rgba(42, 127, 131, 0.5);
 }
 
+/* Hero section secondary CTA - white styling to match hero theme */
+.hero-section .secondary-cta {
+    background-color: transparent !important;
+    color: white !important;
+    border: 2px solid white !important;
+    border-radius: 25px;
+    padding: 15px 30px !important; /* Match primary button padding */
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+    font-size: 1rem; /* Match primary button size */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    min-height: 56px; /* Ensure same height as primary button */
+}
+
+.hero-section .secondary-cta:hover {
+    background-color: white !important;
+    color: #2A7F83 !important;
+    border-color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.hero-section .secondary-cta:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+/* General secondary CTA for other sections */
 .secondary-cta {
     background-color: transparent;
     color: #2A7F83;
@@ -3360,5 +3394,51 @@ nav .dropdown-menu.show,
     /* Adjust body padding for mobile nav height */
     body {
         padding-top: 70px !important;
+    }
+}
+
+/* Mobile Menu Clean Styling - Remove boxes and borders */
+@media (max-width: 767px) {
+    #mobile-menu .dropdown-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin-top: 0 !important;
+        background-color: transparent !important;
+        min-width: auto !important;
+        backdrop-filter: none !important;
+        padding: 0 !important;
+    }
+    
+    /* Clean mobile menu styling - remove all boxes and borders */
+    #mobile-menu {
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    #mobile-menu .nav-link {
+        border: none !important;
+        border-radius: 0 !important;
+        background-color: transparent !important;
+    }
+    
+    #mobile-menu .nav-link:hover {
+        background-color: transparent !important;
+        border-radius: 0 !important;
+    }
+    
+    #mobile-menu a {
+        border: none !important;
+        border-radius: 0 !important;
+        background-color: transparent !important;
+    }
+    
+    #mobile-menu a:hover {
+        background-color: transparent !important;
+        border-radius: 0 !important;
     }
 }
