@@ -1,0 +1,21 @@
+10.12.42.216 - - [30/Aug/2025 16:37:11] "GET / HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:11] "GET /AIniseFlow-Logo.png HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:11] "GET /styles.css HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:11] "GET /scripts.js HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:12] code 404, message File not found
+10.12.42.216 - - [30/Aug/2025 16:37:12] "GET /favicon.ico HTTP/1.1" 404 -
+10.12.42.216 - - [30/Aug/2025 16:37:14] "GET /ai-automation-services.html HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:17] "GET /ai-restaurant-solutions.html HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:19] "GET /web-design-addon.html HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:21] "GET /index.html HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:31] "GET /blog.html HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:37:33] "GET /styles.css HTTP/1.1" 304 -
+10.12.42.216 - - [30/Aug/2025 16:37:44] "GET /index.html HTTP/1.1" 304 -
+10.12.42.216 - - [30/Aug/2025 16:37:47] "GET /ai-automation-services.html HTTP/1.1" 304 -
+10.12.42.216 - - [30/Aug/2025 16:38:00] "GET /styles.css HTTP/1.1" 304 -
+10.12.42.216 - - [30/Aug/2025 16:38:08] "GET /ai-healthcare-solutions.html HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:38:10] "GET /ai-professional-services.html HTTP/1.1" 200 -
+10.12.42.216 - - [30/Aug/2025 16:38:12] "GET /web-design-addon.html HTTP/1.1" 304 -
+10.12.42.216 - - [30/Aug/2025 16:38:14] "GET /blog.html HTTP/1.1" 304 -
+10.12.42.216 - - [30/Aug/2025 16:38:16] "GET /index.html HTTP/1.1" 304 -
+10.12.42.216 - - [30/Aug/2025 16:38:22] "GET /AIniseFlow-Logo.png HTTP/1.1" 304 -

@@ -2212,6 +2212,134 @@ body {
     left: 0 !important;
     right: 0 !important;
     z-index: 9999 !important;
+    height: 80px !important; /* Fixed navigation height */
+}
+
+/* Standardize navigation layout and prevent shifting */
+#main-nav .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+#main-nav .flex {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 80px !important; /* Consistent height */
+    padding: 0 !important; /* Remove padding variations */
+}
+
+/* Logo container - fixed size and position */
+#main-nav .flex.items-center:first-child {
+    flex-shrink: 0 !important;
+    min-width: fit-content !important;
+}
+
+#main-nav .flex.items-center:first-child a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important; /* Fixed gap */
+    text-decoration: none !important;
+}
+
+/* Logo image - consistent size */
+#main-nav img[alt*="AIniseFlow Logo"] {
+    height: 48px !important; /* Fixed height */
+    width: auto !important;
+    flex-shrink: 0 !important;
+    object-fit: contain !important;
+}
+
+/* Brand text - consistent size and prevent wrapping */
+#main-nav span.font-bold {
+    font-size: 1.5rem !important; /* Fixed font size */
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Navigation links container */
+#main-nav .hidden.md\\:flex {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important; /* Fixed spacing between nav items */
+    flex-shrink: 0 !important;
+}
+
+/* Individual navigation links */
+#main-nav .nav-link {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    padding: 0.5rem 0 !important; /* Consistent vertical padding */
+    line-height: 1 !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Dropdown button consistency */
+#main-nav .industries-dropdown-btn {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    padding: 0.5rem 0 !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+/* Mobile menu button - consistent sizing */
+#menu-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Prevent layout shifts */
+body {
+    padding-top: 80px !important; /* Account for fixed nav height */
+}
+
+/* Ensure all pages have consistent top spacing */
+.hero-section,
+section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 5rem !important;
+}
+
+/* Prevent any elements from affecting navigation layout */
+* {
+    box-sizing: border-box !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #main-nav img[alt*="AIniseFlow Logo"] {
+        height: 40px !important;
+    }
+    
+    #main-nav span.font-bold {
+        font-size: 1.25rem !important;
+    }
+    
+    body {
+        padding-top: 70px !important;
+    }
+}
+
+/* Additional stability for navigation */
+#main-nav * {
+    flex-shrink: 0 !important;
+}
+
+#main-nav .container > div {
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 /* Brand Color Utility Classes - Ensuring proper colors regardless of Tailwind version */
