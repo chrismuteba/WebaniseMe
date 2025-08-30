@@ -986,7 +986,7 @@ function setupBlog() {
             const date = new Date(post.sys.createdAt);
             
             // Find featured image if available
-            let imageUrl = 'https://via.placeholder.com/800x450/0d8b9c/ffffff?text=Webanise.me';
+            let imageUrl = 'https://via.placeholder.com/800x450/0d8b9c/ffffff?text=AIniseFlow';
             let imageAlt = 'Blog post image';
             
             if (fields.featuredImage && fields.featuredImage.sys) {
