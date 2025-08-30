@@ -26,3 +26,28 @@
 2025-08-30 16:22:10,757 WARN stopped: webserver (terminated by SIGTERM)
 2025-08-30 16:22:10,766 INFO spawned: 'webserver' with pid 4012
 2025-08-30 16:22:11,866 INFO success: webserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-08-30 16:26:11,121 INFO waiting for webserver to stop
+2025-08-30 16:26:11,123 WARN stopped: webserver (terminated by SIGTERM)
+2025-08-30 16:26:11,126 INFO spawned: 'webserver' with pid 4700
+2025-08-30 16:26:11,225 WARN exited: webserver (exit status 1; not expected)
+2025-08-30 16:26:12,228 INFO spawned: 'webserver' with pid 4702
+2025-08-30 16:26:12,328 WARN exited: webserver (exit status 1; not expected)
+2025-08-30 16:26:14,334 INFO spawned: 'webserver' with pid 4705
+2025-08-30 16:26:14,434 WARN exited: webserver (exit status 1; not expected)
+2025-08-30 16:26:18,286 INFO spawned: 'webserver' with pid 4712
+2025-08-30 16:26:18,389 WARN exited: webserver (exit status 1; not expected)
+2025-08-30 16:26:19,390 INFO gave up: webserver entered FATAL state, too many start retries too quickly
+2025-08-30 16:26:19,390 WARN received SIGTERM indicating exit request
+2025-08-30 16:26:21,494 INFO RPC interface 'supervisor' initialized
+2025-08-30 16:26:21,495 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2025-08-30 16:26:21,497 INFO daemonizing the supervisord process
+2025-08-30 16:26:21,498 INFO supervisord started with pid 4721
+2025-08-30 16:26:22,503 INFO spawned: 'webserver' with pid 4723
+2025-08-30 16:26:22,646 WARN exited: webserver (exit status 1; not expected)
+2025-08-30 16:26:23,651 INFO spawned: 'webserver' with pid 4725
+2025-08-30 16:26:23,794 WARN exited: webserver (exit status 1; not expected)
+2025-08-30 16:26:26,392 INFO spawned: 'webserver' with pid 4730
+2025-08-30 16:26:26,553 WARN exited: webserver (exit status 1; not expected)
+2025-08-30 16:26:29,559 INFO spawned: 'webserver' with pid 4741
+2025-08-30 16:26:29,717 WARN exited: webserver (exit status 1; not expected)
+2025-08-30 16:26:29,718 INFO gave up: webserver entered FATAL state, too many start retries too quickly

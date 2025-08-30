@@ -2123,6 +2123,39 @@ title {
     display: none !important;
 }
 
+/* Prevent any title text from appearing below navigation */
+nav + *::before {
+    content: none !important;
+}
+
+body::before,
+body::after {
+    content: none !important;
+}
+
+/* Hide any potential title display elements */
+.page-title,
+.site-title,
+.document-title {
+    display: none !important;
+}
+
+/* Ensure navigation area has proper spacing and no unwanted content */
+#main-nav + * {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Hide any accessibility or SEO elements that might render visually */
+[aria-label*="AIniseFlow | AI Automation"],
+[title*="AIniseFlow | AI Automation"] {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
 /* Brand Color Utility Classes - Ensuring proper colors regardless of Tailwind version */
 .text-brand-teal {
     color: #0d8b9c !important; /* Teal for icons and main titles */

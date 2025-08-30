@@ -13,7 +13,7 @@ if __name__ == "__main__":
     # Use the current directory
     # os.chdir('/home/user/webapp')
     
-    PORT = 8000
+    PORT = 8080
     with socketserver.TCPServer(("0.0.0.0", PORT), MyHandler) as httpd:
         print(f"Server running on port {PORT}")
         sys.stdout.flush()
