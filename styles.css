@@ -2112,6 +2112,17 @@ html {
     }
 }
 
+/* Ensure no page titles are accidentally displayed on screen */
+title {
+    display: none !important;
+}
+
+/* Hide any elements that might accidentally display the title */
+*[content*="AIniseFlow | AI Automation & Workflow Solutions"]::before,
+*[content*="AIniseFlow | AI Automation & Workflow Solutions"]::after {
+    display: none !important;
+}
+
 /* Brand Color Utility Classes - Ensuring proper colors regardless of Tailwind version */
 .text-brand-teal {
     color: #0d8b9c !important; /* Teal for icons and main titles */
