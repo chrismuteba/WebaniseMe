@@ -124,7 +124,7 @@ html.scrolling #main-nav {
 #menu-btn {
     z-index: 1001 !important;
     position: relative !important;
-    display: flex !important;
+    
     align-items: center !important;
     justify-content: center !important;
     min-width: 44px !important;
@@ -137,14 +137,14 @@ html.scrolling #main-nav {
 /* Mobile menu button visibility fix */
 @media (max-width: 767px) {
     #menu-btn {
-        display: flex !important;
+        
         visibility: visible !important;
         opacity: 1 !important;
         pointer-events: auto !important;
     }
     
     .md\\:hidden {
-        display: flex !important;
+        
     }
 }
 
@@ -2224,7 +2224,7 @@ body {
 }
 
 #main-nav .flex {
-    display: flex !important;
+    
     justify-content: space-between !important;
     align-items: center !important;
     height: 80px !important; /* Consistent height */
@@ -2238,7 +2238,7 @@ body {
 }
 
 #main-nav .flex.items-center:first-child a {
-    display: flex !important;
+    
     align-items: center !important;
     gap: 12px !important; /* Fixed gap */
     text-decoration: none !important;
@@ -2263,7 +2263,7 @@ body {
 
 /* Navigation links container */
 #main-nav .hidden.md\\:flex {
-    display: flex !important;
+    
     align-items: center !important;
     gap: 2rem !important; /* Fixed spacing between nav items */
     flex-shrink: 0 !important;
@@ -2286,7 +2286,7 @@ body {
     white-space: nowrap !important;
     padding: 0.5rem 0 !important;
     line-height: 1 !important;
-    display: flex !important;
+    
     align-items: center !important;
     gap: 0.5rem !important;
 }
@@ -2350,7 +2350,7 @@ section:first-of-type {
     color: white !important;
     font-weight: 700 !important;
     padding: 1rem 2rem !important;
-    display: flex !important;
+    
     align-items: center !important;
     justify-content: center !important;
     gap: 0.5rem !important;
@@ -2373,6 +2373,31 @@ section:first-of-type {
 /* Gear icons spacing */
 .explore-ai-btn i.fa-cog:first-of-type {
     margin-right: 0.25rem !important;
+}
+
+/* Fix mobile menu button visibility - ensure it's hidden on desktop */
+@media (min-width: 768px) {
+    #menu-btn,
+    .md\\:hidden {
+        display: none !important;
+    }
+    
+    /* Ensure desktop navigation is visible */
+    .hidden.md\\:flex {
+        
+    }
+}
+
+/* Mobile menu button should only show on mobile */
+@media (max-width: 767px) {
+    #menu-btn {
+        
+    }
+    
+    /* Hide desktop navigation on mobile */
+    .hidden.md\\:flex {
+        display: none !important;
+    }
 }
 
 /* Explore AI Solutions Button - Match Design */
@@ -2424,6 +2449,34 @@ section:first-of-type {
     }
 }
 
+/* CRITICAL FIX: Mobile menu button should be hidden on desktop */
+@media (min-width: 768px) {
+    #menu-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    
+    /* Ensure desktop nav is visible */
+    nav .hidden.md\\:flex {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #menu-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Hide desktop nav on mobile */  
+    nav .hidden.md\\:flex {
+        display: none !important;
+    }
+}
+
 /* Brand Color Utility Classes - Ensuring proper colors regardless of Tailwind version */
 .text-brand-teal {
     color: #0d8b9c !important; /* Teal for icons and main titles */
@@ -2461,7 +2514,7 @@ section:first-of-type {
 @media (max-width: 767px) {
     /* Ensure mobile menu button is always visible and properly sized */
     #menu-btn {
-        display: flex !important;
+        
         align-items: center;
         justify-content: center;
         width: 44px;
@@ -2698,7 +2751,7 @@ section:first-of-type {
 @media (min-width: 1024px) {
     /* Ensure desktop navigation is properly shown */
     .hidden.md\\:flex {
-        display: flex !important;
+        
     }
     
     .md\\:hidden {

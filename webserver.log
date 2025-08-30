@@ -49,3 +49,7 @@ Server running on port 8080
 30/Aug/2025 16:51:24 - "GET /blog.html HTTP/1.1" 304 -
 30/Aug/2025 16:51:26 - "GET /index.html HTTP/1.1" 200 -
 Server running on port 8080
+30/Aug/2025 16:55:16 - "GET /index.html HTTP/1.1" 200 -
+30/Aug/2025 16:55:16 - "GET /styles.css HTTP/1.1" 200 -
+30/Aug/2025 16:55:16 - "GET /AIniseFlow-Logo.png HTTP/1.1" 304 -
+Server running on port 8080
