@@ -2400,12 +2400,12 @@ section:first-of-type {
     }
 }
 
-/* Explore AI Solutions Button - Match Design */
+/* Explore AI Solutions Button - Enhanced Design with Dual Gears */
 .explore-ai-btn {
     /* Pill shape with specific styling */
     border-radius: 50px !important;
     border: 2px solid rgba(255, 255, 255, 0.9) !important;
-    background: rgba(42, 127, 131, 0.6) !important; /* Teal semi-transparent */
+    background: linear-gradient(135deg, #0d8b9c 0%, #2A7F83 50%, #0a6b75 100%) !important;
     color: white !important;
     font-weight: 700 !important;
     font-size: 1rem !important;
@@ -2414,37 +2414,78 @@ section:first-of-type {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 12px !important;
+    gap: 8px !important;
     transition: all 0.3s ease !important;
     backdrop-filter: blur(2px) !important;
-    min-width: 240px !important;
+    min-width: 260px !important;
     white-space: nowrap !important;
+    box-shadow: 0 4px 15px rgba(42, 127, 131, 0.3) !important;
 }
 
 .explore-ai-btn:hover {
-    background: rgba(42, 127, 131, 0.8) !important;
+    background: linear-gradient(135deg, #0a7a8a 0%, #236e72 50%, #085a63 100%) !important;
     border-color: rgba(255, 255, 255, 1) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 4px 12px rgba(42, 127, 131, 0.3) !important;
+    box-shadow: 0 6px 20px rgba(42, 127, 131, 0.4) !important;
 }
 
+/* Gear icons styling */
 .explore-ai-btn i {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     color: white !important;
     flex-shrink: 0 !important;
+    animation: slowRotate 8s linear infinite !important;
+}
+
+/* Different rotation speeds for each gear */
+.explore-ai-btn i:first-child {
+    animation: slowRotate 6s linear infinite !important;
+}
+
+.explore-ai-btn i:last-child {
+    animation: slowRotate 8s linear infinite reverse !important;
+}
+
+/* Gear rotation animation */
+@keyframes slowRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Text styling */
+.explore-ai-btn span {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
 }
 
 .explore-ai-btn:focus {
     outline: none !important;
-    ring: 2px solid rgba(255, 255, 255, 0.5) !important;
-    ring-offset: 2px !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Ensure consistent styling on different screen sizes */
+/* Mobile responsive styling */
 @media (max-width: 768px) {
     .explore-ai-btn {
-        padding: 14px 28px !important;
+        padding: 14px 24px !important;
         font-size: 0.95rem !important;
+        min-width: 240px !important;
+        gap: 6px !important;
+    }
+    
+    .explore-ai-btn i {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .explore-ai-btn {
+        padding: 12px 20px !important;
+        font-size: 0.9rem !important;
         min-width: 220px !important;
     }
 }
@@ -3234,7 +3275,17 @@ nav .dropdown-menu.show,
         margin: 0 auto !important;
         padding: 1rem 2rem !important;
         font-size: 1rem !important;
-        gap: 0.75rem !important;
+        gap: 0.5rem !important;
+        min-width: 300px !important;
+    }
+    
+    .explore-ai-btn i {
+        font-size: 1rem !important;
+    }
+    
+    .explore-ai-btn span {
+        flex: 1 !important;
+        text-align: center !important;
     }
 }
 
