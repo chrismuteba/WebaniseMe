@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS Checker - AIniseFlow Domain</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            background: #f5f7fa; 
+        }
+        .container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+        }
+        h1 { 
+            color: #2d3748; 
+            text-align: center; 
+            margin-bottom: 30px; 
+        }
+        .status { 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin: 15px 0; 
+            font-weight: 500; 
+        }
+        .success { 
+            background: #d4edda; 
+            color: #155724; 
+            border-left: 4px solid #28a745; 
+        }
+        .error { 
+            background: #f8d7da; 
+            color: #721c24; 
+            border-left: 4px solid #dc3545; 
+        }
+        .warning { 
+            background: #fff3cd; 
+            color: #856404; 
+            border-left: 4px solid #ffc107; 
+        }
+        .info { 
+            background: #d1ecf1; 
+            color: #0c5460; 
+            border-left: 4px solid #17a2b8; 
+        }
+        button { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            border: none; 
+            padding: 12px 24px; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            font-weight: 500; 
+            margin: 10px 5px; 
+            transition: transform 0.2s; 
+        }
+        button:hover { 
+            transform: translateY(-2px); 
+        }
+        .results { 
+            margin-top: 30px; 
+        }
+        .expected { 
+            background: #e3f2fd; 
+            padding: 15px; 
+            border-radius: 6px; 
+            margin-bottom: 20px; 
+        }
+        .test-item { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 0; 
+            border-bottom: 1px solid #eee; 
+        }
+        .loading { 
+            display: inline-block; 
+            width: 20px; 
+            height: 20px; 
+            border: 3px solid #f3f3f3; 
+            border-top: 3px solid #3498db; 
+            border-radius: 50%; 
+            animation: spin 1s linear infinite; 
+        }
+        @keyframes spin { 
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
+        }
+        pre { 
+            background: #f8f9fa; 
+            padding: 15px; 
+            border-radius: 6px; 
+            overflow-x: auto; 
+            font-size: 14px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 DNS Configuration Checker</h1>
+        <h2>Domain: ainiseflow.com</h2>
+        
+        <div class="expected">
+            <h3>Expected Configuration:</h3>
+            <ul>
+                <li><strong>A Record (@):</strong> 76.76.19.61 or 216.198.79.1</li>
+                <li><strong>CNAME (www):</strong> cname.vercel-dns.com</li>
+                <li><strong>HTTPS:</strong> Should load AIniseFlow website</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center;">
+            <button onclick="checkDNS()">🔍 Check DNS Status</button>
+            <button onclick="checkWebsite()">🌍 Test Website</button>
+            <button onclick="checkOnline()">🔗 Check Online Tools</button>
+        </div>
+        
+        <div id="results" class="results"></div>
+        
+        <div class="info">
+            <h3>📋 Troubleshooting Checklist:</h3>
+            <ol>
+                <li>Verify DNS records are correct in Hostinger</li>
+                <li>Wait 10-30 minutes for propagation</li>
+                <li>Try refreshing Vercel domain settings</li>
+                <li>Check for conflicting DNS records</li>
+                <li>Test from different networks/devices</li>
+            </ol>
+        </div>
+        
+        <div class="warning">
+            <strong>⚠️ Note:</strong> DNS propagation can take up to 48 hours worldwide. 
+            Local changes may appear faster than global propagation.
+        </div>
+    </div>
+
+    <script>
+        function showResults(html) {
+            document.getElementById('results').innerHTML = html;
+        }
+
+        function showLoading(message) {
+            showResults(`<div class="info"><div class="loading"></div> ${message}</div>`);
+        }
+
+        async function checkDNS() {
+            showLoading('Checking DNS configuration...');
+            
+            let results = '<h3>🔍 DNS Check Results:</h3>';
+            
+            // Test HTTPS connection
+            try {
+                showLoading('Testing HTTPS connection...');
+                const response = await fetch('https://ainiseflow.com', { 
+                    method: 'HEAD', 
+                    mode: 'no-cors',
+                    cache: 'no-cache'
+                });
+                results += '<div class="success">✅ HTTPS Connection: Success</div>';
+            } catch (error) {
+                results += '<div class="error">❌ HTTPS Connection: Failed</div>';
+            }
+            
+            // Test HTTP connection
+            try {
+                showLoading('Testing HTTP connection...');
+                const response = await fetch('http://ainiseflow.com', { 
+                    method: 'HEAD', 
+                    mode: 'no-cors',
+                    cache: 'no-cache'
+                });
+                results += '<div class="warning">⚠️ HTTP Connection: Working (should redirect to HTTPS)</div>';
+            } catch (error) {
+                results += '<div class="error">❌ HTTP Connection: Failed</div>';
+            }
+            
+            results += '<div class="info">🔍 For detailed DNS record check, use online tools or command line.</div>';
+            showResults(results);
+        }
+
+        async function checkWebsite() {
+            showLoading('Testing website accessibility...');
+            
+            let results = '<h3>🌍 Website Test Results:</h3>';
+            
+            try {
+                // Try to load the website in an iframe (limited by CORS)
+                results += '<div class="test-item">';
+                results += '<span>Main Domain (https://ainiseflow.com):</span>';
+                results += '<iframe src="https://ainiseflow.com" style="width:1px;height:1px;border:none;" onload="this.nextSibling.innerHTML=\'✅ Loading\'" onerror="this.nextSibling.innerHTML=\'❌ Failed\'"></iframe>';
+                results += '<span>Loading...</span>';
+                results += '</div>';
+                
+                results += '<div class="test-item">';
+                results += '<span>WWW Subdomain (https://www.ainiseflow.com):</span>';
+                results += '<iframe src="https://www.ainiseflow.com" style="width:1px;height:1px;border:none;" onload="this.nextSibling.innerHTML=\'✅ Loading\'" onerror="this.nextSibling.innerHTML=\'❌ Failed\'"></iframe>';
+                results += '<span>Loading...</span>';
+                results += '</div>';
+                
+                results += '<div class="info">💡 If both show "Loading", the website is accessible!</div>';
+                
+            } catch (error) {
+                results += '<div class="error">❌ Website test failed: ' + error.message + '</div>';
+            }
+            
+            showResults(results);
+        }
+
+        function checkOnline() {
+            let results = '<h3>🔗 Online DNS Checking Tools:</h3>';
+            results += '<p>Use these external tools for comprehensive DNS analysis:</p>';
+            
+            const tools = [
+                { name: 'WhatsMyDNS.net', url: 'https://www.whatsmydns.net/#A/ainiseflow.com', desc: 'Global DNS propagation check' },
+                { name: 'DNS Checker', url: 'https://dnschecker.org/#A/ainiseflow.com', desc: 'Multiple server DNS lookup' },
+                { name: 'MX Toolbox', url: 'https://mxtoolbox.com/SuperTool.aspx?action=a%3aainiseflow.com', desc: 'Comprehensive DNS analysis' },
+                { name: 'DNS Watch', url: 'https://www.dnswatch.info/dns/dnslookup?la=en&host=ainiseflow.com&type=A', desc: 'Real-time DNS monitoring' }
+            ];
+            
+            tools.forEach(tool => {
+                results += `<div class="test-item">
+                    <span><strong>${tool.name}</strong><br><small>${tool.desc}</small></span>
+                    <a href="${tool.url}" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">Open Tool →</a>
+                </div>`;
+            });
+            
+            results += '<div class="warning">💡 These tools will show you the exact DNS records from multiple global servers.</div>';
+            showResults(results);
+        }
+
+        // Auto-check on page load
+        setTimeout(() => {
+            checkDNS();
+        }, 1000);
+    </script>
+</body>
+</html>

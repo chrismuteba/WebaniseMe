@@ -1290,3 +1290,62 @@ window.addEventListener('resize', function() {
     `;
     document.head.appendChild(style);
 });
+
+/* ============================================ */
+/* MOBILE DROPDOWN FORCE-VISIBLE FIX */
+/* ============================================ */
+
+// Ensure mobile industries dropdown is always visible when mobile menu is open
+document.addEventListener('DOMContentLoaded', function() {
+    function forceMobileDropdownVisible() {
+        if (window.innerWidth <= 767) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileDropdown = mobileMenu ? mobileMenu.querySelector('.dropdown-menu') : null;
+            
+            if (mobileDropdown) {
+                // Force mobile dropdown to always be visible
+                mobileDropdown.style.display = 'block';
+                mobileDropdown.style.opacity = '1';
+                mobileDropdown.style.visibility = 'visible';
+                mobileDropdown.style.transform = 'none';
+                mobileDropdown.style.position = 'static';
+                mobileDropdown.style.maxHeight = 'none';
+                mobileDropdown.style.overflow = 'visible';
+                mobileDropdown.classList.add('show');
+            }
+        }
+    }
+    
+    // Apply the fix on page load
+    forceMobileDropdownVisible();
+    
+    // Apply the fix when mobile menu becomes visible
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && mobileMenu.classList.contains('visible')) {
+                    setTimeout(forceMobileDropdownVisible, 100);
+                }
+            }
+        });
+    });
+    
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenu) {
+        observer.observe(mobileMenu, { attributes: true });
+    }
+    
+    // Apply on window resize
+    window.addEventListener('resize', function() {
+        setTimeout(forceMobileDropdownVisible, 100);
+    });
+    
+    // Force mobile dropdown to be visible whenever mobile menu is toggled
+    const menuBtn = document.getElementById('menu-btn');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+            setTimeout(forceMobileDropdownVisible, 150);
+        });
+    }
+});
