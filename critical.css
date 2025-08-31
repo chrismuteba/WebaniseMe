@@ -1,0 +1,36 @@
+/* Critical CSS for above-the-fold content */
+html{overflow-x:hidden;max-width:100%}
+body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!important}
+*{box-sizing:border-box}
+.hero-section{overflow:hidden;position:relative;width:100%;max-width:100vw}
+.container{max-width:100%;overflow-x:hidden;width:100%}
+nav{max-width:100vw}
+nav .container{position:relative;display:flex;align-items:center}
+
+/* Navigation styles */
+#main-nav{background-color:white;box-shadow:0 2px 4px rgba(0,0,0,0.1);position:fixed;top:0;left:0;right:0;width:100%;z-index:50}
+
+/* Hero section background */
+.hero-section{background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);min-height:100vh;display:flex;align-items:center;position:relative}
+.moving-background{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0.1;z-index:1}
+.background-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,59,92,0.8) 0%,rgba(13,139,156,0.8) 100%);z-index:2}
+
+/* Primary CTA button */
+.primary-cta{background-color:#2A7F83;color:white;border:2px solid #2A7F83;border-radius:25px;padding:15px 30px;transition:all 0.3s ease;position:relative;font-weight:bold;box-shadow:0 6px 12px rgba(0,0,0,0.3),0 0 20px rgba(42,127,131,0.4)}
+.primary-cta:hover{background-color:#236e72;border-color:#236e72;transform:translateY(-2px);box-shadow:0 6px 8px rgba(0,0,0,0.25)}
+
+/* Hero section secondary CTA */
+.hero-section .secondary-cta{background-color:transparent!important;color:white!important;border:2px solid white!important;border-radius:25px;padding:15px 30px!important;transition:all 0.3s ease;position:relative;font-weight:bold;box-shadow:0 6px 12px rgba(0,0,0,0.3),0 0 20px rgba(255,255,255,0.2);font-size:1rem;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:0.5rem!important;text-decoration:none!important;min-height:56px}
+.hero-section .secondary-cta:hover{background-color:white!important;color:#2A7F83!important;border-color:white!important;transform:translateY(-2px);box-shadow:0 6px 8px rgba(0,0,0,0.25)}
+
+/* Typography */
+.hero-headline{font-size:clamp(2rem,5vw,4rem);line-height:1.1;margin-bottom:1.5rem}
+.hero-subheadline{font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.6}
+
+/* Mobile responsive */
+@media (max-width:768px){
+.hero-section{min-height:80vh;padding:2rem 1rem}
+.hero-headline{font-size:2rem}
+.hero-subheadline{font-size:1rem}
+.primary-cta,.hero-section .secondary-cta{padding:12px 24px;font-size:0.9rem}
+}
