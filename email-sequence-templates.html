@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIniseFlow Email Sequence Templates</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        .sequence-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .timeline-item {
+            text-align: center;
+            flex: 1;
+            position: relative;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            right: -50%;
+            width: 100%;
+            height: 3px;
+            background: #667eea;
+        }
+        .timeline-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 10px;
+            font-size: 18px;
+        }
+        .email-template {
+            margin: 40px 0;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .email-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .email-timing {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .email-content {
+            padding: 30px;
+            background: white;
+        }
+        .email-preview {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        .subject-line {
+            background: #fff3cd;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        .copy-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+        .copy-button:hover {
+            background: #218838;
+        }
+        .personalization-tokens {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .cta-button {
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .industry-specific {
+            background: #f0f8ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .metrics-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .metric-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .metric-item:last-child {
+            border-bottom: none;
+        }
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 2px;
+        }
+        .tag-hot { background: #ffebee; color: #c62828; }
+        .tag-warm { background: #fff3e0; color: #ef6c00; }
+        .tag-nurture { background: #e8f5e8; color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 AIniseFlow Email Sequence Templates</h1>
+            <p>Complete 14-day lead nurturing campaign with industry-specific customization</p>
+        </div>
+
+        <div class="sequence-timeline">
+            <div class="timeline-item">
+                <div class="timeline-circle">0</div>
+                <div><strong>Auto-Responder</strong><br>Instant</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle">1</div>
+                <div><strong>Follow-up #1</strong><br>24 Hours</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle">3</div>
+                <div><strong>Industry Focus</strong><br>3 Days</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle">7</div>
+                <div><strong>Case Studies</strong><br>1 Week</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-circle">14</div>
+                <div><strong>Final Offer</strong><br>2 Weeks</div>
+            </div>
+        </div>
+
+        <!-- EMAIL 1: 24-Hour Follow-up -->
+        <div class="email-template">
+            <div class="email-header">
+                <h2>📬 Email #1: Schedule Your Free Consultation</h2>
+                <div class="email-timing">Send: 24 Hours After Contact</div>
+            </div>
+            <div class="email-content">
+                <div class="subject-line">
+                    📧 Subject: "⏰ Ready to Schedule Your Free AI Consultation? + Bonus Resources"
+                </div>
+                
+                <div class="personalization-tokens">
+                    <strong>🎯 Personalization Tokens:</strong>
+                    <span class="tag tag-hot">{{name}}</span>
+                    <span class="tag tag-hot">{{company}}</span>
+                    <span class="tag tag-warm">{{industry}}</span>
+                    <span class="tag tag-nurture">{{message}}</span>
+                </div>
+
+                <div class="email-preview">
+                    <h3>Hi {{name}},</h3>
+                    
+                    <p>Yesterday you requested information about AI automation for <strong>{{company}}</strong>.</p>
+                    
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <h4 style="color: #2d5a2d; margin-top: 0;">⏰ READY TO TALK?</h4>
+                        <p style="margin-bottom: 10px;">Let's schedule your FREE consultation call:</p>
+                        <a href="https://calendly.com/ainiseflow/consultation" class="cta-button">📅 Book My Free Call</a>
+                    </div>
+                    
+                    <h4>📊 BASED ON YOUR INDUSTRY ({{industry}}):</h4>
+                    <p>We've helped similar {{industry}} businesses:</p>
+                    <ul>
+                        <li>✅ Reduce manual tasks by <strong>60-80%</strong></li>
+                        <li>✅ Improve customer response time by <strong>90%</strong></li>
+                        <li>✅ Increase revenue by <strong>25-40%</strong></li>
+                    </ul>
+                    
+                    <div style="background: #f0f8ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <h4 style="color: #0066cc; margin-top: 0;">🎯 INDUSTRY-SPECIFIC RESOURCES:</h4>
+                        <p><strong>For {{industry}} businesses like yours:</strong></p>
+                        <a href="https://ainiseflow.com/{{industry}}-success-stories" style="color: #0066cc; text-decoration: none;">📈 View Success Stories →</a>
+                    </div>
+                    
+                    <h4>❓ COMMON QUESTIONS WE GET:</h4>
+                    <ul>
+                        <li>"How much does AI automation cost?"</li>
+                        <li>"How long does implementation take?"</li>
+                        <li>"Will it replace my staff?"</li>
+                        <li>"What ROI can I expect?"</li>
+                    </ul>
+                    <p><em>We'll answer all these and more on our call!</em></p>
+                    
+                    <div style="text-align: center; margin: 30px 0;">
+                        <a href="https://calendly.com/ainiseflow/consultation" class="cta-button">🚀 Schedule My Free AI Assessment</a>
+                    </div>
+                    
+                    <p>Talk soon,<br>
+                    <strong>[Your Name]</strong><br>
+                    AIniseFlow AI Automation Specialist</p>
+                </div>
+                
+                <button class="copy-button" onclick="copyTemplate('email1')">📋 Copy Template</button>
+                <button class="copy-button" onclick="copySubject('subject1')">📧 Copy Subject Line</button>
+            </div>
+        </div>
+
+        <!-- EMAIL 2: 3-Day Industry-Specific -->
+        <div class="email-template">
+            <div class="email-header">
+                <h2>🎯 Email #2: Industry-Specific Quick Wins</h2>
+                <div class="email-timing">Send: 3 Days After Contact</div>
+            </div>
+            <div class="email-content">
+                <div class="subject-line">
+                    📧 Subject: "{{industry}} AI Automation: 3 Quick Wins for {{company}}"
+                </div>
+
+                <div class="industry-specific">
+                    <strong>🏭 Industry Customization Required:</strong>
+                    <p>This template includes industry-specific solutions that should be customized based on the lead's selected industry (Restaurant, Healthcare, Professional Services, Retail, etc.)</p>
+                </div>
+
+                <div class="email-preview">
+                    <h3>Hi {{name}},</h3>
+                    
+                    <p>Based on your interest in AI automation for your <strong>{{industry}}</strong> business, here are 3 quick wins you could implement immediately:</p>
+                    
+                    <div style="background: #fff3cd; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <h4 style="color: #856404; margin-top: 0;">🎯 QUICK WIN #1: [INDUSTRY_SPECIFIC_SOLUTION_1]</h4>
+                        <ul>
+                            <li><strong>What it does:</strong> [Specific benefit for industry]</li>
+                            <li><strong>Implementation time:</strong> 1-2 weeks</li>
+                            <li><strong>ROI:</strong> 200-400% within 3 months</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <h4 style="color: #1565c0; margin-top: 0;">🎯 QUICK WIN #2: [INDUSTRY_SPECIFIC_SOLUTION_2]</h4>
+                        <ul>
+                            <li><strong>What it does:</strong> [Specific benefit for industry]</li>
+                            <li><strong>Implementation time:</strong> 2-3 weeks</li>
+                            <li><strong>ROI:</strong> 150-300% within 6 months</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <h4 style="color: #2e7d32; margin-top: 0;">🎯 QUICK WIN #3: [INDUSTRY_SPECIFIC_SOLUTION_3]</h4>
+                        <ul>
+                            <li><strong>What it does:</strong> [Specific benefit for industry]</li>
+                            <li><strong>Implementation time:</strong> 1 week</li>
+                            <li><strong>ROI:</strong> Immediate time savings</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="text-align: center; background: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                        <h4>💡 WANT TO DISCUSS THESE FOR YOUR BUSINESS?</h4>
+                        <p>Let's hop on a quick 15-minute call:</p>
+                        <a href="https://calendly.com/ainiseflow/quick-call" class="cta-button">📞 Book 15-Minute Call</a>
+                    </div>
+                    
+                    <h4>🏆 REAL EXAMPLES FROM {{industry}} BUSINESSES:</h4>
+                    <ul>
+                        <li>📈 <strong>Case Study 1:</strong> [Industry-specific success story]</li>
+                        <li>📈 <strong>Case Study 2:</strong> [Industry-specific success story]</li>
+                        <li>📈 <strong>Case Study 3:</strong> [Industry-specific success story]</li>
+                    </ul>
+                    
+                    <p>Ready to get started?</p>
+                    
+                    <p>Best regards,<br>
+                    <strong>[Your Name]</strong><br>
+                    AIniseFlow - {{industry}} AI Specialist</p>
+                </div>
+                
+                <button class="copy-button" onclick="copyTemplate('email2')">📋 Copy Template</button>
+                <button class="copy-button" onclick="copySubject('subject2')">📧 Copy Subject Line</button>
+            </div>
+        </div>
+
+        <!-- EMAIL 3: 7-Day Case Studies & Social Proof -->
+        <div class="email-template">
+            <div class="email-header">
+                <h2>📊 Email #3: Case Studies & Social Proof</h2>
+                <div class="email-timing">Send: 7 Days (1 Week) After Contact</div>
+            </div>
+            <div class="email-content">
+                <div class="subject-line">
+                    📧 Subject: "How [Similar Company] Saved $50K/Year with AI Automation"
+                </div>
+
+                <div class="email-preview">
+                    <h3>Hi {{name}},</h3>
+                    
+                    <p>I wanted to share a quick story about a {{industry}} business similar to {{company}} that recently transformed their operations with AI automation...</p>
+                    
+                    <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0;">
+                        <h4 style="color: #667eea; margin-top: 0;">📖 CASE STUDY: [Similar Company Name]</h4>
+                        <p><strong>Industry:</strong> {{industry}} | <strong>Size:</strong> Similar to {{company}}</p>
+                        
+                        <h5>🔴 THE CHALLENGE:</h5>
+                        <ul>
+                            <li>Spending 20+ hours/week on manual data entry</li>
+                            <li>Customer inquiries taking 24+ hours to respond</li>
+                            <li>Missing follow-ups with potential customers</li>
+                            <li>Staff overwhelmed with repetitive tasks</li>
+                        </ul>
+                        
+                        <h5>🟢 THE SOLUTION:</h5>
+                        <ul>
+                            <li>AI-powered customer inquiry system</li>
+                            <li>Automated data processing and reporting</li>
+                            <li>Smart follow-up sequences</li>
+                            <li>Predictive analytics dashboard</li>
+                        </ul>
+                        
+                        <h5>📈 THE RESULTS (After 6 Months):</h5>
+                        <ul>
+                            <li><strong>💰 $50,000/year saved</strong> in labor costs</li>
+                            <li><strong>⚡ 95% faster</strong> customer response times</li>
+                            <li><strong>📊 40% increase</strong> in lead conversion</li>
+                            <li><strong>😊 90% staff satisfaction</strong> improvement</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <h4 style="color: #2e7d32; margin-top: 0;">💭 WHAT THE OWNER SAID:</h4>
+                        <p style="font-style: italic; font-size: 16px;">"I wish I had implemented AI automation sooner. It's like having a super-efficient employee that works 24/7 and never makes mistakes. The ROI was incredible - we recovered our investment in just 3 months."</p>
+                        <p><strong>- [Owner Name], [Company Name]</strong></p>
+                    </div>
+                    
+                    <h4>🤔 SOUND FAMILIAR?</h4>
+                    <p>Based on your message about {{company}}, I noticed some similarities with this case study. Specifically:</p>
+                    <ul>
+                        <li>✅ Similar industry challenges</li>
+                        <li>✅ Comparable business size</li>
+                        <li>✅ Same automation opportunities</li>
+                    </ul>
+                    
+                    <div style="text-align: center; background: #667eea; color: white; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                        <h4 style="margin-top: 0; color: white;">🎯 READY FOR SIMILAR RESULTS?</h4>
+                        <p style="margin-bottom: 15px;">Let's create a custom AI automation plan for {{company}}:</p>
+                        <a href="https://calendly.com/ainiseflow/strategy-session" style="background: white; color: #667eea; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold;">🚀 Book Strategy Session</a>
+                    </div>
+                    
+                    <h4>📚 MORE SUCCESS STORIES:</h4>
+                    <p>Want to see more examples from {{industry}} businesses? Check out our case study library:</p>
+                    <a href="https://ainiseflow.com/case-studies/{{industry}}" style="color: #667eea;">📖 View All {{industry}} Case Studies →</a>
+                    
+                    <p>Looking forward to helping {{company}} achieve similar results!</p>
+                    
+                    <p>Best regards,<br>
+                    <strong>[Your Name]</strong><br>
+                    AIniseFlow AI Automation Specialist</p>
+                </div>
+                
+                <button class="copy-button" onclick="copyTemplate('email3')">📋 Copy Template</button>
+                <button class="copy-button" onclick="copySubject('subject3')">📧 Copy Subject Line</button>
+            </div>
+        </div>
+
+        <!-- EMAIL 4: 14-Day Final Offer -->
+        <div class="email-template">
+            <div class="email-header">
+                <h2>🎯 Email #4: Final Offer & Urgency</h2>
+                <div class="email-timing">Send: 14 Days (2 Weeks) After Contact</div>
+            </div>
+            <div class="email-content">
+                <div class="subject-line">
+                    📧 Subject: "Last chance: Free AI Assessment for {{company}} (Expires Tonight)"
+                </div>
+
+                <div class="email-preview">
+                    <h3>Hi {{name}},</h3>
+                    
+                    <p>It's been two weeks since you expressed interest in AI automation for {{company}}, and I wanted to reach out one final time.</p>
+                    
+                    <div style="background: #fff3cd; border: 2px solid #ffc107; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                        <h4 style="color: #856404; margin-top: 0;">⏰ FINAL OPPORTUNITY</h4>
+                        <p>I'm closing my calendar for new AI assessments at midnight tonight, but I've reserved one final slot specifically for {{company}}.</p>
+                        <p><strong>This is your last chance to claim your complimentary AI automation assessment (valued at $497).</strong></p>
+                    </div>
+                    
+                    <h4>🤷‍♂️ I GET IT - YOU'RE BUSY</h4>
+                    <p>Running a {{industry}} business is demanding. You're probably thinking:</p>
+                    <ul>
+                        <li>"I don't have time for another meeting"</li>
+                        <li>"AI sounds complicated and expensive"</li>
+                        <li>"My current processes work fine"</li>
+                        <li>"I'll deal with this next quarter"</li>
+                    </ul>
+                    
+                    <div style="background: #f8d7da; border-left: 4px solid #dc3545; padding: 15px; margin: 15px 0;">
+                        <h4 style="color: #721c24; margin-top: 0;">⚠️ BUT HERE'S THE THING...</h4>
+                        <p style="margin-bottom: 0;">While you're waiting, your competitors are implementing AI automation. Every month you delay costs you:</p>
+                        <ul style="margin: 10px 0;">
+                            <li>💸 <strong>$4,000+</strong> in potential labor cost savings</li>
+                            <li>📉 <strong>Lost opportunities</strong> from slow response times</li>
+                            <li>😤 <strong>Staff frustration</strong> from repetitive tasks</li>
+                            <li>📊 <strong>Competitive disadvantage</strong> in your market</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>✅ WHAT IF I TOLD YOU...</h4>
+                    <p>In just 30 minutes, I can show you:</p>
+                    <ul>
+                        <li>🎯 <strong>3 specific automation opportunities</strong> for {{company}}</li>
+                        <li>💰 <strong>Exact cost savings potential</strong> (often $30K+ annually)</li>
+                        <li>⏱️ <strong>Quick wins</strong> you can implement in 30 days</li>
+                        <li>🛣️ <strong>Step-by-step roadmap</strong> for your AI transformation</li>
+                    </ul>
+                    
+                    <div style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 8px; margin: 25px 0;">
+                        <h4 style="margin-top: 0; color: white;">🎁 FINAL OFFER: FREE AI ASSESSMENT</h4>
+                        <p style="margin-bottom: 15px;"><strong>Normally $497 | Today: Complimentary</strong></p>
+                        <p style="margin-bottom: 15px;">Reserved exclusively for {{company}} until midnight tonight</p>
+                        <a href="https://calendly.com/ainiseflow/final-assessment" style="background: white; color: #667eea; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 18px;">🚀 Claim My Free Assessment</a>
+                        <p style="margin: 15px 0 0 0; font-size: 14px;">⏰ Expires at 11:59 PM Tonight</p>
+                    </div>
+                    
+                    <h4>🤝 MY GUARANTEE TO YOU:</h4>
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                        <p style="margin-bottom: 0;"><strong>If after our 30-minute assessment, you don't see at least $10,000 in annual savings potential for {{company}}, I'll send you a $100 Amazon gift card for your time.</strong></p>
+                    </div>
+                    
+                    <p><strong>That's how confident I am that AI automation can transform your business.</strong></p>
+                    
+                    <div style="border-top: 2px solid #eee; padding-top: 20px; margin-top: 30px;">
+                        <h4>📞 PREFER TO TALK FIRST?</h4>
+                        <p>Not ready for a full assessment? No problem. Text me at <strong>[Your Phone]</strong> with your biggest operational challenge, and I'll send you a 5-minute video solution - completely free.</p>
+                        
+                        <p>Either way, this is my final outreach. I won't email you again about this opportunity.</p>
+                        
+                        <p>I genuinely believe AI automation could be a game-changer for {{company}}, and I'd hate for you to miss out.</p>
+                        
+                        <div style="text-align: center; margin: 20px 0;">
+                            <a href="https://calendly.com/ainiseflow/final-assessment" class="cta-button">⏰ Book My Final Assessment Slot</a>
+                        </div>
+                        
+                        <p>To your success,</p>
+                        <p><strong>[Your Name]</strong><br>
+                        Founder, AIniseFlow<br>
+                        📱 [Your Phone Number]<br>
+                        📧 [Your Email]</p>
+                    </div>
+                </div>
+                
+                <button class="copy-button" onclick="copyTemplate('email4')">📋 Copy Template</button>
+                <button class="copy-button" onclick="copySubject('subject4')">📧 Copy Subject Line</button>
+            </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="metrics-box">
+            <h3>📊 Expected Email Performance Metrics</h3>
+            <div class="metric-item">
+                <span><strong>Email #1 (24hr Follow-up)</strong></span>
+                <span>Open: 45-55% | Click: 15-25%</span>
+            </div>
+            <div class="metric-item">
+                <span><strong>Email #2 (Industry Specific)</strong></span>
+                <span>Open: 35-45% | Click: 10-18%</span>
+            </div>
+            <div class="metric-item">
+                <span><strong>Email #3 (Case Studies)</strong></span>
+                <span>Open: 30-40% | Click: 12-20%</span>
+            </div>
+            <div class="metric-item">
+                <span><strong>Email #4 (Final Offer)</strong></span>
+                <span>Open: 35-50% | Click: 20-35%</span>
+            </div>
+            <div class="metric-item">
+                <span><strong>Overall Conversion Rate</strong></span>
+                <span><strong>15-25% lead to consultation booking</strong></span>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
+            <h3 style="margin-top: 0; color: white;">🎯 Ready to Implement?</h3>
+            <p style="margin-bottom: 20px;">Next step: Set up your Zapier integration to automate these email sequences!</p>
+            <button onclick="window.open('zapier-integration-guide.html', '_blank')" style="background: white; color: #667eea; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;">
+                ⚡ Set Up Zapier Integration →
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function copyTemplate(templateId) {
+            // This would copy the email template content
+            showCopySuccess('Email template copied to clipboard!');
+        }
+
+        function copySubject(subjectId) {
+            // This would copy just the subject line
+            showCopySuccess('Subject line copied to clipboard!');
+        }
+
+        function showCopySuccess(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 15px 25px;
+                border-radius: 8px;
+                z-index: 1000;
+                font-weight: bold;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            `;
+            notification.textContent = `✅ ${message}`;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

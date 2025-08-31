@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapier Integration Setup Guide - AIniseFlow</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #4ecdc4;
+        }
+        .integration-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            flex-wrap: wrap;
+        }
+        .flow-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            margin: 10px;
+        }
+        .flow-arrow {
+            font-size: 24px;
+            color: #ffd700;
+            margin: 0 10px;
+        }
+        .step-section {
+            margin: 40px 0;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #4ecdc4;
+            background: #f8fdff;
+        }
+        .step-number {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        .platform-card {
+            background: white;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .platform-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .platform-logo {
+            width: 50px;
+            height: 50px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        .recommended-badge {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-left: auto;
+        }
+        .pro-con-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .pro-list, .con-list {
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .pro-list {
+            background: #d4f8d4;
+            border-left: 4px solid #28a745;
+        }
+        .con-list {
+            background: #ffd4d4;
+            border-left: 4px solid #dc3545;
+        }
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .webhook-url {
+            background: #fff3cd;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 2px solid #ffc107;
+            font-family: monospace;
+            font-weight: bold;
+            word-break: break-all;
+        }
+        .setup-checklist {
+            background: white;
+            border: 2px solid #28a745;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        .checklist-item input[type="checkbox"] {
+            margin-right: 12px;
+            transform: scale(1.3);
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+        .warning-box::before {
+            content: "⚠️ ";
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .success-box {
+            background: #d4edda;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+        .success-box::before {
+            content: "✅ ";
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            transition: transform 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        .automation-preview {
+            background: #f8f9fa;
+            border: 2px dashed #6c757d;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .trigger-action-flow {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .flow-box {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            min-width: 150px;
+            text-align: center;
+        }
+        .flow-box.trigger {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+        .flow-box.action {
+            border-color: #007bff;
+            background: #d1ecf1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ Zapier Integration Setup Guide</h1>
+            <p>Connect Formspree → Email Marketing → CRM Automation</p>
+            <div style="background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%); color: white; padding: 10px 20px; border-radius: 25px; display: inline-block; font-weight: bold;">
+                Current Form: f/mpwdodpp
+            </div>
+        </div>
+
+        <div class="integration-flow">
+            <div class="flow-item">
+                <div style="font-size: 30px; margin-bottom: 10px;">📝</div>
+                <strong>Contact Form</strong><br>
+                <small>Formspree Endpoint</small>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item">
+                <div style="font-size: 30px; margin-bottom: 10px;">⚡</div>
+                <strong>Zapier</strong><br>
+                <small>Automation Hub</small>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item">
+                <div style="font-size: 30px; margin-bottom: 10px;">📧</div>
+                <strong>Email Platform</strong><br>
+                <small>Mailchimp/ConvertKit</small>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-item">
+                <div style="font-size: 30px; margin-bottom: 10px;">👥</div>
+                <strong>CRM</strong><br>
+                <small>HubSpot/Pipedrive</small>
+            </div>
+        </div>
+
+        <div class="step-section">
+            <h2><span class="step-number">1</span>Choose Your Email Marketing Platform</h2>
+            <p>Select the best platform for your budget and automation needs:</p>
+
+            <!-- Mailchimp Card -->
+            <div class="platform-card">
+                <div class="platform-header">
+                    <div class="platform-logo" style="background: #ffe01b; color: #333;">📬</div>
+                    <div>
+                        <h3 style="margin: 0;">Mailchimp</h3>
+                        <p style="margin: 5px 0; color: #666;">Best for beginners</p>
+                    </div>
+                    <div class="recommended-badge">Recommended</div>
+                </div>
+                
+                <div class="pro-con-grid">
+                    <div class="pro-list">
+                        <strong>✅ Pros:</strong>
+                        <ul>
+                            <li>Free for up to 500 contacts</li>
+                            <li>Easy drag-and-drop email builder</li>
+                            <li>Built-in analytics and reporting</li>
+                            <li>Excellent Zapier integration</li>
+                            <li>Industry templates available</li>
+                        </ul>
+                    </div>
+                    <div class="con-list">
+                        <strong>❌ Cons:</strong>
+                        <ul>
+                            <li>Limited automation on free plan</li>
+                            <li>Can get expensive with growth</li>
+                            <li>Basic CRM features</li>
+                            <li>Limited customization options</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p><strong>💰 Pricing:</strong> Free (up to 500 contacts) | $13/month (up to 500 contacts + automation)</p>
+                <a href="https://mailchimp.com" class="cta-button" target="_blank">🚀 Start with Mailchimp</a>
+            </div>
+
+            <!-- ConvertKit Card -->
+            <div class="platform-card">
+                <div class="platform-header">
+                    <div class="platform-logo" style="background: #fb6970; color: white;">📨</div>
+                    <div>
+                        <h3 style="margin: 0;">ConvertKit</h3>
+                        <p style="margin: 5px 0; color: #666;">Best for automation</p>
+                    </div>
+                </div>
+                
+                <div class="pro-con-grid">
+                    <div class="pro-list">
+                        <strong>✅ Pros:</strong>
+                        <ul>
+                            <li>Advanced automation workflows</li>
+                            <li>Powerful tagging system</li>
+                            <li>Great for content creators</li>
+                            <li>Excellent deliverability rates</li>
+                            <li>Visual automation builder</li>
+                        </ul>
+                    </div>
+                    <div class="con-list">
+                        <strong>❌ Cons:</strong>
+                        <ul>
+                            <li>No free plan (14-day free trial)</li>
+                            <li>More expensive than Mailchimp</li>
+                            <li>Steeper learning curve</li>
+                            <li>Limited template designs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p><strong>💰 Pricing:</strong> $29/month (up to 1,000 subscribers)</p>
+                <a href="https://convertkit.com" class="cta-button" target="_blank">📈 Try ConvertKit</a>
+            </div>
+
+            <!-- ActiveCampaign Card -->
+            <div class="platform-card">
+                <div class="platform-header">
+                    <div class="platform-logo" style="background: #356ae6; color: white;">🎯</div>
+                    <div>
+                        <h3 style="margin: 0;">ActiveCampaign</h3>
+                        <p style="margin: 5px 0; color: #666;">Most powerful (advanced users)</p>
+                    </div>
+                </div>
+                
+                <div class="pro-con-grid">
+                    <div class="pro-list">
+                        <strong>✅ Pros:</strong>
+                        <ul>
+                            <li>CRM + Email + Automation</li>
+                            <li>Advanced behavioral tracking</li>
+                            <li>Machine learning features</li>
+                            <li>Detailed contact scoring</li>
+                            <li>Advanced segmentation</li>
+                        </ul>
+                    </div>
+                    <div class="con-list">
+                        <strong>❌ Cons:</strong>
+                        <ul>
+                            <li>Most expensive option</li>
+                            <li>Complex interface for beginners</li>
+                            <li>Requires time investment to master</li>
+                            <li>Can be overwhelming initially</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p><strong>💰 Pricing:</strong> $49/month (up to 1,000 contacts)</p>
+                <a href="https://activecampaign.com" class="cta-button" target="_blank">🔧 Explore ActiveCampaign</a>
+            </div>
+        </div>
+
+        <div class="step-section">
+            <h2><span class="step-number">2</span>Set Up Zapier Account & Webhook</h2>
+            
+            <div class="warning-box">
+                <strong>Important:</strong> You'll need a Zapier account (free plan available) and access to your Formspree dashboard.
+            </div>
+
+            <h3>📋 Setup Checklist:</h3>
+            <div class="setup-checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="zapier-account">
+                    <label for="zapier-account">Create Zapier account at <strong>zapier.com</strong></label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="formspree-login">
+                    <label for="formspree-login">Login to Formspree dashboard</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="email-platform">
+                    <label for="email-platform">Set up your chosen email platform account</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="test-form">
+                    <label for="test-form">Test your contact form submission</label>
+                </div>
+            </div>
+
+            <h3>🔗 Formspree Webhook Configuration:</h3>
+            <ol>
+                <li><strong>Access Formspree Dashboard:</strong> Go to <code>formspree.io/dashboard</code></li>
+                <li><strong>Select Your Form:</strong> Find form endpoint <code>mpwdodpp</code></li>
+                <li><strong>Navigate to Integrations:</strong> Click "Integrations" tab</li>
+                <li><strong>Add Webhook URL:</strong> You'll get this from Zapier in the next step</li>
+            </ol>
+        </div>
+
+        <div class="step-section">
+            <h2><span class="step-number">3</span>Create Your First Zap (Mailchimp Example)</h2>
+            
+            <div class="automation-preview">
+                <h3>🔄 Automation Flow Preview</h3>
+                <div class="trigger-action-flow">
+                    <div class="flow-box trigger">
+                        <strong>TRIGGER</strong><br>
+                        📝 New Formspree Submission<br>
+                        <small>Form: mpwdodpp</small>
+                    </div>
+                    <div style="font-size: 24px; color: #28a745;">→</div>
+                    <div class="flow-box action">
+                        <strong>ACTION 1</strong><br>
+                        📧 Add to Mailchimp List<br>
+                        <small>Lead Magnets List</small>
+                    </div>
+                    <div style="font-size: 24px; color: #007bff;">→</div>
+                    <div class="flow-box action">
+                        <strong>ACTION 2</strong><br>
+                        👥 Create HubSpot Contact<br>
+                        <small>With lead scoring</small>
+                    </div>
+                    <div style="font-size: 24px; color: #6f42c1;">→</div>
+                    <div class="flow-box action">
+                        <strong>ACTION 3</strong><br>
+                        💬 Send Slack Notification<br>
+                        <small>To sales team</small>
+                    </div>
+                </div>
+            </div>
+
+            <h3>📝 Step-by-Step Zap Creation:</h3>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>🎯 TRIGGER SETUP:</h4>
+                <ol>
+                    <li><strong>In Zapier:</strong> Click "Create Zap"</li>
+                    <li><strong>Choose Trigger App:</strong> Search for "Webhooks by Zapier"</li>
+                    <li><strong>Select Trigger Event:</strong> "Catch Hook"</li>
+                    <li><strong>Copy Webhook URL:</strong> Zapier will provide a unique URL</li>
+                    <li><strong>Add to Formspree:</strong> Paste webhook URL in Formspree integrations</li>
+                </ol>
+                
+                <div class="webhook-url">
+                    Example Webhook URL: https://hooks.zapier.com/hooks/catch/123456/abcdef/
+                </div>
+            </div>
+
+            <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>⚡ ACTION SETUP (Mailchimp):</h4>
+                <ol>
+                    <li><strong>Choose Action App:</strong> Search for "Mailchimp"</li>
+                    <li><strong>Select Action Event:</strong> "Add/Update Subscriber"</li>
+                    <li><strong>Connect Mailchimp Account:</strong> Authorize Zapier access</li>
+                    <li><strong>Choose Audience:</strong> Select your email list</li>
+                    <li><strong>Map Fields:</strong>
+                        <ul style="margin: 10px 0;">
+                            <li>Email Address: <code>{{email}}</code></li>
+                            <li>First Name: <code>{{name}}</code></li>
+                            <li>Company: <code>{{company}}</code></li>
+                            <li>Industry: <code>{{industry}}</code></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="step-section">
+            <h2><span class="step-number">4</span>Advanced Multi-Action Automation</h2>
+            
+            <p>Once your basic Zap is working, enhance it with multiple actions:</p>
+
+            <div class="code-block">
+TRIGGER: New Formspree Submission
+├── ACTION 1: Add to Mailchimp List
+│   ├── List: "AIniseFlow Leads"
+│   ├── Tags: "Website Contact", "{{industry}}"
+│   └── Trigger: Welcome email sequence
+│
+├── ACTION 2: Create HubSpot Contact
+│   ├── Lead Source: "Website Contact Form"
+│   ├── Lead Score: Based on form data
+│   └── Assign to: Sales team member
+│
+├── ACTION 3: Send Slack Notification
+│   ├── Channel: #sales-leads
+│   ├── Message: "New {{industry}} lead: {{name}} from {{company}}"
+│   └── Include: Link to HubSpot contact
+│
+└── ACTION 4: Add to Google Sheets
+    ├── Spreadsheet: "Lead Tracking"
+    ├── Data: All form fields + timestamp
+    └── Purpose: Backup and reporting
+            </div>
+
+            <h3>🎯 Lead Scoring Automation:</h3>
+            <div style="background: #e8f5e8; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>Automatic Lead Scoring Rules:</h4>
+                <ul>
+                    <li><strong>High Score (Hot Lead - 20+ points):</strong>
+                        <ul>
+                            <li>Business email domain (+10 points)</li>
+                            <li>Company name provided (+5 points)</li>
+                            <li>Industry: Professional Services/Healthcare (+10 points)</li>
+                            <li>Detailed message about specific needs (+5 points)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Medium Score (Warm Lead - 10-19 points):</strong>
+                        <ul>
+                            <li>Industry selected (+5 points)</li>
+                            <li>Multiple AI interests checked (+5 points)</li>
+                            <li>Phone number provided (+5 points)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step-section">
+            <h2><span class="step-number">5</span>Email Sequence Trigger Setup</h2>
+            
+            <p>Connect your email sequences to trigger automatically based on form submissions:</p>
+
+            <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>📧 Mailchimp Automation Setup:</h4>
+                <ol>
+                    <li><strong>Create Audience:</strong> "AIniseFlow Leads"</li>
+                    <li><strong>Set up Tags:</strong> Industry-specific tags for segmentation</li>
+                    <li><strong>Create Automation:</strong> Welcome series for new subscribers</li>
+                    <li><strong>Trigger Condition:</strong> When subscriber is added via Zapier</li>
+                    <li><strong>Email Sequence:</strong> Use templates from previous section</li>
+                </ol>
+            </div>
+
+            <div style="background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>🎯 ConvertKit Automation Setup:</h4>
+                <ol>
+                    <li><strong>Create Form:</strong> "Website Lead Capture"</li>
+                    <li><strong>Add Tags:</strong> Based on industry and interests</li>
+                    <li><strong>Create Sequence:</strong> 4-email nurture campaign</li>
+                    <li><strong>Rules:</strong> Automatically subscribe via Zapier</li>
+                    <li><strong>Segments:</strong> High-value leads get faster follow-up</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="step-section">
+            <h2><span class="step-number">6</span>Testing & Troubleshooting</h2>
+            
+            <div class="success-box">
+                <strong>Test Your Integration:</strong> Always test with real data before going live!
+            </div>
+
+            <h3>🧪 Testing Checklist:</h3>
+            <div class="setup-checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="test-submission">
+                    <label for="test-submission">Submit test form with your email address</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-zapier">
+                    <label for="check-zapier">Verify Zap triggered in Zapier dashboard</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-email-platform">
+                    <label for="check-email-platform">Confirm contact added to email platform</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-sequence">
+                    <label for="check-sequence">Verify welcome email sequence started</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-crm">
+                    <label for="check-crm">Check CRM contact creation (if applicable)</label>
+                </div>
+            </div>
+
+            <h3>🔧 Common Issues & Solutions:</h3>
+            <div style="background: #f8d7da; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>❌ Problem: Zap not triggering</h4>
+                <ul>
+                    <li><strong>Solution 1:</strong> Check webhook URL in Formspree settings</li>
+                    <li><strong>Solution 2:</strong> Verify form is submitting successfully</li>
+                    <li><strong>Solution 3:</strong> Test webhook URL manually</li>
+                </ul>
+            </div>
+
+            <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>⚠️ Problem: Missing form data</h4>
+                <ul>
+                    <li><strong>Solution 1:</strong> Check field mapping in Zap actions</li>
+                    <li><strong>Solution 2:</strong> Ensure form field names match Zap variables</li>
+                    <li><strong>Solution 3:</strong> Test with all form fields populated</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step-section">
+            <h2><span class="step-number">7</span>Analytics & Optimization</h2>
+            
+            <p>Track your automation performance and optimize for better results:</p>
+
+            <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>📊 Key Metrics to Monitor:</h4>
+                <ul>
+                    <li><strong>Form Conversion Rate:</strong> Visitors → Form submissions</li>
+                    <li><strong>Email Open Rates:</strong> Target 40-60% for welcome emails</li>
+                    <li><strong>Email Click Rates:</strong> Target 10-20% for email sequence</li>
+                    <li><strong>Lead → Customer Rate:</strong> Track through CRM</li>
+                    <li><strong>Revenue Attribution:</strong> ROI from email automation</li>
+                </ul>
+            </div>
+
+            <div style="background: #f0fff0; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                <h4>🔄 Optimization Strategies:</h4>
+                <ul>
+                    <li><strong>A/B Test Subject Lines:</strong> Try different emotional triggers</li>
+                    <li><strong>Segment by Industry:</strong> Customize content for each vertical</li>
+                    <li><strong>Time-Based Sending:</strong> Optimize send times per audience</li>
+                    <li><strong>Lead Scoring Refinement:</strong> Adjust scoring based on conversions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white;">
+            <h3 style="margin-top: 0; color: white;">🎉 Congratulations!</h3>
+            <p style="margin-bottom: 25px; font-size: 18px;">You now have a complete email automation system that will nurture leads 24/7!</p>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h4 style="color: white; margin-top: 0;">📈 Expected Results:</h4>
+                <ul style="list-style: none; padding: 0; text-align: left;">
+                    <li>✅ <strong>50% increase</strong> in lead engagement</li>
+                    <li>✅ <strong>25% improvement</strong> in lead-to-customer conversion</li>
+                    <li>✅ <strong>80% time savings</strong> on manual follow-ups</li>
+                    <li>✅ <strong>24/7 lead nurturing</strong> without manual intervention</li>
+                </ul>
+            </div>
+            
+            <button onclick="window.open('analytics-tracking-setup.html', '_blank')" class="cta-button" style="background: white; color: #667eea;">
+                📊 Set Up Analytics Tracking →
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Auto-check items when clicked
+        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    this.parentElement.style.background = '#d4edda';
+                    this.parentElement.style.textDecoration = 'line-through';
+                } else {
+                    this.parentElement.style.background = 'transparent';
+                    this.parentElement.style.textDecoration = 'none';
+                }
+            });
+        });
+
+        // Progress tracking
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.setup-checklist input[type="checkbox"]');
+            const checkedBoxes = document.querySelectorAll('.setup-checklist input[type="checkbox"]:checked');
+            const progress = (checkedBoxes.length / checkboxes.length) * 100;
+            
+            console.log(`Setup Progress: ${Math.round(progress)}%`);
+        }
+
+        document.querySelectorAll('.setup-checklist input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updateProgress);
+        });
+    </script>
+</body>
+</html>
