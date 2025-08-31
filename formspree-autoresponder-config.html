@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formspree Auto-Responder Configuration</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        .config-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .template-box {
+            background: #fff;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+        }
+        .template-box::before {
+            content: "📧";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-size: 20px;
+        }
+        .copy-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            margin-top: 10px;
+        }
+        .copy-button:hover {
+            background: #5a6fd8;
+        }
+        .url-highlight {
+            background: #fff3cd;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            border: 1px solid #ffeaa7;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status-active { background: #d4edda; color: #155724; }
+        .status-pending { background: #fff3cd; color: #856404; }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .important-note {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .important-note::before {
+            content: "⚠️ ";
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Formspree Auto-Responder Configuration</h1>
+            <p>Complete setup guide for automated email responses</p>
+            <div class="status-badge status-active">Form Endpoint: f/mpwdodpp</div>
+        </div>
+
+        <div class="config-section">
+            <h2><span class="step-number">1</span>Access Your Formspree Dashboard</h2>
+            <p>Login to your Formspree account and navigate to your form settings:</p>
+            <ul>
+                <li>📍 <strong>URL:</strong> <span class="url-highlight">https://formspree.io/dashboard</span></li>
+                <li>🔍 <strong>Find Form:</strong> Search for endpoint <code>mpwdodpp</code></li>
+                <li>⚙️ <strong>Settings:</strong> Click on "Settings" tab</li>
+            </ul>
+        </div>
+
+        <div class="config-section">
+            <h2><span class="step-number">2</span>Enable Auto-Responder</h2>
+            <div class="important-note">
+                Make sure to enable the auto-responder feature in your Formspree dashboard before adding the templates below.
+            </div>
+            
+            <ul class="checklist">
+                <li><input type="checkbox"> Navigate to "Auto-Reply" section</li>
+                <li><input type="checkbox"> Toggle "Enable Auto-Reply" to ON</li>
+                <li><input type="checkbox"> Set sender name: "AIniseFlow Team"</li>
+                <li><input type="checkbox"> Set reply-to email: your business email</li>
+            </ul>
+        </div>
+
+        <div class="config-section">
+            <h2><span class="step-number">3</span>Auto-Responder Email Templates</h2>
+            
+            <div class="template-box">
+                <h3>Template 1: Instant Acknowledgment (Auto-Responder)</h3>
+                <button class="copy-button" onclick="copyToClipboard('template1')">📋 Copy</button>
+                <div id="template1">
+                    <p><strong>Subject:</strong> 🤖 Your AI Consultation Request Received - Next Steps Inside</p>
+                    <hr>
+                    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px;">
+                        <div style="background: white; padding: 30px; border-radius: 8px;">
+                            <h2 style="color: #667eea; margin-top: 0;">Hi {{name}},</h2>
+                            
+                            <p>Thank you for your interest in AI automation solutions for <strong>{{company}}</strong>!</p>
+                            
+                            <div style="background: #e8f5e8; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                                <h3 style="color: #2d5a2d; margin-top: 0;">✅ YOUR REQUEST HAS BEEN RECEIVED</h3>
+                                <p style="margin-bottom: 0;">We've successfully received your consultation request and our AI automation specialist will review your specific needs.</p>
+                            </div>
+                            
+                            <h3 style="color: #667eea;">🚀 WHAT HAPPENS NEXT:</h3>
+                            <ul style="padding-left: 20px;">
+                                <li><strong>Within 2 hours:</strong> You'll receive our "AI Readiness Assessment" questionnaire</li>
+                                <li><strong>Within 24 hours:</strong> We'll schedule your FREE 30-minute AI consultation call</li>
+                                <li><strong>During the call:</strong> We'll discuss your specific automation opportunities</li>
+                            </ul>
+                            
+                            <div style="background: #fff3cd; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                                <h3 style="color: #856404; margin-top: 0;">🎁 WHILE YOU WAIT:</h3>
+                                <p style="margin-bottom: 10px;">Download our free "Small Business AI Automation Guide":</p>
+                                <a href="https://ainiseflow.com/ai-guide-download" style="background: #667eea; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">📚 Download Free Guide</a>
+                            </div>
+                            
+                            <div style="border-top: 2px solid #eee; padding-top: 20px; margin-top: 30px; text-align: center;">
+                                <p><strong>📞 QUESTIONS?</strong><br>
+                                Feel free to reply to this email or call us directly.</p>
+                                
+                                <p style="margin-bottom: 0;">
+                                    Best regards,<br>
+                                    <strong>The AIniseFlow Team</strong><br>
+                                    🔗 <a href="https://ainiseflow.com" style="color: #667eea;">https://ainiseflow.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2><span class="step-number">4</span>Form Configuration Settings</h2>
+            <p>Add these hidden fields to your contact form to enhance the auto-responder:</p>
+            
+            <div class="template-box">
+                <h3>Enhanced Form Fields</h3>
+                <button class="copy-button" onclick="copyToClipboard('formFields')">📋 Copy HTML</button>
+                <div id="formFields">
+                    <pre style="background: #f1f1f1; padding: 15px; border-radius: 5px; overflow-x: auto;">
+&lt;!-- Add these to your existing contact form --&gt;
+&lt;input type="hidden" name="_subject" value="New AI Consultation Request from {{name}}"&gt;
+&lt;input type="hidden" name="_next" value="https://ainiseflow.com/thank-you.html"&gt;
+&lt;input type="hidden" name="_autoresponse" value="Thank you for your interest in AI automation!"&gt;
+&lt;input type="hidden" name="_cc" value="your-backup-email@domain.com"&gt;
+
+&lt;!-- Optional: Add lead source tracking --&gt;
+&lt;input type="hidden" name="_lead_source" value="website_contact_form"&gt;
+&lt;input type="hidden" name="_timestamp" id="timestamp"&gt;
+
+&lt;script&gt;
+document.getElementById('timestamp').value = new Date().toISOString();
+&lt;/script&gt;</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h2><span class="step-number">5</span>Advanced Settings Checklist</h2>
+            <ul class="checklist">
+                <li><input type="checkbox"> <strong>Spam Protection:</strong> Enable reCAPTCHA</li>
+                <li><input type="checkbox"> <strong>File Uploads:</strong> Allow attachments (for future use)</li>
+                <li><input type="checkbox"> <strong>Email Notifications:</strong> Set to your business email</li>
+                <li><input type="checkbox"> <strong>Webhook URL:</strong> Add if using Zapier integration</li>
+                <li><input type="checkbox"> <strong>GDPR Compliance:</strong> Enable consent tracking</li>
+                <li><input type="checkbox"> <strong>Response Format:</strong> Set to HTML for rich formatting</li>
+            </ul>
+        </div>
+
+        <div class="config-section">
+            <h2><span class="step-number">6</span>Testing Your Auto-Responder</h2>
+            <div class="important-note">
+                Always test your auto-responder with a real email address before going live!
+            </div>
+            
+            <ol>
+                <li><strong>Submit Test Form:</strong> Use your contact form with your email</li>
+                <li><strong>Check Inbox:</strong> Verify auto-responder arrives within 1-2 minutes</li>
+                <li><strong>Review Content:</strong> Ensure all merge fields populate correctly</li>
+                <li><strong>Test Links:</strong> Click all links to verify they work</li>
+                <li><strong>Mobile Test:</strong> Check email appearance on mobile devices</li>
+            </ol>
+        </div>
+
+        <div class="config-section">
+            <h2><span class="step-number">7</span>Next Steps: Email Automation</h2>
+            <p>Once your auto-responder is working, enhance with:</p>
+            <ul>
+                <li>🔗 <strong>Zapier Integration:</strong> Connect to email marketing platform</li>
+                <li>📊 <strong>Lead Scoring:</strong> Automatically categorize leads</li>
+                <li>📅 <strong>Calendar Booking:</strong> Add Calendly integration</li>
+                <li>📈 <strong>Analytics Tracking:</strong> Monitor email performance</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f0f8ff; border-radius: 8px;">
+            <h3>🎯 Ready to Level Up?</h3>
+            <p>Your auto-responder is the foundation. Next, we'll implement the complete email automation sequence!</p>
+            <button onclick="window.open('email-sequence-templates.html', '_blank')" style="background: #667eea; color: white; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+                📧 Set Up Email Sequences →
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent || element.innerText;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showCopySuccess();
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showCopySuccess();
+            }
+        }
+
+        function showCopySuccess() {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                z-index: 1000;
+                font-weight: bold;
+            `;
+            notification.textContent = '✅ Copied to clipboard!';
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 2000);
+        }
+
+        // Auto-update timestamp on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const timestampElements = document.querySelectorAll('[id="timestamp"]');
+            timestampElements.forEach(el => {
+                if (el) el.value = new Date().toISOString();
+            });
+        });
+    </script>
+</body>
+</html>
