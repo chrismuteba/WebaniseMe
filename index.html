@@ -54,6 +54,7 @@
     <!-- Load Tailwind CSS immediately for layout -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     
     <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
@@ -218,56 +219,18 @@ html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;pos
     <!-- Performance optimizations script -->
     <script src="performance-optimizations.js" defer></script>
     
-    <!-- Performance-optimized scripts -->
-    <script src="performance-enhanced.js" async></script>
-    <script src="scripts-combined.js" defer></script>
+    <!-- Load main scripts normally -->
+    <script src="scripts.js" defer></script>
     
-    <!-- Advanced form handling and lead generation - Load on interaction -->
-    <link rel="preload" href="advanced-forms.js" as="script">
-    <link rel="preload" href="lead-magnets.js" as="script">
+    <!-- Advanced form handling and lead generation -->
+    <script src="advanced-forms.js" defer></script>
     
-    <!-- Load additional scripts on user interaction -->
+    <!-- Simple fix for sticky contact bar -->
     <script>
-        // Smooth scrolling navigation function
-        function scrollToHome() {
-            event.preventDefault();
-            document.getElementById('home').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            return false;
-        }
-        
-        // Disable problematic sticky contact bar on load
+        // Disable sticky contact bar to fix layout issues
         document.addEventListener('DOMContentLoaded', function() {
-            // Remove any existing sticky bars that might cause layout issues
-            const removeSticky = () => {
-                const stickyBars = document.querySelectorAll('.sticky-contact-bar');
-                stickyBars.forEach(bar => bar.remove());
-            };
-            
-            // Remove immediately and set interval to catch dynamically created ones
-            removeSticky();
-            setInterval(removeSticky, 1000);
-        });
-        
-        // Load heavy scripts only when user interacts
-        let interactionLoaded = false;
-        const loadOnInteraction = () => {
-            if (interactionLoaded) return;
-            interactionLoaded = true;
-            
-            const scripts = ['advanced-forms.js', 'lead-magnets.js'];
-            scripts.forEach(src => {
-                const script = document.createElement('script');
-                script.src = src;
-                script.defer = true;
-                document.head.appendChild(script);
-            });
-        };
-        
-        ['mousedown', 'touchstart', 'scroll'].forEach(event => {
-            document.addEventListener(event, loadOnInteraction, { once: true, passive: true });
+            // Disable lead magnets that cause CTA positioning issues
+            window.LeadMagnetManager = { init: function() {}, show: function() {} };
         });
     </script>
 </head>
@@ -275,34 +238,34 @@ html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;pos
     <div style="display: none; height: 0; overflow: hidden; position: absolute; left: -9999px;"><!-- title barrier --></div>
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav">
-        <div class="nav-container">
-                <div>
-                    <a href="#home" onclick="scrollToHome()">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3">
                         <picture>
                             <source srcset="AIniseFlow-Logo.webp" type="image/webp">
-                            <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="logo-img" width="56" height="56" loading="eager">
+                            <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="h-12 md:h-14 w-auto" width="56" height="56" loading="eager">
                         </picture>
-                        <span class="logo-text"><span class="logo-part1">AInise</span><span class="logo-part2">Flow</span></span>
+                        <span class="text-xl md:text-2xl font-bold whitespace-nowrap"><span class="text-[#0a3b5c]">AInise</span><span class="text-[#0d8b9c]">Flow</span></span>
                     </a>
                 </div>
-                <div>
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="ai-automation-services.html" class="nav-link">AI Solutions</a>
-                    
-                    <a href="ai-restaurant-solutions.html" class="nav-link">Industries</a>
-                    
-                    <a href="web-design-addon.html" class="nav-link">Web Design</a>
-                    <a href="blog.html" class="nav-link">Blog</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
+                    <a href="ai-automation-services.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
+                    <a href="ai-restaurant-solutions.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Industries</a>
+                    <a href="web-design-addon.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Web Design</a>
+                    <a href="blog.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Blog</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
                 </div>
-                <div>
-                    <button id="menu-btn" style="color:#374151;padding:0.5rem;">
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" style="display:none;padding:1rem 0;">
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
                 <div class="pt-4 space-y-1">
                     <a href="#home" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Home</a>
                     <a href="ai-automation-services.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">AI Solutions</a>
