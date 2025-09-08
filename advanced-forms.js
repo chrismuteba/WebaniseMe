@@ -111,6 +111,11 @@
 
         // Form progress indicator
         setupProgressIndicator() {
+            // Check if progress indicator already exists to prevent duplicates
+            if (this.form.querySelector('.form-progress-container')) {
+                return;
+            }
+            
             const progressBar = document.createElement('div');
             progressBar.className = 'form-progress-container mb-6';
             progressBar.innerHTML = `
@@ -124,7 +129,9 @@
             `;
 
             const firstFieldContainer = this.form.querySelector('.grid');
-            firstFieldContainer.parentNode.insertBefore(progressBar, firstFieldContainer);
+            if (firstFieldContainer) {
+                firstFieldContainer.parentNode.insertBefore(progressBar, firstFieldContainer);
+            }
 
             // Update progress on field changes
             const fields = this.form.querySelectorAll('input[required], select[required], textarea[required]');
@@ -381,6 +388,12 @@
 
     // Initialize form enhancements when DOM is ready
     function initContactForms() {
+        // Prevent duplicate initialization
+        if (window.contactFormInitialized) {
+            return;
+        }
+        window.contactFormInitialized = true;
+        
         // Track when user starts interacting with form
         const contactForm = document.querySelector('#contact form');
         if (contactForm) {
