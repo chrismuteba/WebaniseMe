@@ -50,6 +50,11 @@
     <link rel="preload" href="AIniseFlow-Logo.webp" as="image" type="image/webp">
     <link rel="preload" href="AIniseFlow-Logo.png" as="image" type="image/png">
     <link rel="preload" href="styles-critical.css" as="style">
+    
+    <!-- Load Tailwind CSS immediately for layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -61,7 +66,7 @@
     <style>
     
 /* Critical CSS - Above the fold styles only */
-html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!important;margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;line-height:1.6;color:#374151}*{box-sizing:border-box}#main-nav{background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;width:100%;z-index:50}.nav-container{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;height:80px}.logo-container{display:flex;align-items:center;gap:.75rem}.logo-img{height:3rem;width:auto}.logo-text{font-size:1.25rem;font-weight:700;white-space:nowrap}.logo-part1{color:#0a3b5c}.logo-part2{color:#0d8b9c}.hero-section{background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;width:100%;max-width:100vw;color:#fff;text-align:center}.moving-background{position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);background-image:url('https://page.gensparksite.com/v1/base64_upload/6b0fa0934b4f5682f76defa26a5f633a');background-size:cover;background-position:center;z-index:-1;animation:backgroundMove 40s ease-in-out infinite alternate;max-width:100vw!important;overflow:hidden!important}.background-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,59,92,.7) 0%,rgba(13,139,156,.6) 50%,rgba(10,59,92,.8) 100%);z-index:0}@keyframes backgroundMove{0%{transform:translate(0,0) scale(1.02)}50%{transform:translate(-5px,-5px) scale(1.05)}100%{transform:translate(5px,5px) scale(1.02)}}.hero-content{position:relative;z-index:10;max-width:800px;margin:0 auto;padding:0 1.5rem}.hero-headline{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:1.5rem;font-weight:700;text-shadow:2px 2px 8px rgba(0,0,0,.8),0 0 16px rgba(10,59,92,.6);color:#fff}.hero-subheadline{font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.6;margin-bottom:2rem;opacity:.9}.primary-cta{background-color:#2A7F83;color:#fff;border:2px solid #2A7F83;border-radius:25px;padding:15px 30px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:600;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.3),0 0 20px rgba(42,127,131,.4);min-height:56px}.primary-cta:hover{background-color:#236e72;border-color:#236e72;transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.4)}.secondary-cta{background-color:transparent!important;color:#fff!important;border:2px solid #fff!important;border-radius:25px;padding:15px 30px!important;text-decoration:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:.5rem!important;font-weight:600;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.3),0 0 20px rgba(255,255,255,.2);min-height:56px}.secondary-cta:hover{background-color:#fff!important;color:#2A7F83!important;transform:translateY(-2px)}.container{max-width:1200px;margin:0 auto;padding:0 1.5rem;width:100%;overflow-x:hidden}#contact{width:100%;overflow-x:hidden;position:relative}#contact .container{width:100%;max-width:1200px;margin:0 auto}#contact form{width:100%;max-width:600px;margin:0 auto;box-sizing:border-box}#contact button{width:auto;margin:0 auto;display:block;max-width:300px}@media (max-width:768px){.nav-container{padding:0 1rem;height:70px}.logo-img{height:2.5rem}.logo-text{font-size:1rem}body{padding-top:70px!important}.hero-section{min-height:80vh;padding:2rem 0}.primary-cta,.secondary-cta{padding:12px 24px;font-size:.9rem}}.fade-in{opacity:0;animation:fadeIn .3s ease-in-out forwards}@keyframes fadeIn{to{opacity:1}}img{height:auto;max-width:100%}
+html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!important;margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;line-height:1.6;color:#374151}*{box-sizing:border-box}#main-nav{background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;width:100%;z-index:50}.nav-container{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;height:80px}.nav-container>div:first-child{display:flex;align-items:center}.nav-container>div:nth-child(2){display:none}.logo-container{display:flex;align-items:center;gap:.75rem}.logo-img{height:3rem;width:auto}.logo-text{font-size:1.25rem;font-weight:700;white-space:nowrap}.logo-part1{color:#0a3b5c}.logo-part2{color:#0d8b9c}@media (min-width:768px){.nav-container>div:nth-child(2){display:flex!important;align-items:center;gap:2rem}.nav-container>div:nth-child(3){display:flex;align-items:center}}.nav-link{color:#374151;font-weight:500;transition:color .3s ease;text-decoration:none;padding:0.5rem 0}.nav-link:hover{color:#2A7F83}.nav-container>div:last-child{display:flex;align-items:center}@media (min-width:768px){.nav-container>div:last-child{display:none}}.hero-section{background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;width:100%;max-width:100vw;color:#fff;text-align:center}.moving-background{position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);background-image:url('https://page.gensparksite.com/v1/base64_upload/6b0fa0934b4f5682f76defa26a5f633a');background-size:cover;background-position:center;z-index:-1;animation:backgroundMove 40s ease-in-out infinite alternate;max-width:100vw!important;overflow:hidden!important}.background-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,59,92,.7) 0%,rgba(13,139,156,.6) 50%,rgba(10,59,92,.8) 100%);z-index:0}@keyframes backgroundMove{0%{transform:translate(0,0) scale(1.02)}50%{transform:translate(-5px,-5px) scale(1.05)}100%{transform:translate(5px,5px) scale(1.02)}}.hero-content{position:relative;z-index:10;max-width:800px;margin:0 auto;padding:0 1.5rem}.hero-headline{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:1.5rem;font-weight:700;text-shadow:2px 2px 8px rgba(0,0,0,.8),0 0 16px rgba(10,59,92,.6);color:#fff}.hero-subheadline{font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.6;margin-bottom:2rem;opacity:.9}.primary-cta{background-color:#2A7F83;color:#fff;border:2px solid #2A7F83;border-radius:25px;padding:15px 30px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:600;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.3),0 0 20px rgba(42,127,131,.4);min-height:56px}.primary-cta:hover{background-color:#236e72;border-color:#236e72;transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.4)}.secondary-cta{background-color:transparent!important;color:#fff!important;border:2px solid #fff!important;border-radius:25px;padding:15px 30px!important;text-decoration:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:.5rem!important;font-weight:600;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.3),0 0 20px rgba(255,255,255,.2);min-height:56px}.secondary-cta:hover{background-color:#fff!important;color:#2A7F83!important;transform:translateY(-2px)}.container{max-width:1200px;margin:0 auto;padding:0 1.5rem;width:100%;overflow-x:hidden}#contact{width:100%;overflow-x:hidden;position:relative}#contact .container{width:100%;max-width:1200px;margin:0 auto}#contact form{width:100%;max-width:600px;margin:0 auto;box-sizing:border-box}#contact button{width:auto;margin:0 auto;display:block;max-width:300px}.sticky-contact-bar{position:fixed!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;max-width:100vw!important;z-index:1000!important;transform:translateY(0)!important;display:flex!important;justify-content:center!important;padding:1rem!important}.sticky-contact-bar>div{max-width:1200px;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 1rem}body{padding-bottom:60px!important}@media (max-width:480px){.sticky-contact-bar{padding:0.5rem!important;font-size:0.875rem}.sticky-contact-bar a{padding:0.5rem 1rem!important;font-size:0.75rem!important}}@media (max-width:768px){.nav-container{padding:0 1rem;height:70px}.logo-img{height:2.5rem}.logo-text{font-size:1rem}body{padding-top:70px!important}.hero-section{min-height:80vh;padding:2rem 0}.primary-cta,.secondary-cta{padding:12px 24px;font-size:.9rem}}.fade-in{opacity:0;animation:fadeIn .3s ease-in-out forwards}@keyframes fadeIn{to{opacity:1}}img{height:auto;max-width:100%}
     </style>
     
     <title>AIniseFlow | AI Automation & Workflow Solutions for UK Small & Medium Businesses</title>
@@ -233,6 +238,19 @@ html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;pos
             return false;
         }
         
+        // Disable problematic sticky contact bar on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove any existing sticky bars that might cause layout issues
+            const removeSticky = () => {
+                const stickyBars = document.querySelectorAll('.sticky-contact-bar');
+                stickyBars.forEach(bar => bar.remove());
+            };
+            
+            // Remove immediately and set interval to catch dynamically created ones
+            removeSticky();
+            setInterval(removeSticky, 1000);
+        });
+        
         // Load heavy scripts only when user interacts
         let interactionLoaded = false;
         const loadOnInteraction = () => {
@@ -258,9 +276,8 @@ html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;pos
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav">
         <div class="nav-container">
-            <div class="flex justify-between items-center py-3">
-                <div class="flex items-center">
-                    <a href="#home" class="flex items-center gap-3" onclick="scrollToHome()">
+                <div>
+                    <a href="#home" onclick="scrollToHome()">
                         <picture>
                             <source srcset="AIniseFlow-Logo.webp" type="image/webp">
                             <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="logo-img" width="56" height="56" loading="eager">
@@ -268,46 +285,24 @@ html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;pos
                         <span class="logo-text"><span class="logo-part1">AInise</span><span class="logo-part2">Flow</span></span>
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
-                    <a href="ai-automation-services.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
+                <div>
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="ai-automation-services.html" class="nav-link">AI Solutions</a>
                     
-                    <!-- Industries Dropdown -->
-                    <div class="relative group">
-                        <button class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium industries-dropdown-btn flex items-center" aria-expanded="false" aria-haspopup="true">
-                            Industries <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-300"></i>
-                        </button>
-                        <div class="dropdown-menu absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 opacity-0 invisible transform scale-95 transition-all duration-200 ease-out">
-                            <div class="py-1" role="menu" aria-orientation="vertical">
-                                <a href="ai-restaurant-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
-                                    <i class="fas fa-utensils mr-3 text-[#2A7F83]"></i>Restaurants & Hospitality
-                                </a>
-                                <a href="ai-healthcare-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
-                                    <i class="fas fa-heartbeat mr-3 text-[#2A7F83]"></i>Healthcare & Wellness
-                                </a>
-                                <a href="ai-professional-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
-                                    <i class="fas fa-briefcase mr-3 text-[#2A7F83]"></i>Professional Services
-                                </a>
-                                <a href="ai-retail-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#2A7F83] transition-colors" role="menuitem">
-                                    <i class="fas fa-shopping-cart mr-3 text-[#2A7F83]"></i>Retail & E-commerce
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="ai-restaurant-solutions.html" class="nav-link">Industries</a>
                     
-                    <a href="web-design-addon.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Web Design</a>
-                    <a href="blog.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Blog</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
+                    <a href="web-design-addon.html" class="nav-link">Web Design</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors">
+                <div>
+                    <button id="menu-btn" style="color:#374151;padding:0.5rem;">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
-            </div>
-            
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" style="display:none;padding:1rem 0;">
                 <div class="pt-4 space-y-1">
                     <a href="#home" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Home</a>
                     <a href="ai-automation-services.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">AI Solutions</a>
