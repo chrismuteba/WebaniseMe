@@ -1,0 +1,39 @@
+{
+  "name": "AIniseFlow - AI Automation Solutions",
+  "short_name": "AIniseFlow",
+  "description": "AI automation & workflow solutions for UK small businesses",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a3b5c",
+  "theme_color": "#2A7F83",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity"],
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "AIniseFlow-Logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "AIniseFlow-Logo.webp",
+      "sizes": "192x192", 
+      "type": "image/webp",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "AIniseFlow-Logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "AIniseFlow-Logo.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ]
+}

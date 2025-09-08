@@ -39,15 +39,30 @@
     <meta name="theme-color" content="#2A7F83" />
     <link rel="canonical" href="https://ainiseflow.com/" />
     
-    <!-- Performance Optimizations -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="AIniseFlow">
+    
+    <!-- Enhanced Performance Optimizations -->
+    <link rel="preload" href="AIniseFlow-Logo.webp" as="image" type="image/webp">
     <link rel="preload" href="AIniseFlow-Logo.png" as="image" type="image/png">
+    <link rel="preload" href="styles-critical.css" as="style">
     <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Inline Critical CSS for instant above-the-fold rendering -->
+    <style>
+    
+/* Critical CSS - Above the fold styles only */
+html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!important;margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;line-height:1.6;color:#374151}*{box-sizing:border-box}#main-nav{background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;width:100%;z-index:50}.nav-container{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;height:80px}.logo-container{display:flex;align-items:center;gap:.75rem}.logo-img{height:3rem;width:auto}.logo-text{font-size:1.25rem;font-weight:700;white-space:nowrap}.logo-part1{color:#0a3b5c}.logo-part2{color:#0d8b9c}.hero-section{background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;width:100%;max-width:100vw;color:#fff;text-align:center}.hero-content{position:relative;z-index:10;max-width:800px;margin:0 auto;padding:0 1.5rem}.hero-headline{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:1.5rem;font-weight:700}.hero-subheadline{font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.6;margin-bottom:2rem;opacity:.9}.primary-cta{background-color:#2A7F83;color:#fff;border:2px solid #2A7F83;border-radius:25px;padding:15px 30px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:600;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.3),0 0 20px rgba(42,127,131,.4);min-height:56px}.primary-cta:hover{background-color:#236e72;border-color:#236e72;transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.4)}.secondary-cta{background-color:transparent!important;color:#fff!important;border:2px solid #fff!important;border-radius:25px;padding:15px 30px!important;text-decoration:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:.5rem!important;font-weight:600;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.3),0 0 20px rgba(255,255,255,.2);min-height:56px}.secondary-cta:hover{background-color:#fff!important;color:#2A7F83!important;transform:translateY(-2px)}.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}@media (max-width:768px){.nav-container{padding:0 1rem;height:70px}.logo-img{height:2.5rem}.logo-text{font-size:1rem}body{padding-top:70px!important}.hero-section{min-height:80vh;padding:2rem 0}.primary-cta,.secondary-cta{padding:12px 24px;font-size:.9rem}}.fade-in{opacity:0;animation:fadeIn .3s ease-in-out forwards}@keyframes fadeIn{to{opacity:1}}img{height:auto;max-width:100%}
+    </style>
     
     <title>AIniseFlow | AI Automation & Workflow Solutions for UK Small & Medium Businesses</title>
     
@@ -198,9 +213,35 @@
     <!-- Performance optimizations script -->
     <script src="performance-optimizations.js" defer></script>
     
-    <!-- Advanced form handling and lead generation -->
-    <script src="advanced-forms.js" defer></script>
-    <script src="lead-magnets.js" defer></script>
+    <!-- Performance-optimized scripts -->
+    <script src="performance-enhanced.js" async></script>
+    <script src="scripts-combined.js" defer></script>
+    
+    <!-- Advanced form handling and lead generation - Load on interaction -->
+    <link rel="preload" href="advanced-forms.js" as="script">
+    <link rel="preload" href="lead-magnets.js" as="script">
+    
+    <!-- Load additional scripts on user interaction -->
+    <script>
+        // Load heavy scripts only when user interacts
+        let interactionLoaded = false;
+        const loadOnInteraction = () => {
+            if (interactionLoaded) return;
+            interactionLoaded = true;
+            
+            const scripts = ['advanced-forms.js', 'lead-magnets.js'];
+            scripts.forEach(src => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.defer = true;
+                document.head.appendChild(script);
+            });
+        };
+        
+        ['mousedown', 'touchstart', 'scroll'].forEach(event => {
+            document.addEventListener(event, loadOnInteraction, { once: true, passive: true });
+        });
+    </script>
 </head>
 <body class="font-sans antialiased text-gray-800">
     <div style="display: none; height: 0; overflow: hidden; position: absolute; left: -9999px;"><!-- title barrier --></div>
@@ -210,8 +251,11 @@
             <div class="flex justify-between items-center py-3">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center gap-3">
-                        <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="h-12 md:h-14 w-auto" width="56" height="56" loading="eager">
-                        <span class="text-xl md:text-2xl font-bold whitespace-nowrap"><span class="text-[#0a3b5c]">AInise</span><span class="text-[#0d8b9c]">Flow</span></span>
+                        <picture>
+                            <source srcset="AIniseFlow-Logo.webp" type="image/webp">
+                            <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="logo-img" width="56" height="56" loading="eager">
+                        </picture>
+                        <span class="logo-text"><span class="logo-part1">AInise</span><span class="logo-part2">Flow</span></span>
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
