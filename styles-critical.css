@@ -16,8 +16,18 @@ body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!import
 
 /* Hero section - Critical */
 .hero-section{background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;width:100%;max-width:100vw;color:#fff;text-align:center}
+
+/* Moving background styling - Critical */
+.moving-background{position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);background-image:url('https://page.gensparksite.com/v1/base64_upload/6b0fa0934b4f5682f76defa26a5f633a');background-size:cover;background-position:center;z-index:-1;animation:backgroundMove 40s ease-in-out infinite alternate;max-width:100vw!important;overflow:hidden!important}
+
+/* Background overlay for text readability - Critical */
+.background-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,59,92,.7) 0%,rgba(13,139,156,.6) 50%,rgba(10,59,92,.8) 100%);z-index:0}
+
+/* Background animation - Critical */
+@keyframes backgroundMove{0%{transform:translate(0,0) scale(1.02)}50%{transform:translate(-5px,-5px) scale(1.05)}100%{transform:translate(5px,5px) scale(1.02)}}
+
 .hero-content{position:relative;z-index:10;max-width:800px;margin:0 auto;padding:0 1.5rem}
-.hero-headline{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:1.5rem;font-weight:700}
+.hero-headline{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:1.5rem;font-weight:700;text-shadow:2px 2px 8px rgba(0,0,0,.8),0 0 16px rgba(10,59,92,.6);color:#fff}
 .hero-subheadline{font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.6;margin-bottom:2rem;opacity:.9}
 
 /* Primary CTA - Critical */
@@ -28,7 +38,13 @@ body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!import
 .secondary-cta:hover{background-color:#fff!important;color:#2A7F83!important;transform:translateY(-2px)}
 
 /* Container */
-.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem;width:100%;overflow-x:hidden}
+
+/* Contact section specific fixes */
+#contact{width:100%;overflow-x:hidden;position:relative}
+#contact .container{width:100%;max-width:1200px;margin:0 auto}
+#contact form{width:100%;max-width:600px;margin:0 auto;box-sizing:border-box}
+#contact button{width:auto;margin:0 auto;display:block;max-width:300px}
 
 /* Mobile responsive - Critical */
 @media (max-width:768px){
