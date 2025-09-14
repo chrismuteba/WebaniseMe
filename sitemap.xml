@@ -1,57 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- AIniseFlow Website Sitemap - Updated for canonical consistency -->
 
 <url>
-  <loc>https://www.ainiseflow.com/</loc>
-  <lastmod>2025-08-31T09:09:50+00:00</lastmod>
+  <loc>https://ainiseflow.com/</loc>
+  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
   <priority>1.00</priority>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>https://www.ainiseflow.com/index.html</loc>
-  <lastmod>2025-08-31T09:06:12+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://ainiseflow.com/ai-automation-services.html</loc>
+  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <priority>0.90</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.ainiseflow.com/ai-automation-services.html</loc>
-  <lastmod>2025-08-31T09:07:43+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://ainiseflow.com/ai-restaurant-solutions.html</loc>
+  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.ainiseflow.com/ai-restaurant-solutions.html</loc>
-  <lastmod>2025-08-31T09:07:54+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://ainiseflow.com/ai-healthcare-solutions.html</loc>
+  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.ainiseflow.com/ai-healthcare-solutions.html</loc>
-  <lastmod>2025-08-31T09:09:50+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://ainiseflow.com/ai-professional-services.html</loc>
+  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.ainiseflow.com/ai-professional-services.html</loc>
-  <lastmod>2025-08-31T09:07:58+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://ainiseflow.com/ai-retail-solutions.html</loc>
+  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <priority>0.85</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.ainiseflow.com/ai-retail-solutions.html</loc>
-  <lastmod>2025-08-31T09:09:51+00:00</lastmod>
+  <loc>https://ainiseflow.com/web-design-addon.html</loc>
+  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
   <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.ainiseflow.com/web-design-addon.html</loc>
-  <lastmod>2025-08-31T09:07:28+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://ainiseflow.com/blog.html</loc>
+  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>weekly</changefreq>
 </url>
-<url>
-  <loc>https://www.ainiseflow.com/blog.html</loc>
-  <lastmod>2025-08-31T09:07:30+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
 
 </urlset>
