@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI automation & workflow solutions for UK small businesses. Streamline operations, optimize process flows, and enhance efficiency with intelligent automation tailored for SMBs."
-    <meta name="keywords" content="AI automation, workflow automation, process flow optimization, artificial intelligence, business automation, UK SME automation, intelligent workflows, AI chatbots, automated customer service, small business AI"
-    
-    <!-- Google Search Console Verification - Replace with your actual verification code -->
+    <meta name="description" content="AI-powered booking, reminder, and follow-up automation built for UK private physiotherapy clinics. Reduce admin, cut no-shows, and convert more enquiries—without extra reception hours.">
+    <meta name="keywords" content="physiotherapy clinic automation, AI booking system UK, physio appointment reminders, reduce DNA appointments, private physio clinic software, UK healthcare automation, physiotherapy follow-up system">
+
+    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="PBwJIPl5o8P2KEdOw2PNHWsUqoGauRg_WsTrehBfGyg" />
-    
+
     <!-- Bing Webmaster Tools Verification -->
     <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE_HERE" />
-    
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="AIniseFlow | AI Automation & Workflow Solutions for UK Businesses" />
-    <meta property="og:description" content="Transform your UK small business with intelligent workflow automation. Optimize process flows, reduce operational friction, and deliver exceptional efficiency with AI-powered solutions." />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AIniseFlow | AI Booking & Follow-Up Automation for UK Physio Clinics" />
+    <meta property="og:description" content="Reduce admin, cut no-shows, and convert more enquiries into attended appointments—without hiring more reception hours. Built for UK private physiotherapy clinics." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ainiseflow.com/" />
     <meta property="og:image" content="https://ainiseflow.com/AIniseFlow-Logo.png" />
@@ -22,15 +22,15 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="AIniseFlow" />
     <meta property="og:locale" content="en_GB" />
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AIniseFlow | AI Automation & Workflow Solutions" />
-    <meta name="twitter:description" content="Transform your UK small business with intelligent workflow automation and AI-powered solutions." />
+    <meta name="twitter:title" content="AIniseFlow | AI Booking & Follow-Up for UK Physio Clinics" />
+    <meta name="twitter:description" content="Reduce admin, cut no-shows, and convert more enquiries—without extra reception hours. Built for UK private physiotherapy clinics." />
     <meta name="twitter:image" content="https://ainiseflow.com/AIniseFlow-Logo.png" />
     <meta name="twitter:site" content="@AIniseFlow" />
     <meta name="twitter:creator" content="@AIniseFlow" />
-    
+
     <!-- Additional SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
@@ -38,48 +38,62 @@
     <meta name="publisher" content="AIniseFlow" />
     <meta name="theme-color" content="#2A7F83" />
     <link rel="canonical" href="https://ainiseflow.com/" />
-    
+
     <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="AIniseFlow">
-    
-    <!-- Enhanced Performance Optimizations -->
+
+    <!-- Performance: preload key assets -->
     <link rel="preload" href="AIniseFlow-Logo.webp" as="image" type="image/webp">
     <link rel="preload" href="AIniseFlow-Logo.png" as="image" type="image/png">
-    <link rel="preload" href="styles-critical.css" as="style">
-    
-    <!-- Load Tailwind CSS immediately for layout -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    
+
+    <!-- DNS prefetch -->
     <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Inline Critical CSS for instant above-the-fold rendering -->
+
+    <!-- Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
+
+    <!-- Inline Critical CSS -->
     <style>
-    
-/* Critical CSS - Above the fold styles only */
-html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!important;margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;line-height:1.6;color:#374151}*{box-sizing:border-box}#main-nav{background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;width:100%;z-index:50}.nav-container{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;height:80px}.nav-container>div:first-child{display:flex;align-items:center}.nav-container>div:nth-child(2){display:none}.logo-container{display:flex;align-items:center;gap:.75rem}.logo-img{height:3rem;width:auto}.logo-text{font-size:1.25rem;font-weight:700;white-space:nowrap}.logo-part1{color:#0a3b5c}.logo-part2{color:#0d8b9c}@media (min-width:768px){.nav-container>div:nth-child(2){display:flex!important;align-items:center;gap:2rem}.nav-container>div:nth-child(3){display:flex;align-items:center}}.nav-link{color:#374151;font-weight:500;transition:color .3s ease;text-decoration:none;padding:0.5rem 0}.nav-link:hover{color:#2A7F83}.nav-container>div:last-child{display:flex;align-items:center}@media (min-width:768px){.nav-container>div:last-child{display:none}}.hero-section{background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;width:100%;max-width:100vw;color:#fff;text-align:center}.moving-background{position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);background-image:url('https://page.gensparksite.com/v1/base64_upload/6b0fa0934b4f5682f76defa26a5f633a');background-size:cover;background-position:center;z-index:-1;animation:backgroundMove 40s ease-in-out infinite alternate;max-width:100vw!important;overflow:hidden!important}.background-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,59,92,.7) 0%,rgba(13,139,156,.6) 50%,rgba(10,59,92,.8) 100%);z-index:0}@keyframes backgroundMove{0%{transform:translate(0,0) scale(1.02)}50%{transform:translate(-5px,-5px) scale(1.05)}100%{transform:translate(5px,5px) scale(1.02)}}.hero-content{position:relative;z-index:10;max-width:800px;margin:0 auto;padding:0 1.5rem}.hero-headline{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:1.5rem;font-weight:700;text-shadow:2px 2px 8px rgba(0,0,0,.8),0 0 16px rgba(10,59,92,.6);color:#fff}.hero-subheadline{font-size:clamp(1rem,2.5vw,1.25rem);line-height:1.6;margin-bottom:2rem;opacity:.9}.primary-cta{background-color:#2A7F83;color:#fff;border:2px solid #2A7F83;border-radius:25px;padding:15px 30px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:600;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.3),0 0 20px rgba(42,127,131,.4);min-height:56px}.primary-cta:hover{background-color:#236e72;border-color:#236e72;transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.4)}.secondary-cta{background-color:transparent!important;color:#fff!important;border:2px solid #fff!important;border-radius:25px;padding:15px 30px!important;text-decoration:none!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:.5rem!important;font-weight:600;transition:all .3s ease;box-shadow:0 6px 12px rgba(0,0,0,.3),0 0 20px rgba(255,255,255,.2);min-height:56px}.secondary-cta:hover{background-color:#fff!important;color:#2A7F83!important;transform:translateY(-2px)}.container{max-width:1200px;margin:0 auto;padding:0 1.5rem;width:100%;overflow-x:hidden}#contact{width:100%;overflow-x:hidden;position:relative}#contact .container{width:100%;max-width:1200px;margin:0 auto}#contact form{width:100%;max-width:600px;margin:0 auto;box-sizing:border-box}#contact button{width:auto;margin:0 auto;display:block;max-width:300px}.sticky-contact-bar{position:fixed!important;bottom:0!important;left:0!important;right:0!important;width:100%!important;max-width:100vw!important;z-index:1000!important;transform:translateY(0)!important;display:flex!important;justify-content:center!important;padding:1rem!important}.sticky-contact-bar>div{max-width:1200px;width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 1rem}body{padding-bottom:60px!important}@media (max-width:480px){.sticky-contact-bar{padding:0.5rem!important;font-size:0.875rem}.sticky-contact-bar a{padding:0.5rem 1rem!important;font-size:0.75rem!important}}@media (max-width:768px){.nav-container{padding:0 1rem;height:70px}.logo-img{height:2.5rem}.logo-text{font-size:1rem}body{padding-top:70px!important}.hero-section{min-height:80vh;padding:2rem 0}.primary-cta,.secondary-cta{padding:12px 24px;font-size:.9rem}}.fade-in{opacity:0;animation:fadeIn .3s ease-in-out forwards}@keyframes fadeIn{to{opacity:1}}img{height:auto;max-width:100%}
+        html{overflow-x:hidden;max-width:100%}
+        body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!important;margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#374151}
+        *{box-sizing:border-box}
+        #main-nav{background-color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;width:100%;z-index:50}
+        .hero-section{background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;width:100%;max-width:100vw;color:#fff}
+        .moving-background{position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);background-size:cover;background-position:center;z-index:0;animation:backgroundMove 40s ease-in-out infinite alternate}
+        .background-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,59,92,0.88) 0%,rgba(13,139,156,0.82) 100%);z-index:1}
+        .primary-cta{background-color:#2A7F83;color:#fff;border:2px solid #2A7F83;border-radius:6px;padding:14px 28px;transition:all .3s ease;font-weight:700;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+        .primary-cta:hover{background-color:#236e72;border-color:#236e72;transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.25)}
+        .secondary-cta{background-color:transparent;color:#fff;border:2px solid rgba(255,255,255,.75);border-radius:6px;padding:14px 28px;transition:all .3s ease;font-weight:600;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+        .secondary-cta:hover{background-color:#fff;color:#0a3b5c;border-color:#fff;transform:translateY(-2px)}
+        @keyframes backgroundMove{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,-1%)}}
+        .faq-answer{display:none}.faq-answer.open{display:block}
+        .faq-btn[aria-expanded="true"] .faq-icon{transform:rotate(180deg)}
+        .faq-icon{transition:transform .25s ease}
     </style>
-    
-    <title>AIniseFlow | AI Automation & Workflow Solutions for UK Small & Medium Businesses</title>
-    
-    <!-- Enhanced Schema.org markup for AI service business -->
+
+    <title>AIniseFlow | AI Booking &amp; Follow-Up Automation for UK Private Physiotherapy Clinics</title>
+
+    <!-- Schema.org – Service for UK Physio Clinic Automation -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechnologyCompany",
       "name": "AIniseFlow",
-      "alternateName": "AI Workflow Automation Solutions",
-      "description": "AI automation solutions and intelligent business process optimization for UK small & medium businesses.",
+      "description": "AI-powered booking, reminder, and follow-up automation for UK private physiotherapy clinics.",
       "url": "https://ainiseflow.com",
       "email": "info@ainiseflow.com",
       "logo": {
@@ -88,74 +102,25 @@ html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;pos
         "width": 400,
         "height": 400
       },
-      "image": "https://ainiseflow.com/AIniseFlow-Logo.png",
       "address": {
         "@type": "PostalAddress",
-        "addressCountry": "United Kingdom"
+        "addressCountry": "GB"
       },
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 54.7023545,
-          "longitude": -3.2765753
-        },
-        "geoRadius": "500km"
-      },
+      "areaServed": "GB",
       "foundingDate": "2024",
-      "numberOfEmployees": {
-        "@type": "QuantitativeValue",
-        "minValue": 1,
-        "maxValue": 50
-      },
-      "knowsAbout": [
-        "Artificial Intelligence",
-        "Process Automation",
-        "Workflow Optimization",
-        "Business Intelligence",
-        "Machine Learning",
-        "Chatbot Development",
-        "Small Business Solutions"
-      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "AI Automation Services",
+        "name": "Physio Clinic Automation Packages",
         "itemListElement": [
           {
             "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "AI Chatbot Implementation",
-              "description": "24/7 intelligent customer service automation with human-like conversations",
-              "serviceType": "AI Customer Support"
-            }
+            "name": "QuickStart",
+            "description": "Setup plus one core workflow engine and KPI baseline, delivered in 10–14 days."
           },
           {
             "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Workflow Automation",
-              "description": "AI-powered business process optimization and intelligent workflow orchestration",
-              "serviceType": "Process Flow Automation"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Predictive Analytics",
-              "description": "AI-powered insights for customer behavior prediction and business optimization",
-              "serviceType": "Business Intelligence"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Voice AI Solutions",
-              "description": "Voice-enabled AI assistants for appointment booking and customer service",
-              "serviceType": "Voice Automation"
-            }
+            "name": "Automation Ops",
+            "description": "Ongoing monthly monitoring, optimisation, and reporting for private physio clinics."
           }
         ]
       },
@@ -165,9 +130,8 @@ html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;pos
       ]
     }
     </script>
-    
-    <!-- Google Analytics 4 (GA4) Tracking Code -->
-    <!-- Replace GA_MEASUREMENT_ID with your actual Google Analytics 4 Measurement ID -->
+
+    <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKM102Q8H1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -175,706 +139,787 @@ html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;pos
       gtag('js', new Date());
       gtag('config', 'G-JKM102Q8H1', {
         send_page_view: true,
-        anonymize_ip: true, // GDPR compliance
-        allow_google_signals: true,
-        custom_map: {
-          'custom_parameter_1': 'business_type',
-          'custom_parameter_2': 'service_interest'
-        }
+        anonymize_ip: true
       });
-
-      // Enhanced conversion tracking functions
-      function trackContactSubmission(method) {
-        gtag('event', 'contact_form_submit', {
-          'event_category': 'engagement',
-          'event_label': method,
-          'value': 1
-        });
-      }
-
       function trackCTAClick(cta_name) {
-        gtag('event', 'cta_click', {
-          'event_category': 'conversion',
-          'event_label': cta_name,
-          'value': 1
-        });
+        gtag('event', 'cta_click', { 'event_category': 'conversion', 'event_label': cta_name, 'value': 1 });
+      }
+      function trackFormSubmit(method) {
+        gtag('event', 'contact_form_submit', { 'event_category': 'engagement', 'event_label': method, 'value': 1 });
       }
     </script>
 
-    <!-- Critical CSS inlined for faster rendering -->
-    <style>
-        /* Critical above-the-fold styles */
-        html{overflow-x:hidden;max-width:100%}body{overflow-x:hidden;max-width:100vw;position:relative;padding-top:80px!important;margin:0;font-family:system-ui,-apple-system,sans-serif}*{box-sizing:border-box}.hero-section{overflow:hidden;position:relative;width:100%;max-width:100vw;background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);min-height:100vh;display:flex;align-items:center}.container{max-width:100%;overflow-x:hidden;width:100%}nav{max-width:100vw}#main-nav{background-color:white;box-shadow:0 2px 4px rgba(0,0,0,0.1);position:fixed;top:0;left:0;right:0;width:100%;z-index:50}.moving-background{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0.1;z-index:1}.background-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,59,92,0.8) 0%,rgba(13,139,156,0.8) 100%);z-index:2}.primary-cta{background-color:#2A7F83;color:white;border:2px solid #2A7F83;border-radius:25px;padding:15px 30px;transition:all 0.3s ease;position:relative;font-weight:bold;box-shadow:0 6px 12px rgba(0,0,0,0.3),0 0 20px rgba(42,127,131,0.4)}.primary-cta:hover{background-color:#236e72;border-color:#236e72;transform:translateY(-2px);box-shadow:0 6px 8px rgba(0,0,0,0.25)}.hero-section .secondary-cta{background-color:transparent!important;color:white!important;border:2px solid white!important;border-radius:25px;padding:15px 30px!important;transition:all 0.3s ease;position:relative;font-weight:bold;box-shadow:0 6px 12px rgba(0,0,0,0.3),0 0 20px rgba(255,255,255,0.2);font-size:1rem;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:0.5rem!important;text-decoration:none!important;min-height:56px}.hero-section .secondary-cta:hover{background-color:white!important;color:#2A7F83!important;border-color:white!important;transform:translateY(-2px);box-shadow:0 6px 8px rgba(0,0,0,0.25)}
-    </style>
-
-    <!-- Load non-critical CSS asynchronously -->
-    <link rel="preload" href="styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
-    
-    <!-- Load external resources with performance optimizations -->
-    <script async src="https://cdn.tailwindcss.com"></script>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Performance optimizations script -->
+    <!-- Scripts -->
     <script src="performance-optimizations.js" defer></script>
-    
-    <!-- Load main scripts normally -->
     <script src="scripts.js" defer></script>
-    
-    <!-- Advanced form handling and lead generation - DISABLED TO FIX DUPLICATE PROGRESS -->
-    <!-- <script src="advanced-forms.js" defer></script> -->
-    
-    <!-- Simple fix for sticky contact bar -->
     <script>
-        // Disable sticky contact bar to fix layout issues
         document.addEventListener('DOMContentLoaded', function() {
-            // Disable lead magnets that cause CTA positioning issues
             window.LeadMagnetManager = { init: function() {}, show: function() {} };
         });
     </script>
 </head>
 <body class="font-sans antialiased text-gray-800">
-    <div style="display: none; height: 0; overflow: hidden; position: absolute; left: -9999px;"><!-- title barrier --></div>
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav">
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav" aria-label="Main navigation">
         <div class="container mx-auto px-4 md:px-6">
             <div class="flex justify-between items-center py-3">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-3" aria-label="AIniseFlow homepage">
                         <picture>
                             <source srcset="AIniseFlow-Logo.webp" type="image/webp">
                             <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="h-12 md:h-14 w-auto" width="56" height="56" loading="eager">
                         </picture>
-                        <span class="text-xl md:text-2xl font-bold whitespace-nowrap"><span class="text-[#0a3b5c]">AInise</span><span class="text-[#0d8b9c]">Flow</span></span>
+                        <span class="text-xl md:text-2xl font-bold whitespace-nowrap">
+                            <span class="text-[#0a3b5c]">AInise</span><span class="text-[#0d8b9c]">Flow</span>
+                        </span>
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
-                    <a href="ai-automation-services.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
-                    <a href="ai-restaurant-solutions.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Industries</a>
-                    <a href="web-design-addon.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Web Design</a>
-                    <a href="blog.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Blog</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
+
+                <!-- Desktop nav links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="ai-physio-clinic-automation.html" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Private Physio Clinics</a>
+                    <a href="ai-physio-clinic-automation.html#how-it-works" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
+                    <a href="ai-physio-clinic-automation.html#quickstart" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
+                    <a href="blog.html" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Blog</a>
+                    <a href="ai-physio-clinic-automation.html#book" class="nav-link bg-[#2A7F83] text-white px-4 py-2 rounded-md hover:bg-[#236e72] transition-colors font-medium text-sm" onclick="trackCTAClick('nav_book_audit')">Book Audit</a>
                 </div>
+
+                <!-- Mobile hamburger -->
                 <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] p-2 rounded-md" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
                     </button>
                 </div>
             </div>
-            
+
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <div class="pt-4 space-y-1">
-                    <a href="#home" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Home</a>
-                    <a href="ai-automation-services.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">AI Solutions</a>
-                    <a href="ai-restaurant-solutions.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Industries</a>
-                    <a href="web-design-addon.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Web Design</a>
+            <div id="mobile-menu" class="hidden md:hidden pb-4" role="navigation" aria-label="Mobile navigation">
+                <div class="pt-2 space-y-1 border-t border-gray-100 mt-2">
+                    <a href="ai-physio-clinic-automation.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Private Physio Clinics</a>
+                    <a href="ai-physio-clinic-automation.html#how-it-works" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
+                    <a href="ai-physio-clinic-automation.html#quickstart" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
                     <a href="blog.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Blog</a>
-                    <a href="#contact" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Contact</a>
+                    <a href="ai-physio-clinic-automation.html#book" class="nav-link block py-3 px-2 text-[#2A7F83] font-semibold" onclick="trackCTAClick('mobile_nav_book_audit')">Book Audit →</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section text-white py-20">
-        <!-- Moving Background Image -->
-        <div class="moving-background" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/6b0fa0934b4f5682f76defa26a5f633a');"></div>
-        
-        <!-- Background Overlay -->
-        <div class="background-overlay"></div>
-        
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-on-scroll hero-headline">
-                AI Workflow Automation for <span class="text-accent">Seamless Business Flow</span>
-            </h1>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-on-scroll hero-subheadline">
-                Transform your UK small business with intelligent workflow automation. Optimize process flows, reduce operational friction, and deliver exceptional efficiency with AI-powered solutions designed for seamless business operations.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
-                <a href="#contact" class="primary-cta font-bold py-4 px-8 rounded-full transition duration-300 bg-[#2A7F83] text-white hover:bg-[#236e72] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2" onclick="trackCTAClick('start_ai_journey')">
-                    <i class="fas fa-robot mr-2"></i>Start Your AI Journey
-                </a>
-                <a href="ai-automation-services.html" class="secondary-cta" onclick="trackCTAClick('explore_ai_solutions')">
-                    <i class="fas fa-cog"></i>
-                    <i class="fas fa-cog"></i>
-                    <span>Explore AI Solutions</span>
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- AI Solutions Overview -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">AI-Powered Workflow Transformation</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">Discover how AI-driven workflow automation can streamline your business processes, optimize operational flows, and accelerate growth through intelligent process management.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- AI Chatbots -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
-                        <i class="fas fa-comments text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">AI Customer Support</h3>
-                    <p class="text-gray-600 text-center mb-4">24/7 intelligent chatbots that handle customer inquiries, bookings, and support requests with human-like conversations.</p>
-                    <ul class="text-sm text-gray-600 space-y-1 text-center">
-                        <li>• Instant customer responses</li>
-                        <li>• Multi-language support</li>
-                        <li>• Lead qualification & capture</li>
-                        <li>• Seamless human handoff</li>
-                    </ul>
-                </div>
-                
-                <!-- Workflow Automation -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
-                        <i class="fas fa-project-diagram text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Intelligent Process Flow Automation</h3>
-                    <p class="text-gray-600 text-center mb-4">AI-driven process flow automation that learns and adapts to optimize your business workflows seamlessly.</p>
-                    <ul class="text-sm text-gray-600 space-y-1 text-center">
-                        <li>• Seamless process flow automation</li>
-                        <li>• Intelligent workflow orchestration</li>
-                        <li>• Predictive flow optimization</li>
-                        <li>• End-to-end process integration</li>
-                    </ul>
-                </div>
-                
-                <!-- AI Analytics -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Predictive Analytics</h3>
-                    <p class="text-gray-600 text-center mb-4">AI-powered insights that predict customer behavior, optimize inventory, and identify growth opportunities.</p>
-                    <ul class="text-sm text-gray-600 space-y-1 text-center">
-                        <li>• Customer behavior prediction</li>
-                        <li>• Sales forecasting</li>
-                        <li>• Inventory optimization</li>
-                        <li>• Market trend analysis</li>
-                    </ul>
-                </div>
-                
-                <!-- AI Marketing -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
-                        <i class="fas fa-bullseye text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Intelligent Marketing</h3>
-                    <p class="text-gray-600 text-center mb-4">AI-powered marketing automation that personalizes campaigns and optimizes conversions in real-time.</p>
-                    <ul class="text-sm text-gray-600 space-y-1 text-center">
-                        <li>• Personalized email campaigns</li>
-                        <li>• Dynamic content optimization</li>
-                        <li>• Automated social media</li>
-                        <li>• ROI optimization</li>
-                    </ul>
-                </div>
-                
-                <!-- AI Voice Assistant -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
-                        <i class="fas fa-microphone text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Voice AI Solutions</h3>
-                    <p class="text-gray-600 text-center mb-4">Voice-enabled AI assistants for appointment booking, order processing, and customer service calls.</p>
-                    <ul class="text-sm text-gray-600 space-y-1 text-center">
-                        <li>• Automated phone handling</li>
-                        <li>• Voice appointment booking</li>
-                        <li>• Natural language processing</li>
-                        <li>• Call analytics & insights</li>
-                    </ul>
-                </div>
-                
-                <!-- AI Document Processing -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll hover:shadow-xl transition-shadow duration-300">
-                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style="background: linear-gradient(to right, #0d8b9c, #0a3b5c);">
-                        <i class="fas fa-file-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Document Intelligence</h3>
-                    <p class="text-gray-600 text-center mb-4">AI-powered document processing that extracts, categorizes, and processes business documents automatically.</p>
-                    <ul class="text-sm text-gray-600 space-y-1 text-center">
-                        <li>• Automated data extraction</li>
-                        <li>• Invoice processing</li>
-                        <li>• Document classification</li>
-                        <li>• Compliance monitoring</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- =========================================================
+         A) HERO SECTION
+    ========================================================== -->
+    <section id="home" class="hero-section py-20 md:py-28">
+        <div class="moving-background" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/6b0fa0934b4f5682f76defa26a5f633a');" aria-hidden="true"></div>
+        <div class="background-overlay" aria-hidden="true"></div>
 
-    <!-- Why Choose AI Automation -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Why SMBs Choose AI Automation</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">Transform your business with the power of artificial intelligence</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Cost Savings -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-piggy-bank text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Reduce Operating Costs</h3>
-                    <p class="text-gray-600 text-center">Save up to 40% on operational costs through intelligent automation that works 24/7 without breaks.</p>
-                </div>
-                
-                <!-- Efficiency -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-rocket text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">10x Faster Operations</h3>
-                    <p class="text-gray-600 text-center">Automate repetitive tasks and processes to focus your team on high-value activities that grow your business.</p>
-                </div>
-                
-                <!-- Customer Experience -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-heart text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Enhanced Customer Experience</h3>
-                    <p class="text-gray-600 text-center">Provide instant, personalized service that delights customers and builds lasting relationships.</p>
-                </div>
-                
-                <!-- Scalability -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-expand-arrows-alt text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Scale Without Limits</h3>
-                    <p class="text-gray-600 text-center">AI solutions grow with your business, handling increased workload without proportional cost increases.</p>
-                </div>
-                
-                <!-- Data Insights -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-brain text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Intelligent Decision Making</h3>
-                    <p class="text-gray-600 text-center">Make data-driven decisions with AI-powered insights and predictive analytics tailored to your business.</p>
-                </div>
-                
-                <!-- Competitive Advantage -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i class="fas fa-trophy text-primary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3 text-center">Stay Ahead of Competition</h3>
-                    <p class="text-gray-600 text-center">Leverage cutting-edge AI technology to differentiate your business and capture market opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-sm font-semibold tracking-widest uppercase text-[#7ee8f0] mb-4 animate-on-scroll">Built for UK Private Physiotherapy Clinics</p>
 
-    <!-- Industry Solutions -->
-    <section id="ai-solutions" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">AI Solutions by Industry</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">Specialized AI automation tailored for your industry's unique challenges</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <!-- Healthcare & Wellness -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden industry-card group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://page.gensparksite.com/v1/base64_upload/8a75ca088449ab1dec79a21defed6f93" alt="Healthcare AI Solutions" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-secondary mb-3">Healthcare & Wellness</h3>
-                        <p class="text-gray-600 mb-4">AI-powered patient scheduling, automated follow-ups, and intelligent health monitoring systems for healthcare providers.</p>
-                        <a href="ai-healthcare-solutions.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors duration-300 font-semibold">
-                            Learn More <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Professional Services -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden industry-card group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Professional Services AI Solutions" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-secondary mb-3">Professional Services</h3>
-                        <p class="text-gray-600 mb-4">Automated client onboarding, intelligent document processing, and AI-driven project management for service professionals.</p>
-                        <a href="ai-professional-services.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors duration-300 font-semibold">
-                            Learn More <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Restaurant & Hospitality -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden industry-card group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Restaurant AI Solutions" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-secondary mb-3">Restaurant & Hospitality</h3>
-                        <p class="text-gray-600 mb-4">Smart reservation systems, automated inventory management, and AI-powered customer service for hospitality businesses.</p>
-                        <a href="ai-restaurant-solutions.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors duration-300 font-semibold">
-                            Learn More <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Retail & E-commerce -->
-                <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden industry-card group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Retail AI Solutions" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-secondary mb-3">Retail & E-commerce</h3>
-                        <p class="text-gray-600 mb-4">Intelligent inventory management, personalized shopping experiences, and automated customer support for retailers.</p>
-                        <a href="ai-retail-solutions.html" class="inline-flex items-center text-primary hover:text-secondary transition-colors duration-300 font-semibold">
-                            Learn More <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight animate-on-scroll text-white">
+                    AI-powered booking &amp; follow-up for UK private physiotherapy clinics
+                </h1>
 
-    <!-- Process Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Our AI Workflow Implementation Process</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">From consultation to deployment, we ensure seamless AI workflow integration that optimizes your business process flows</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <!-- Consultation -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="flex items-start">
-                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                            <span class="font-bold">1</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-secondary mb-3">AI Consultation</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Analyze your business processes</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Identify automation opportunities</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Define AI solution roadmap</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <p class="text-lg md:text-xl mb-10 text-gray-200 max-w-2xl mx-auto animate-on-scroll leading-relaxed">
+                    Reduce admin, cut no&#8209;shows, and convert more enquiries into attended appointments&mdash;without hiring more reception hours.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 animate-on-scroll">
+                    <a href="/ai-physio-clinic-automation.html#book"
+                       class="primary-cta text-base"
+                       onclick="trackCTAClick('hero_book_audit')">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        Book a 15&#8209;min Clinic Automation Audit
+                    </a>
+                    <a href="/ai-physio-clinic-automation.html#how-it-works"
+                       class="secondary-cta text-base"
+                       onclick="trackCTAClick('hero_see_how')">
+                        <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        See how it works
+                    </a>
                 </div>
-                
-                <!-- Strategy -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="flex items-start">
-                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                            <span class="font-bold">2</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-secondary mb-3">AI Strategy Design</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Custom AI solution architecture</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Integration planning</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>ROI projections & timelines</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Development -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="flex items-start">
-                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                            <span class="font-bold">3</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-secondary mb-3">AI Development</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Build & train AI models</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>System integration & testing</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Quality assurance & optimization</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Launch & Support -->
-                <div class="bg-white rounded-lg shadow-lg p-6 animate-on-scroll">
-                    <div class="flex items-start">
-                        <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
-                            <span class="font-bold">4</span>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-secondary mb-3">Launch & Optimize</h3>
-                            <ul class="space-y-3">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Deployment & staff training</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Performance monitoring</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>Continuous improvement</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bg-accent p-6 rounded-lg shadow-md max-w-3xl mx-auto mt-12 animate-on-scroll">
-                <p class="text-lg flex items-start">
-                    <span class="text-primary mr-2">⚡</span>
-                    <span><strong>Fast Implementation:</strong> Most AI solutions deployed within 2-6 weeks depending on complexity and integration requirements.</span>
+
+                <p class="mt-8 text-sm text-gray-300 animate-on-scroll">
+                    No obligation &middot; 15 minutes &middot; UK clinics only
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-primary text-white">
+
+    <!-- =========================================================
+         B) BUILT FOR PHYSIO CLINICS (replaces generic industry grid)
+    ========================================================== -->
+    <section id="ai-solutions" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 animate-on-scroll">Ready to Transform Your Business with AI?</h2>
-                <p class="text-xl max-w-3xl mx-auto animate-on-scroll">Get started with a free AI automation consultation and discover how artificial intelligence can revolutionize your operations.</p>
-            </div>
-            
-            <div class="max-w-2xl mx-auto">
-                <form action="https://formspree.io/f/mpwdodpp" method="POST" class="bg-white rounded-lg shadow-lg p-8 text-gray-800">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+            <div class="max-w-4xl mx-auto">
+
+                <!-- Primary card: Physio-focused -->
+                <div class="bg-gradient-to-br from-[#0a3b5c] to-[#0d8b9c] rounded-2xl p-8 md:p-12 text-white shadow-xl mb-6 animate-on-scroll">
+                    <div class="flex flex-col md:flex-row md:items-start gap-8">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                                <i class="fas fa-clinic-medical text-white text-2xl" aria-hidden="true"></i>
+                            </div>
                         </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
-                            <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="industry" class="block text-sm font-medium text-gray-700 mb-2">Industry</label>
-                            <select id="industry" name="industry" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                                <option value="">Select your industry</option>
-                                <option value="restaurant">Restaurant & Hospitality</option>
-                                <option value="healthcare">Healthcare & Wellness</option>
-                                <option value="professional">Professional Services</option>
-                                <option value="retail">Retail & E-commerce</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label for="ai-interest" class="block text-sm font-medium text-gray-700 mb-2">Which AI solutions interest you most?</label>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <label class="flex items-center">
-                                <input type="checkbox" name="ai-solutions[]" value="chatbot" class="mr-2">
-                                <span>AI Customer Support Chatbots</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" name="ai-solutions[]" value="workflow" class="mr-2">
-                                <span>Workflow Automation</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" name="ai-solutions[]" value="analytics" class="mr-2">
-                                <span>Predictive Analytics</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" name="ai-solutions[]" value="marketing" class="mr-2">
-                                <span>AI Marketing Automation</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" name="ai-solutions[]" value="voice" class="mr-2">
-                                <span>Voice AI Solutions</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" name="ai-solutions[]" value="documents" class="mr-2">
-                                <span>Document Intelligence</span>
-                            </label>
+                        <div class="flex-1">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4">Built for Private Physio Clinics</h2>
+                            <p class="text-gray-200 text-lg leading-relaxed mb-6">
+                                Private physiotherapy runs on appointments. Every missed enquiry, every DNA, every patient who doesn't rebook costs you real revenue. Our <a href="/ai-physio-clinic-automation.html" class="text-[#7ee8f0] underline underline-offset-2 hover:text-white font-semibold">private physio clinic automation</a> handles enquiries, confirmations, appointment reminders, and follow-ups — so your clinicians can focus on patients, not admin.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-[#7ee8f0]" aria-hidden="true"></i>
+                                    <span class="text-gray-200">Instant enquiry response</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-[#7ee8f0]" aria-hidden="true"></i>
+                                    <span class="text-gray-200">Automated appointment reminders</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-[#7ee8f0]" aria-hidden="true"></i>
+                                    <span class="text-gray-200">Post-visit follow-up &amp; rebooking</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-[#7ee8f0]" aria-hidden="true"></i>
+                                    <span class="text-gray-200">Dormant patient reactivation</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-[#7ee8f0]" aria-hidden="true"></i>
+                                    <span class="text-gray-200">GDPR-compliant consent flows</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-check-circle text-[#7ee8f0]" aria-hidden="true"></i>
+                                    <span class="text-gray-200">No new software to learn</span>
+                                </div>
+                            </div>
+                            <a href="/ai-physio-clinic-automation.html#book"
+                               class="inline-flex items-center gap-2 bg-white text-[#0a3b5c] font-bold py-3 px-7 rounded-md hover:bg-gray-100 transition-colors"
+                               onclick="trackCTAClick('physio_card_book_audit')">
+                                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                                Book a Free Clinic Audit
+                            </a>
                         </div>
                     </div>
-                    
-                    <div class="mb-6">
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Tell us about your business challenges</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Describe your current processes and what you'd like to automate..."></textarea>
-                    </div>
-                    
-                    <div class="text-center">
-                        <button type="submit" class="bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-secondary transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                            <i class="fas fa-robot mr-2"></i>Get Free AI Consultation
-                        </button>
-                    </div>
-                </form>
+                </div>
+
+                <!-- Secondary: Other industries (de-emphasised) -->
+                <p class="text-center text-sm text-gray-500 animate-on-scroll">
+                    We also work with other appointment-based healthcare businesses.
+                    <a href="ai-automation-services.html" class="text-[#2A7F83] hover:underline font-medium ml-1">See all services &rarr;</a>
+                </p>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#1e3a5f] text-white py-12">
+
+    <!-- =========================================================
+         C1) WHAT THIS FIXES
+    ========================================================== -->
+    <section id="problems" class="py-16 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Column 1: Company Info -->
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <div class="flex items-center gap-3 mb-6">
-                        <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="h-12 sm:h-12 h-8 w-auto min-w-8 max-w-8 sm:min-w-12 sm:max-w-12" width="48" height="48" loading="lazy">
-                        <h3 class="text-xl font-bold sm:text-xl text-base whitespace-nowrap"><span class="text-white">AInise</span><span class="text-[#0d8b9c]">Flow</span></h3>
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What this fixes</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Three operational problems that eat into clinic revenue every single week.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-md p-8 animate-on-scroll border-t-4 border-[#0d8b9c]">
+                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6"
+                         style="background:linear-gradient(135deg,#0d8b9c,#0a3b5c)">
+                        <i class="fas fa-hourglass-half text-white text-xl" aria-hidden="true"></i>
                     </div>
-                    <p class="text-gray-300 mb-6 leading-relaxed">Transforming UK small businesses with intelligent AI automation and seamless workflow solutions that drive growth and operational excellence.</p>
-                    
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/share/1B1i9xa3N6/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
-                            <i class="fab fa-facebook-f text-xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/ainiseflow?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#2dd4bf] transition-colors duration-300">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Slow enquiry response</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        A new patient enquires, then books with whoever replies first. If your clinic doesn't respond within the hour&mdash;especially outside reception hours&mdash;that patient is gone. Automation handles the instant acknowledgement and booking link, even at 10 pm.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-md p-8 animate-on-scroll border-t-4 border-[#0d8b9c]">
+                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6"
+                         style="background:linear-gradient(135deg,#0d8b9c,#0a3b5c)">
+                        <i class="fas fa-user-slash text-white text-xl" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">DNAs &amp; late cancellations</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Did-not-attends and last-minute cancellations leave appointment slots empty with no time to fill them. A structured <a href="/ai-physio-clinic-automation.html#how-it-works" class="text-[#2A7F83] hover:underline font-medium">appointment reminder sequence</a>&mdash;sent at the right intervals before the appointment&mdash;gives patients enough notice to reschedule while there's still time to fill the gap.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-md p-8 animate-on-scroll border-t-4 border-[#0d8b9c]">
+                    <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6"
+                         style="background:linear-gradient(135deg,#0d8b9c,#0a3b5c)">
+                        <i class="fas fa-tasks text-white text-xl" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Manual chasing</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Reminders, rebooking prompts, discharge follow-ups, review requests&mdash;all valuable, all time-consuming to do manually. Your reception time is better spent on patient-facing work. Automation runs these sequences consistently, without anyone having to remember.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         C2) THE PHYSIO APPOINTMENT & FOLLOW-UP SYSTEM
+    ========================================================== -->
+    <section id="system" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">The Physio Appointment &amp; Follow&#8209;Up System</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        A connected set of automated workflows covering the full patient journey&mdash;from first enquiry to long-term retention.
+                    </p>
+                </div>
+
+                <div class="space-y-5 animate-on-scroll">
+
+                    <!-- Item 1 -->
+                    <div class="flex items-start gap-5 bg-gray-50 rounded-xl p-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                             style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c)">1</div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">Enquiry capture &rarr; instant reply &rarr; booking link</h3>
+                            <p class="text-gray-600">When a new patient contacts your clinic&mdash;by web form, email, or social message&mdash;they receive an immediate, personalised response acknowledging their enquiry and presenting a direct link to book their first appointment. No waiting until tomorrow morning.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex items-start gap-5 bg-gray-50 rounded-xl p-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                             style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c)">2</div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">Confirmations &amp; reminder sequences</h3>
+                            <p class="text-gray-600">Once an appointment is booked, a confirmation goes out immediately. Automated reminders follow at set intervals (typically 48 hours and 2 hours before the appointment), giving patients the chance to reschedule if they can't attend&mdash;rather than simply not showing up.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex items-start gap-5 bg-gray-50 rounded-xl p-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                             style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c)">3</div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">Post-visit follow-up &amp; rebooking prompts</h3>
+                            <p class="text-gray-600">After each session, a short follow-up message checks in with the patient and, where appropriate, prompts them to book their next appointment. This keeps treatment continuity high and reduces the gap between sessions caused by patients forgetting to rebook.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex items-start gap-5 bg-gray-50 rounded-xl p-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                             style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c)">4</div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">Reactivation for dormant patients</h3>
+                            <p class="text-gray-600">Patients who haven't visited in 3, 6, or 12 months receive a friendly, non-intrusive re-engagement message. Many clinics find this alone brings back patients who had simply forgotten to come back&mdash;no advertising spend required.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="flex items-start gap-5 bg-gray-50 rounded-xl p-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                             style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c)">5</div>
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">Review requests (after positive outcomes)</h3>
+                            <p class="text-gray-600">Where a patient has completed a course of treatment and expressed satisfaction, an automated message invites them to leave a review on your chosen platform. Timing and wording are kept appropriate to a clinical context&mdash;no pressure, no medical claims.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         C3) HOW IT WORKS (3 steps)
+    ========================================================== -->
+    <section id="how-it-works" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">How it works</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Three straightforward phases from first conversation to ongoing automation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                <!-- Step 1 -->
+                <div class="relative animate-on-scroll">
+                    <div class="bg-white rounded-xl shadow-md p-8 h-full">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 text-white font-bold text-2xl"
+                             style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c)">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div class="inline-block bg-[#e8f7f8] text-[#0a3b5c] text-xs font-bold tracking-wider px-3 py-1 rounded-full mb-4 uppercase">Step 1</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Audit</h3>
+                        <p class="text-gray-600 leading-relaxed">We spend 15 minutes on a call with you to understand your current enquiry and appointment flow, where patients are dropping off, and what your reception team spends the most time on. No forms to fill in beforehand&mdash;we just talk through it.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 w-8 text-[#0d8b9c] text-2xl font-bold z-10" aria-hidden="true">›</div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative animate-on-scroll">
+                    <div class="bg-white rounded-xl shadow-md p-8 h-full">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 text-white font-bold text-2xl"
+                             style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c)">
+                            <i class="fas fa-cogs" aria-hidden="true"></i>
+                        </div>
+                        <div class="inline-block bg-[#e8f7f8] text-[#0a3b5c] text-xs font-bold tracking-wider px-3 py-1 rounded-full mb-4 uppercase">Step 2</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Install</h3>
+                        <p class="text-gray-600 leading-relaxed">We build and connect the automation workflows to your existing booking system and communication channels. You don't need new software&mdash;we work with what you already use. Most setups are live within 10–14 days. We test everything before handover.</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 w-8 text-[#0d8b9c] text-2xl font-bold z-10" aria-hidden="true">›</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="animate-on-scroll">
+                    <div class="bg-white rounded-xl shadow-md p-8 h-full">
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 text-white font-bold text-2xl"
+                             style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c)">
+                            <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                        </div>
+                        <div class="inline-block bg-[#e8f7f8] text-[#0a3b5c] text-xs font-bold tracking-wider px-3 py-1 rounded-full mb-4 uppercase">Step 3</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Operate &amp; improve</h3>
+                        <p class="text-gray-600 leading-relaxed">Once live, the system runs on its own. On a monthly retainer we monitor performance, adjust messaging and timing based on what the data shows, and report back to you on the metrics that matter: enquiry conversion rate, DNA rate, and rebooking rate.</p>
                     </div>
                 </div>
-                
-                <!-- Column 2: AI Solutions -->
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">AI Solutions</h4>
-                    <div class="text-sm space-y-2">
-                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">AI Customer Support</a>
-                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Workflow Automation</a>
-                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Predictive Analytics</a>
-                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Marketing Automation</a>
-                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Voice AI Solutions</a>
-                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Document Intelligence</a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         C4) PACKAGES
+    ========================================================== -->
+    <section id="packages" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Packages</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Two clear options depending on where you are right now.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+                <!-- QuickStart -->
+                <div class="bg-white border-2 border-[#0d8b9c] rounded-2xl p-8 shadow-lg animate-on-scroll flex flex-col">
+                    <div class="mb-6">
+                        <div class="inline-block bg-[#e8f7f8] text-[#0a3b5c] text-xs font-bold tracking-wider px-3 py-1 rounded-full mb-4 uppercase">One-off setup</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-1">QuickStart</h3>
+                        <p class="text-sm text-gray-500 mb-4">Delivered in 10–14 days</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Everything you need to go from zero automation to a working system in under a fortnight. Ideal if you want to see results quickly and prove the concept before committing to ongoing support.
+                        </p>
                     </div>
-                </div>
-                
-                <!-- Column 3: Industries -->
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Industries</h4>
-                    <div class="text-sm space-y-2">
-                        <a href="ai-restaurant-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Restaurants & Hospitality</a>
-                        <a href="ai-healthcare-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Healthcare & Wellness</a>
-                        <a href="ai-professional-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Professional Services</a>
-                        <a href="ai-retail-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Retail & E-commerce</a>
-                        <a href="web-design-addon.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Web Design Services</a>
-                        <a href="blog.html" class="block text-gray-300 hover:text-white transition-colors duration-300">AI Insights Blog</a>
-                    </div>
-                </div>
-                
-                <!-- Column 4: Contact -->
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Get Started</h4>
-                    <p class="text-gray-300 mb-6">Ready to revolutionize your business with AI automation?</p>
-                    <a href="#contact" class="inline-block bg-[#2dd4bf] text-[#1e3a5f] font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
-                        <i class="fas fa-robot mr-2"></i>Free AI Consultation
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#0d8b9c] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-700">Clinic workflow audit &amp; mapping</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#0d8b9c] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-700">One core workflow engine (your choice: enquiry response, reminder sequence, or post-visit follow-up)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#0d8b9c] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-700">Integration with your existing booking system and email/SMS channel</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#0d8b9c] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-700">KPI baseline report (so you know what's improving)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#0d8b9c] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-700">Handover session &amp; documentation</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                       class="block text-center bg-[#0a3b5c] text-white font-bold py-3 px-6 rounded-md hover:bg-[#0d2e46] transition-colors"
+                       onclick="trackCTAClick('quickstart_enquire')">
+                        Enquire about QuickStart
                     </a>
-                    
-                    <div class="mt-6 text-sm text-gray-300">
-                        <p><i class="fas fa-envelope mr-2"></i>info@ainiseflow.com</p>
+                </div>
+
+                <!-- Automation Ops -->
+                <div class="bg-gradient-to-br from-[#0a3b5c] to-[#0d8b9c] rounded-2xl p-8 shadow-xl animate-on-scroll text-white flex flex-col relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-white text-[#0a3b5c] text-xs font-bold px-3 py-1 rounded-full">Most popular</span>
+                    </div>
+                    <div class="mb-6">
+                        <div class="inline-block bg-white bg-opacity-20 text-white text-xs font-bold tracking-wider px-3 py-1 rounded-full mb-4 uppercase">Monthly retainer</div>
+                        <h3 class="text-2xl font-bold mb-1">Automation Ops</h3>
+                        <p class="text-sm text-gray-300 mb-4">Ongoing partnership</p>
+                        <p class="text-gray-200 leading-relaxed">
+                            For clinics that want the full system running&mdash;and improving&mdash;month after month, without having to manage it themselves. We handle the monitoring, tweaks, and reporting.
+                        </p>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#7ee8f0] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-200">Everything in QuickStart</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#7ee8f0] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-200">Full workflow suite (all five automation sequences)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#7ee8f0] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-200">Monthly performance monitoring &amp; optimisation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#7ee8f0] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-200">Monthly reporting cadence (enquiry conversion, DNA rate, rebooking rate)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#7ee8f0] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-200">Priority support &amp; workflow adjustments</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-[#7ee8f0] mt-1 flex-shrink-0" aria-hidden="true"></i>
+                            <span class="text-gray-200">Quarterly strategy review call</span>
+                        </li>
+                    </ul>
+                    <a href="#contact"
+                       class="block text-center bg-white text-[#0a3b5c] font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition-colors"
+                       onclick="trackCTAClick('automation_ops_enquire')">
+                        Enquire about Automation Ops
+                    </a>
+                </div>
+
+            </div>
+
+            <p class="text-center text-sm text-gray-500 mt-8 animate-on-scroll">
+                Pricing is discussed on the audit call and tailored to your clinic size and setup. We don't list fixed prices here because the right scope varies—and we'd rather have an honest conversation than publish a number that doesn't fit your situation.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         C5) FAQ
+    ========================================================== -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently asked questions</h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-3 animate-on-scroll" id="faq-list">
+
+                <!-- Q1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center font-semibold text-gray-800 hover:text-[#0d8b9c] transition-colors"
+                            aria-expanded="false" aria-controls="faq-1">
+                        <span>How do you handle GDPR and patient consent?</span>
+                        <i class="fas fa-chevron-down faq-icon text-gray-400 flex-shrink-0 ml-4" aria-hidden="true"></i>
+                    </button>
+                    <div id="faq-1" class="faq-answer px-6 pb-5 text-gray-600 leading-relaxed">
+                        <p>We design all communication flows in line with UK GDPR requirements. Patients are only contacted through channels they have consented to, using your existing consent records from your booking system. We don't store patient data ourselves&mdash;messages are sent through your own channels or systems you already control. We can walk through our approach in detail on the audit call.</p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center font-semibold text-gray-800 hover:text-[#0d8b9c] transition-colors"
+                            aria-expanded="false" aria-controls="faq-2">
+                        <span>How long does it take to get set up?</span>
+                        <i class="fas fa-chevron-down faq-icon text-gray-400 flex-shrink-0 ml-4" aria-hidden="true"></i>
+                    </button>
+                    <div id="faq-2" class="faq-answer px-6 pb-5 text-gray-600 leading-relaxed">
+                        <p>The QuickStart package typically goes live within 10–14 days from the point you confirm you want to proceed. The exact timeline depends on how quickly we can access your existing systems and test the integrations. Most clinics see their first automated messages going out within two weeks.</p>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center font-semibold text-gray-800 hover:text-[#0d8b9c] transition-colors"
+                            aria-expanded="false" aria-controls="faq-3">
+                        <span>What do I need to have in place before starting?</span>
+                        <i class="fas fa-chevron-down faq-icon text-gray-400 flex-shrink-0 ml-4" aria-hidden="true"></i>
+                    </button>
+                    <div id="faq-3" class="faq-answer px-6 pb-5 text-gray-600 leading-relaxed">
+                        <p>You need an online booking system (we work with most common ones used by UK physio clinics), a way to communicate with patients by email or SMS, and basic consent records in place. You don't need any specific software beyond that. We'll confirm compatibility on the audit call before you commit to anything.</p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center font-semibold text-gray-800 hover:text-[#0d8b9c] transition-colors"
+                            aria-expanded="false" aria-controls="faq-4">
+                        <span>Which booking or practice management systems do you integrate with?</span>
+                        <i class="fas fa-chevron-down faq-icon text-gray-400 flex-shrink-0 ml-4" aria-hidden="true"></i>
+                    </button>
+                    <div id="faq-4" class="faq-answer px-6 pb-5 text-gray-600 leading-relaxed">
+                        <p>We work with a range of booking and practice management tools used by UK clinics. The specifics depend on your setup&mdash;we assess this on the audit call rather than publishing a fixed list, because integrations vary and we want to give you an accurate answer rather than a generic one. If you're using something niche, we'll tell you honestly whether we can connect to it.</p>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center font-semibold text-gray-800 hover:text-[#0d8b9c] transition-colors"
+                            aria-expanded="false" aria-controls="faq-5">
+                        <span>Is this only for physiotherapy clinics?</span>
+                        <i class="fas fa-chevron-down faq-icon text-gray-400 flex-shrink-0 ml-4" aria-hidden="true"></i>
+                    </button>
+                    <div id="faq-5" class="faq-answer px-6 pb-5 text-gray-600 leading-relaxed">
+                        <p>Our current focus is private physiotherapy clinics in the UK&mdash;that's where we have built the most relevant workflow templates and where we understand the operational patterns well. If you run a related appointment-based healthcare practice (osteopathy, sports therapy, occupational health), it's worth having a conversation&mdash;the underlying approach is often transferable. We're not the right fit for general GP practices or NHS settings.</p>
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center font-semibold text-gray-800 hover:text-[#0d8b9c] transition-colors"
+                            aria-expanded="false" aria-controls="faq-6">
+                        <span>How does pricing work?</span>
+                        <i class="fas fa-chevron-down faq-icon text-gray-400 flex-shrink-0 ml-4" aria-hidden="true"></i>
+                    </button>
+                    <div id="faq-6" class="faq-answer px-6 pb-5 text-gray-600 leading-relaxed">
+                        <p>We discuss pricing on the audit call rather than publishing fixed figures, because the right setup varies by clinic size, number of practitioners, existing software, and how many workflows you need. What we can tell you is that we offer a one-off QuickStart fee for the initial setup, and a fixed monthly retainer for ongoing Automation Ops. There are no hidden usage charges or per-message fees on top.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         C6) FINAL CTA BLOCK
+    ========================================================== -->
+    <section id="contact" class="py-16 bg-[#0a3b5c]">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-3xl font-bold text-white mb-4">Ready to see how this would work for your clinic?</h2>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                        Book a 15-minute audit call. We'll look at your current enquiry and appointment flow, identify the biggest gaps, and tell you honestly what automation would and wouldn't help. No sales pitch—just a practical conversation.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+                    <!-- Left: Quick contact form -->
+                    <div class="bg-white rounded-2xl shadow-xl p-8 animate-on-scroll">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Send us a quick note</h3>
+                        <form action="https://formspree.io/f/mpwdodpp" method="POST" onsubmit="trackFormSubmit('physio_contact_form')">
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your name</label>
+                                <input type="text" id="name" name="name" required
+                                       class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2A7F83] focus:border-transparent text-sm"
+                                       placeholder="Jane Smith">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+                                <input type="email" id="email" name="email" required
+                                       class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2A7F83] focus:border-transparent text-sm"
+                                       placeholder="jane@yourclinic.co.uk">
+                            </div>
+                            <div class="mb-4">
+                                <label for="clinic" class="block text-sm font-medium text-gray-700 mb-1">Clinic name</label>
+                                <input type="text" id="clinic" name="clinic"
+                                       class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2A7F83] focus:border-transparent text-sm"
+                                       placeholder="Your Physio Clinic Ltd">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">What's your biggest admin headache right now? <span class="text-gray-400 font-normal">(optional)</span></label>
+                                <textarea id="message" name="message" rows="3"
+                                          class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2A7F83] focus:border-transparent text-sm resize-none"
+                                          placeholder="e.g. chasing patients to rebook, too many no-shows..."></textarea>
+                            </div>
+                            <!-- Hidden field to identify lead source -->
+                            <input type="hidden" name="industry" value="private-physiotherapy-clinic">
+                            <button type="submit"
+                                    class="w-full bg-[#2A7F83] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#236e72] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2">
+                                <i class="fas fa-calendar-check mr-2" aria-hidden="true"></i>Request my Clinic Audit
+                            </button>
+                            <p class="text-xs text-gray-400 mt-3 text-center">We'll reply within one business day to confirm a time.</p>
+                        </form>
+                    </div>
+
+                    <!-- Right: Direct contact details + CTA link -->
+                    <div class="animate-on-scroll">
+
+                        <div class="bg-white bg-opacity-10 rounded-2xl p-8 mb-6">
+                            <h3 class="text-xl font-bold text-white mb-5">Or get in touch directly</h3>
+
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-white" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400 mb-0.5">Email us</p>
+                                        <a href="mailto:info@ainiseflow.com" class="text-white font-medium hover:text-[#7ee8f0] transition-colors">info@ainiseflow.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-calendar-alt text-white" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400 mb-0.5">Book directly</p>
+                                        <a href="/ai-physio-clinic-automation.html#book"
+                                           class="text-white font-medium hover:text-[#7ee8f0] transition-colors"
+                                           onclick="trackCTAClick('contact_block_book_audit')">
+                                            Book a 15-min audit call
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white bg-opacity-10 rounded-2xl p-8">
+                            <h4 class="text-white font-semibold mb-3">What to expect on the call</h4>
+                            <ul class="space-y-2 text-gray-300 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#7ee8f0] mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                    <span>15 minutes, no preparation needed</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#7ee8f0] mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                    <span>We map your current patient journey</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#7ee8f0] mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                    <span>You get a clear view of where automation would help</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#7ee8f0] mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                    <span>No obligation to proceed</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-[#7ee8f0] mt-0.5 flex-shrink-0" aria-hidden="true"></i>
+                                    <span>UK clinics only</span>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-600 mt-12 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2025 AIniseFlow - AI Automation & Workflow Solutions for UK SMBs. All rights reserved.</p>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+    <footer class="bg-[#1e3a5f] text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Col 1: Company -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="h-10 w-auto" width="40" height="40" loading="lazy">
+                        <span class="text-xl font-bold whitespace-nowrap"><span class="text-white">AInise</span><span class="text-[#0d8b9c]">Flow</span></span>
+                    </div>
+                    <p class="text-gray-300 mb-5 leading-relaxed text-sm">AI booking and follow-up automation for UK private physiotherapy clinics. Helping clinics reduce admin, cut no-shows, and rebook more patients.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1B1i9xa3N6/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#2dd4bf] transition-colors" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ainiseflow?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#2dd4bf] transition-colors" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Physio Clinic Services -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-base font-semibold mb-5 text-[#2dd4bf]">Clinic Automation</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="#system" class="block text-gray-300 hover:text-white transition-colors">Enquiry &amp; Booking System</a>
+                        <a href="#system" class="block text-gray-300 hover:text-white transition-colors">Appointment Reminders</a>
+                        <a href="#system" class="block text-gray-300 hover:text-white transition-colors">Post-Visit Follow-Up</a>
+                        <a href="#system" class="block text-gray-300 hover:text-white transition-colors">Patient Reactivation</a>
+                        <a href="#system" class="block text-gray-300 hover:text-white transition-colors">Review Requests</a>
+                        <a href="ai-automation-services.html" class="block text-gray-300 hover:text-white transition-colors">All Services</a>
+                    </div>
+                </div>
+
+                <!-- Col: Our Specialism -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-base font-semibold mb-5 text-[#2dd4bf]">Our Specialism</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="ai-physio-clinic-automation.html" class="block text-[#2dd4bf] hover:text-white transition-colors font-semibold">Private Physio Clinics</a>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">
+                        <a href="ai-automation-services.html" class="hover:text-gray-300 transition-colors underline underline-offset-2">Other industries →</a>
+                    </p>
+                </div>
+
+                <!-- Col 4: Get Started -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-base font-semibold mb-5 text-[#2dd4bf]">Get Started</h4>
+                    <p class="text-gray-300 mb-5 text-sm">Book a 15-minute audit call to see how automation would work in your clinic.</p>
+                    <a href="/ai-physio-clinic-automation.html#book"
+                       class="inline-block bg-[#2dd4bf] text-[#1e3a5f] font-semibold py-2.5 px-5 rounded-lg hover:bg-opacity-90 transition-colors text-sm mb-5"
+                       onclick="trackCTAClick('footer_book_audit')">
+                        <i class="fas fa-calendar-check mr-1" aria-hidden="true"></i>Book Clinic Audit
+                    </a>
+                    <div class="text-sm text-gray-300 space-y-1">
+                        <p><i class="fas fa-envelope mr-2" aria-hidden="true"></i><a href="mailto:info@ainiseflow.com" class="hover:text-white transition-colors">info@ainiseflow.com</a></p>
+                        <p class="text-xs text-gray-400 mt-2">UK clinics only &middot; GDPR compliant</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-600 mt-10 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 AIniseFlow &mdash; AI Automation for UK Private Physiotherapy Clinics. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to top button -->
-    <div class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Scroll to top -->
+    <div class="scroll-top" id="scrollTop" role="button" aria-label="Scroll to top" tabindex="0">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </div>
 
-    <script src="scripts.js"></script>
-    <script src="lead-magnets.js"></script>
-    <script src="performance-optimizations.js"></script>
-    <script src="lead-scoring-system.js"></script>
-    
+    <!-- FAQ accordion script -->
     <script>
-    // Remove any unwanted title text that might appear
-    document.addEventListener('DOMContentLoaded', function() {
-        function removeTitleText() {
-            const walker = document.createTreeWalker(
-                document.body,
-                NodeFilter.SHOW_TEXT,
-                null,
-                false
-            );
-            
-            const textNodes = [];
-            let node;
-            
-            while (node = walker.nextNode()) {
-                if (node.textContent.includes('AIniseFlow | AI Automation & Workflow Solutions')) {
-                    textNodes.push(node);
-                }
-            }
-            
-            textNodes.forEach(textNode => {
-                if (textNode.parentNode && !textNode.parentNode.closest('title, meta, script')) {
-                    textNode.textContent = '';
+    (function() {
+        var btns = document.querySelectorAll('.faq-btn');
+        btns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var targetId = this.getAttribute('aria-controls');
+                var answer   = document.getElementById(targetId);
+                var isOpen   = this.getAttribute('aria-expanded') === 'true';
+
+                // Close all
+                btns.forEach(function(b) {
+                    var aId = b.getAttribute('aria-controls');
+                    document.getElementById(aId).classList.remove('open');
+                    b.setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle clicked
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    this.setAttribute('aria-expanded', 'true');
                 }
             });
-            
-            // Also remove any elements that might be displaying the title
-            const elements = document.querySelectorAll('*');
-            elements.forEach(el => {
-                if (el.textContent === 'AIniseFlow | AI Automation & Workflow Solutions for UK Small & Medium Businesses' && 
-                    !el.closest('title, meta, script, nav')) {
-                    el.style.display = 'none';
-                    el.remove();
-                }
-            });
-        }
-        
-        // Run immediately
-        removeTitleText();
-        
-        // Run again after a short delay in case content loads dynamically
-        setTimeout(removeTitleText, 100);
-        setTimeout(removeTitleText, 500);
-    });
+        });
+    })();
     </script>
+
+    <script src="scripts.js"></script>
+    <script src="performance-optimizations.js"></script>
+
 </body>
 </html>
