@@ -1,20 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI automation solutions for healthcare and wellness businesses. Smart appointment booking, patient communication, and automated health management systems.">
-    <meta name="keywords" content="healthcare AI automation, medical practice automation, patient management AI, healthcare chatbot, automated appointment booking, telemedicine solutions">
-    <title>Healthcare AI Solutions | AIniseFlow - Smart Medical Practice Workflow Automation</title>
-    
+    <meta name="description" content="AI automation for healthcare and wellness practices in the UK. Appointment booking, patient communication, and follow-up automation. Private physiotherapy clinic? See our dedicated physio automation service.">
+    <meta name="keywords" content="healthcare AI automation UK, medical practice automation, patient management AI, healthcare appointment reminders, automated follow-up healthcare, private physiotherapy clinic automation">
+    <title>Healthcare &amp; Wellness AI Automation | AIniseFlow – UK Practice Automation</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Healthcare & Wellness AI Automation | AIniseFlow" />
+    <meta property="og:description" content="AI automation for UK healthcare and wellness practices. Appointment booking, reminders, patient follow-up, and practice management. Dedicated page for private physio clinics available." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ainiseflow.com/ai-healthcare-solutions.html" />
+    <meta property="og:image" content="https://ainiseflow.com/AIniseFlow-Logo.png" />
+    <meta property="og:site_name" content="AIniseFlow" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Healthcare & Wellness AI Automation | AIniseFlow" />
+    <meta name="twitter:description" content="AI automation for UK healthcare and wellness practices. Private physio clinic? See our dedicated physio automation page." />
+    <meta name="twitter:image" content="https://ainiseflow.com/AIniseFlow-Logo.png" />
+    <meta name="twitter:site" content="@AIniseFlow" />
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="AIniseFlow" />
+    <meta name="theme-color" content="#2A7F83" />
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ainiseflow.com/ai-healthcare-solutions.html" />
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Physio referral banner */
+        .physio-banner {
+            background-color: #0a3b5c;
+            color: #fff;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 60;
+            border-bottom: 3px solid #2dd4bf;
+        }
+        .physio-banner a {
+            color: #2dd4bf;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            white-space: nowrap;
+        }
+        .physio-banner a:hover {
+            color: #fff;
+        }
+        /* Push body down so fixed nav + banner don't overlap content */
+        body { padding-top: 0 !important; }
+        .nav-spacer { height: 120px; }
+        @media (max-width: 640px) { .nav-spacer { height: 140px; } }
+    </style>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKM102Q8H1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JKM102Q8H1', { send_page_view: true, anonymize_ip: true });
+      function trackCTAClick(n) { gtag('event','cta_click',{'event_category':'conversion','event_label':n,'value':1}); }
+    </script>
 </head>
 <body class="font-sans antialiased text-gray-800">
+
+    <!-- =========================================================
+         PHYSIO REFERRAL BANNER (fixed above nav)
+    ========================================================== -->
+    <div class="physio-banner" role="complementary" aria-label="Specialist page notice">
+        <span class="hidden sm:inline">Running a private physiotherapy clinic? We have a dedicated service built around physio appointment &amp; follow-up automation. &nbsp;</span>
+        <span class="sm:hidden">Private physio clinic? &nbsp;</span>
+        <a href="ai-physio-clinic-automation.html" onclick="trackCTAClick('healthcare_top_banner_physio')">
+            Private physio clinic? Start here &rarr;
+        </a>
+    </div>
+
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav">
         <div class="container mx-auto px-4 md:px-6">
@@ -25,29 +94,13 @@
                         <span class="text-xl md:text-2xl font-bold whitespace-nowrap"><span class="text-[#0a3b5c]">AInise</span><span class="text-[#0d8b9c]">Flow</span></span>
                     </a>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Home</a>
-                    <a href="ai-automation-services.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">AI Solutions</a>
-                    
-                    <!-- Industries Dropdown -->
-                    <div class="relative group">
-                        <button class="industries-dropdown-btn text-[#2A7F83] hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors flex items-center font-bold">
-                            <span>Industries</span>
-                            <i class="fas fa-chevron-down ml-1 text-xs transition-transform duration-200"></i>
-                        </button>
-                        <div class="dropdown-menu absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" style="display: none;">
-                            <div class="py-1" role="menu" aria-orientation="vertical">
-                                <a href="ai-restaurant-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Restaurants & Hospitality</a>
-                                <a href="ai-healthcare-solutions.html" class="block px-4 py-2 text-sm text-[#2A7F83] font-bold bg-gray-100" role="menuitem">Healthcare & Wellness</a>
-                                <a href="ai-professional-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Professional Services</a>
-                                <a href="ai-retail-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Retail & E-commerce</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="web-design-addon.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Web Design</a>
-                    <a href="blog.html" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Blog</a>
-                    <a href="index.html#contact" class="nav-link text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 transition-colors font-medium">Contact</a>
+                <!-- Desktop nav links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="ai-physio-clinic-automation.html" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Private Physio Clinics</a>
+                    <a href="ai-physio-clinic-automation.html#how-it-works" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
+                    <a href="ai-physio-clinic-automation.html#quickstart" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
+                    <a href="blog.html" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Blog</a>
+                    <a href="ai-physio-clinic-automation.html#book" class="nav-link bg-[#2A7F83] text-white px-4 py-2 rounded-md hover:bg-[#236e72] transition-colors font-medium text-sm" onclick="trackCTAClick('nav_book_audit')">Book Audit</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors font-medium">
@@ -57,22 +110,20 @@
             </div>
             
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="index.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Home</a>
-                <a href="ai-automation-services.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">AI Solutions</a>
-                <div class="py-2 border-t border-gray-100 mt-2">
-                    <p class="text-sm font-semibold text-gray-500 mb-2 px-1">INDUSTRIES</p>
-                    <a href="ai-restaurant-solutions.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Restaurants & Hospitality</a>
-                    <a href="ai-healthcare-solutions.html" class="block py-2 pl-4 text-[#2A7F83] font-bold">Healthcare & Wellness</a>
-                    <a href="ai-professional-services.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Professional Services</a>
-                    <a href="ai-retail-solutions.html" class="block py-2 pl-4 text-gray-700 hover:text-[#2A7F83]">Retail & E-commerce</a>
+            <div id="mobile-menu" class="hidden md:hidden pb-4" role="navigation" aria-label="Mobile navigation">
+                <div class="pt-2 space-y-1 border-t border-gray-100 mt-2">
+                    <a href="ai-physio-clinic-automation.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Private Physio Clinics</a>
+                    <a href="ai-physio-clinic-automation.html#how-it-works" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
+                    <a href="ai-physio-clinic-automation.html#quickstart" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
+                    <a href="blog.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Blog</a>
+                    <a href="ai-physio-clinic-automation.html#book" class="nav-link block py-3 px-2 text-[#2A7F83] font-semibold" onclick="trackCTAClick('mobile_nav_book_audit')">Book Audit →</a>
                 </div>
-                <a href="web-design-addon.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Web Design</a>
-                <a href="blog.html" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Blog</a>
-                <a href="index.html#contact" class="nav-link block py-2 text-gray-700 hover:text-[#2A7F83]">Contact</a>
             </div>
         </div>
     </nav>
+
+    <!-- Spacer to compensate for fixed nav + banner -->
+    <div class="nav-spacer" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <section class="hero-section wellness-hero text-white py-20">
@@ -80,18 +131,25 @@
         <div class="background-overlay"></div>
         
         <div class="container mx-auto px-6 text-center relative z-10">
+            <p class="text-sm font-semibold tracking-widest uppercase text-[#7ee8f0] mb-4">Broader Healthcare &amp; Wellness</p>
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-on-scroll hero-headline">
-                AI Automation for <span class="text-[#e6f7ff]">Healthcare & Wellness</span>
+                AI Automation for <span class="text-[#e6f7ff]">Healthcare &amp; Wellness</span>
             </h1>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto animate-on-scroll hero-subheadline">
-                Transform your healthcare practice with intelligent automation. From smart appointment booking to patient communication and automated follow-ups, deliver exceptional care while reducing administrative burden.
+            <p class="text-lg md:text-xl mb-4 max-w-3xl mx-auto animate-on-scroll hero-subheadline">
+                Appointment booking, patient communication, and follow-up automation for UK healthcare and wellness practices — from GP support services and dental to physio and wellness studios.
+            </p>
+            <!-- Physio callout inside hero -->
+            <p class="text-sm text-[#b8eded] mb-8 max-w-xl mx-auto">
+                <i class="fas fa-arrow-right mr-1" aria-hidden="true"></i>
+                Running a <strong>private physiotherapy clinic</strong>? We have a dedicated service for you —
+                <a href="ai-physio-clinic-automation.html" class="text-[#2dd4bf] underline underline-offset-2 hover:text-white font-semibold" onclick="trackCTAClick('healthcare_hero_physio_link')">see the Private Physio Clinic Automation page</a>.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
-                <a href="index.html#contact" class="primary-cta font-bold py-4 px-8 rounded-full transition duration-300 bg-[#2A7F83] text-white hover:bg-[#236e72]">
-                    <i class="fas fa-heartbeat mr-2"></i>Transform My Practice
+                <a href="ai-physio-clinic-automation.html#book" class="primary-cta font-bold py-4 px-8 rounded-full transition duration-300 bg-[#2dd4bf] text-[#0a3b5c] hover:bg-opacity-90" onclick="trackCTAClick('healthcare_hero_physio_cta')">
+                    <i class="fas fa-calendar-check mr-2"></i>Book a Free Clinic Audit
                 </a>
                 <a href="#solutions" class="secondary-cta font-bold py-4 px-8 rounded-full transition duration-300 border-2 border-white text-white hover:bg-white hover:text-[#2A7F83]">
-                    <i class="fas fa-stethoscope mr-2"></i>See Healthcare AI
+                    <i class="fas fa-stethoscope mr-2"></i>Broader Healthcare AI
                 </a>
             </div>
         </div>
@@ -101,8 +159,8 @@
     <section id="solutions" class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Smart Healthcare AI Solutions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">Comprehensive AI automation designed specifically for healthcare and wellness practices</p>
+                <h2 class="text-3xl font-bold mb-4 text-gray-800 animate-on-scroll">Healthcare &amp; Wellness AI Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto animate-on-scroll">A broad set of automation capabilities for UK healthcare and wellness practices. For private physiotherapy clinics specifically, <a href="ai-physio-clinic-automation.html" class="text-[#2A7F83] underline underline-offset-2 hover:text-[#0a3b5c] font-semibold" onclick="trackCTAClick('healthcare_solutions_header_physio_link')">see our dedicated physio clinic page</a>.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -267,20 +325,43 @@
 
 
 
+    <!-- Physio Clinic mid-page contextual callout -->
+    <section class="py-10 bg-[#f0f9fa] border-t border-b border-[#c8eaec]">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-6">
+                <div class="w-14 h-14 bg-[#0a3b5c] rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-clinic-medical text-[#2dd4bf] text-2xl" aria-hidden="true"></i>
+                </div>
+                <div class="flex-1 text-center sm:text-left">
+                    <h3 class="text-lg font-bold text-[#0a3b5c] mb-1">Private physiotherapy clinic?</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">We've built a focused appointment &amp; follow-up automation service specifically for UK private physio clinics — covering enquiry auto-reply, appointment reminders, DNA follow-up, post-visit follow-up, and patient reactivation.</p>
+                </div>
+                <a href="ai-physio-clinic-automation.html"
+                   class="flex-shrink-0 bg-[#0a3b5c] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#0c4a73] transition-colors text-sm whitespace-nowrap"
+                   onclick="trackCTAClick('healthcare_midpage_physio_cta')">
+                    <i class="fas fa-arrow-right mr-2" aria-hidden="true"></i>Physio clinic page
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-16 bg-gradient-to-r from-blue-500 to-teal-500 text-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4 animate-on-scroll">Ready to Transform Your Healthcare Practice?</h2>
+            <h2 class="text-3xl font-bold mb-4 animate-on-scroll">Ready to automate your healthcare or wellness practice?</h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto animate-on-scroll">
-                Join healthcare professionals who are already providing better patient care with AI automation.
+                Get in touch for a free 15-minute consultation. We'll look at your current workflows and tell you honestly what automation would be worth pursuing.
             </p>
-            
+
             <div class="flex flex-col md:flex-row justify-center gap-4 animate-on-scroll">
-                <a href="index.html#contact" class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition duration-300">
-                    <i class="fas fa-calendar-check mr-2"></i>Book Free Healthcare Consultation
+                <a href="ai-physio-clinic-automation.html#book" class="bg-[#2dd4bf] text-[#0a3b5c] font-bold py-4 px-8 rounded-lg hover:bg-opacity-90 transition duration-300" onclick="trackCTAClick('healthcare_cta_physio')">
+                    <i class="fas fa-clinic-medical mr-2"></i>Private Physio Clinic Automation
                 </a>
-                <a href="ai-automation-services.html" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition duration-300">
-                    <i class="fas fa-cogs mr-2"></i>View All AI Solutions
+                <a href="index.html#contact" class="border-2 border-white text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition duration-300" onclick="trackCTAClick('healthcare_cta_contact')">
+                    <i class="fas fa-calendar-check mr-2"></i>Other healthcare enquiry
+                </a>
+                <a href="ai-automation-services.html" class="border-2 border-white border-opacity-60 text-white font-bold py-4 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-cogs mr-2"></i>View all services
                 </a>
             </div>
         </div>
@@ -299,30 +380,44 @@
                 </div>
                 
                 <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Specialist Page</h4>
+                    <div class="text-sm space-y-3">
+                        <a href="ai-physio-clinic-automation.html" class="block text-[#2dd4bf] hover:text-white transition-colors font-semibold">
+                            <i class="fas fa-clinic-medical mr-2" aria-hidden="true"></i>Private Physio Clinic Automation
+                        </a>
+                        <p class="text-gray-400 text-xs leading-relaxed">Appointment reminders, enquiry follow-up, DNA reduction, patient reactivation — built specifically for UK private physio clinics.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
                     <h4 class="text-lg font-semibold mb-6 text-[#0d8b9c]">Healthcare AI</h4>
                     <div class="text-sm space-y-2">
-                        <p class="text-gray-300">Smart Appointment Booking</p>
+                        <p class="text-gray-300">Appointment Scheduling</p>
                         <p class="text-gray-300">Patient Communication</p>
                         <p class="text-gray-300">Health Monitoring</p>
-                        <p class="text-gray-300">Telemedicine Integration</p>
+                        <p class="text-gray-300">Practice Management</p>
                     </div>
                 </div>
-                
+
+                <!-- Col: Our Specialism -->
                 <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <h4 class="text-lg font-semibold mb-6 text-[#0d8b9c]">Other Industries</h4>
+                    <h4 class="text-base font-semibold mb-5 text-[#2dd4bf]">Our Specialism</h4>
                     <div class="text-sm space-y-2">
-                        <a href="ai-restaurant-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Restaurants</a>
-                        <a href="ai-professional-services.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Professional Services</a>
-                        <a href="ai-retail-solutions.html" class="block text-gray-300 hover:text-white transition-colors duration-300">Retail</a>
+                        <a href="ai-physio-clinic-automation.html" class="block text-[#2dd4bf] hover:text-white transition-colors font-semibold">Private Physio Clinics</a>
                     </div>
+                    <p class="text-xs text-gray-500 mt-4">
+                        <a href="ai-automation-services.html" class="hover:text-gray-300 transition-colors underline underline-offset-2">Other industries →</a>
+                    </p>
                 </div>
-                
+
                 <div class="bg-white bg-opacity-10 p-6 rounded-lg">
                     <h4 class="text-lg font-semibold mb-6 text-[#0d8b9c]">Get Started</h4>
-                    <p class="text-gray-300 mb-6">Ready to automate your healthcare practice?</p>
-                    <a href="index.html#contact" class="inline-block bg-[#2A7F83] text-white font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300">
-                        <i class="fas fa-heartbeat mr-2"></i>Healthcare Consultation
+                    <p class="text-gray-300 mb-4 text-sm">Private physio clinic?</p>
+                    <a href="ai-physio-clinic-automation.html#book" class="inline-block bg-[#2dd4bf] text-[#0a3b5c] font-semibold py-3 px-5 rounded-lg hover:bg-opacity-90 transition-colors duration-300 text-sm mb-4" onclick="trackCTAClick('healthcare_footer_physio_cta')">
+                        <i class="fas fa-clinic-medical mr-2"></i>Physio Audit Call
                     </a>
+                    <p class="text-gray-400 text-sm mt-2">Other healthcare:</p>
+                    <a href="index.html#contact" class="inline-block mt-2 text-gray-300 hover:text-white text-sm underline underline-offset-2">General enquiry →</a>
                 </div>
             </div>
         </div>

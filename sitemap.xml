@@ -4,54 +4,37 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<!-- AIniseFlow Website Sitemap - Updated for canonical consistency -->
+<!-- AIniseFlow Website Sitemap - Updated 2026-02-19 -->
+<!-- Indexable pages only. Pages with noindex (restaurant, retail, professional, web-design) are intentionally excluded. -->
 
 <url>
   <loc>https://ainiseflow.com/</loc>
-  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <lastmod>2026-02-19T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>https://ainiseflow.com/ai-automation-services.html</loc>
-  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <loc>https://ainiseflow.com/ai-physio-clinic-automation.html</loc>
+  <lastmod>2026-02-19T00:00:00+00:00</lastmod>
   <priority>0.90</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://ainiseflow.com/ai-restaurant-solutions.html</loc>
-  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
-  <priority>0.85</priority>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
   <loc>https://ainiseflow.com/ai-healthcare-solutions.html</loc>
-  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
-  <priority>0.85</priority>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>https://ainiseflow.com/ai-professional-services.html</loc>
-  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
-  <priority>0.85</priority>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>https://ainiseflow.com/ai-retail-solutions.html</loc>
-  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
-  <priority>0.85</priority>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>https://ainiseflow.com/web-design-addon.html</loc>
-  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
+  <lastmod>2026-02-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
+  <loc>https://ainiseflow.com/ai-automation-services.html</loc>
+  <lastmod>2026-02-19T00:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
   <loc>https://ainiseflow.com/blog.html</loc>
-  <lastmod>2024-09-14T23:12:00+00:00</lastmod>
-  <priority>0.75</priority>
+  <lastmod>2026-02-19T00:00:00+00:00</lastmod>
+  <priority>0.65</priority>
   <changefreq>weekly</changefreq>
 </url>
 
