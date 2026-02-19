@@ -66,6 +66,7 @@
   ],
 
   "buildCommand": null,
+  "_deploy": "2026-02-19-force",
   "outputDirectory": "./",
   "installCommand": null
 }
