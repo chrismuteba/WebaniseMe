@@ -735,6 +735,11 @@
                             <h4 class="font-bold text-[#0a3b5c] mb-2">Request received</h4>
                             <p class="text-gray-600 text-sm">We'll be in touch within one working day to arrange a time that suits you.</p>
                         </div>
+
+                        <!-- Error message (hidden by default) -->
+                        <div id="form-error" class="hidden mt-4 p-3 bg-red-50 border border-red-200 rounded-md text-center">
+                            <p class="text-red-600 text-sm">Something went wrong — please try again or email us at <a href="mailto:hello@ainiseflow.co.uk" class="underline">hello@ainiseflow.co.uk</a>.</p>
+                        </div>
                     </div>
 
                     <!-- Direct contact options -->
@@ -891,14 +896,23 @@
         e.preventDefault();
         var form = document.getElementById('aesthetic-audit-form');
         var successMsg = document.getElementById('form-success');
-        var name = document.getElementById('f-name').value.trim();
-        var email = document.getElementById('f-email').value.trim();
-        var clinic = document.getElementById('f-clinic').value.trim();
+        var submitBtn = form.querySelector('button[type="submit"]');
+
+        var name     = document.getElementById('f-name').value.trim();
+        var email    = document.getElementById('f-email').value.trim();
+        var clinic   = document.getElementById('f-clinic').value.trim();
+        var phone    = document.getElementById('f-phone').value.trim();
+        var software = document.getElementById('f-software').value.trim();
+        var pain     = document.getElementById('f-pain').value.trim();
 
         if (!name || !email || !clinic) {
             alert('Please fill in your name, clinic name, and email address.');
             return;
         }
+
+        // Disable button & show sending state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2" aria-hidden="true"></i>Sending…';
 
         // GA4 event
         if (typeof gtag !== 'undefined') {
@@ -909,25 +923,37 @@
             });
         }
 
-        // Build mailto fallback (simple, no server needed)
-        var phone = document.getElementById('f-phone').value.trim();
-        var software = document.getElementById('f-software').value.trim();
-        var pain = document.getElementById('f-pain').value.trim();
-        var body = 'Name: ' + name + '\nClinic: ' + clinic + '\nEmail: ' + email +
-                   '\nPhone: ' + (phone || 'Not provided') +
-                   '\nBooking software: ' + (software || 'Not provided') +
-                   '\nMain pain point: ' + (pain || 'Not provided');
-        var mailtoLink = 'mailto:hello@ainiseflow.co.uk?subject=Aesthetic%20Clinic%20Automation%20Audit%20Request%20%E2%80%93%20' +
-                         encodeURIComponent(clinic) + '&body=' + encodeURIComponent(body);
-
-        // Show success state
-        form.classList.add('hidden');
-        successMsg.classList.remove('hidden');
-
-        // Open mailto after brief delay
-        setTimeout(function() {
-            window.location.href = mailtoLink;
-        }, 800);
+        // Submit to Formspree
+        fetch('https://formspree.io/f/mreyjjon', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name:     name,
+                email:    email,
+                clinic:   clinic,
+                phone:    phone    || 'Not provided',
+                software: software || 'Not provided',
+                message:  pain     || 'Not provided'
+            })
+        })
+        .then(function(res) {
+            if (res.ok) {
+                // Show success state
+                form.classList.add('hidden');
+                successMsg.classList.remove('hidden');
+            } else {
+                return res.json().then(function(data) {
+                    throw new Error(data.error || 'Submission failed');
+                });
+            }
+        })
+        .catch(function() {
+            // Re-enable button and show error
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-calendar-check mr-2" aria-hidden="true"></i>Request my free audit call';
+            var errEl = document.getElementById('form-error');
+            if (errEl) { errEl.classList.remove('hidden'); }
+        });
     }
     </script>
 
