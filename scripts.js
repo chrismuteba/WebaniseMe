@@ -122,74 +122,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Enhanced Mobile menu toggle
+    // Mobile menu toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        const icon = menuBtn.querySelector('i');
+        if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+        mobileMenu.classList.remove('hidden');
+        const icon = menuBtn.querySelector('i');
+        if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); }
+        menuBtn.setAttribute('aria-expanded', 'true');
+    }
+
     if (menuBtn && mobileMenu) {
-        // Ensure menu button is always visible
-        menuBtn.style.display = 'flex';
-        menuBtn.style.visibility = 'visible';
-        menuBtn.style.opacity = '1';
-        
         menuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
             e.stopPropagation();
-            
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('visible');
-            
-            // Toggle icon between bars and X
-            const icon = menuBtn.querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
+            if (mobileMenu.classList.contains('hidden')) {
+                openMobileMenu();
             } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-            
-            // Prevent body scrolling when menu is open
-            if (mobileMenu.classList.contains('visible')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
+                closeMobileMenu();
             }
         });
-        
-        // Close mobile menu when clicking outside
+
+        // Close when clicking outside
         document.addEventListener('click', function(e) {
-            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('visible');
-                
-                const icon = menuBtn.querySelector('i');
-                if (icon.classList.contains('fa-times')) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-                
-                // Restore body scrolling
-                document.body.style.overflow = '';
+            if (!mobileMenu.classList.contains('hidden') &&
+                !menuBtn.contains(e.target) &&
+                !mobileMenu.contains(e.target)) {
+                closeMobileMenu();
             }
         });
-        
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('visible');
-                
-                const icon = menuBtn.querySelector('i');
-                if (icon.classList.contains('fa-times')) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-                
-                // Restore body scrolling
-                document.body.style.overflow = '';
-            });
+
+        // Close when a nav link is tapped
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
         });
     }
     
