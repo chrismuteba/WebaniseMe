@@ -16,37 +16,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Physio referral banner */
-        .physio-banner {
-            background-color: #0a3b5c;
-            color: #fff;
-            text-align: center;
-            padding: 10px 16px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            position: relative;
-            z-index: 60;
-            border-bottom: 3px solid #2dd4bf;
-        }
-        .physio-banner a {
-            color: #2dd4bf;
-            text-decoration: underline;
-            text-underline-offset: 2px;
-            white-space: nowrap;
-        }
-        .physio-banner a:hover { color: #fff; }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
-    <!-- Physio referral banner -->
-    <div class="physio-banner" role="complementary" aria-label="Specialist page notice">
-        <span class="hidden sm:inline">Running a private physiotherapy clinic? We have a dedicated service built around physio appointment &amp; follow-up automation. &nbsp;</span>
-        <span class="sm:hidden">Private physio clinic? &nbsp;</span>
-        <a href="/ai-physio-clinic-automation.html" onclick="trackCTAClick('webdesign_top_banner_physio')">
-            Private physio clinic? Start here &rarr;
-        </a>
-    </div>
-
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav">
         <div class="container mx-auto px-4 md:px-6">
@@ -59,11 +31,10 @@
                 </div>
                 <!-- Desktop nav links -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="ai-physio-clinic-automation.html" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Private Physio Clinics</a>
-                    <a href="ai-physio-clinic-automation.html#how-it-works" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
-                    <a href="ai-physio-clinic-automation.html#quickstart" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
-                    <a href="blog.html" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Blog</a>
-                    <a href="ai-physio-clinic-automation.html#book" class="nav-link bg-[#2A7F83] text-white px-4 py-2 rounded-md hover:bg-[#236e72] transition-colors font-medium text-sm" onclick="trackCTAClick('nav_book_audit')">Book Audit</a>
+                    <a href="ai-aesthetic-clinic-automation.html#services" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Aesthetic Clinic Automation</a>
+                    <a href="ai-aesthetic-clinic-automation.html#how-it-works" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
+                    <a href="ai-aesthetic-clinic-automation.html#quickstart" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
+                    <a href="ai-aesthetic-clinic-automation.html#book" class="nav-link bg-[#2A7F83] text-white px-4 py-2 rounded-md hover:bg-[#236e72] transition-colors font-medium text-sm" onclick="trackCTAClick('nav_book_audit')">Book Audit</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] focus:ring-offset-2 p-2 rounded-md transition-colors font-medium">
@@ -75,11 +46,10 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4" role="navigation" aria-label="Mobile navigation">
                 <div class="pt-2 space-y-1 border-t border-gray-100 mt-2">
-                    <a href="ai-physio-clinic-automation.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Private Physio Clinics</a>
-                    <a href="ai-physio-clinic-automation.html#how-it-works" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
-                    <a href="ai-physio-clinic-automation.html#quickstart" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
-                    <a href="blog.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Blog</a>
-                    <a href="ai-physio-clinic-automation.html#book" class="nav-link block py-3 px-2 text-[#2A7F83] font-semibold" onclick="trackCTAClick('mobile_nav_book_audit')">Book Audit →</a>
+                    <a href="ai-aesthetic-clinic-automation.html#services" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Aesthetic Clinic Automation</a>
+                    <a href="ai-aesthetic-clinic-automation.html#how-it-works" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
+                    <a href="ai-aesthetic-clinic-automation.html#quickstart" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
+                    <a href="ai-aesthetic-clinic-automation.html#book" class="nav-link block py-3 px-2 text-[#2A7F83] font-semibold" onclick="trackCTAClick('mobile_nav_book_audit')">Book Audit →</a>
                 </div>
             </div>
         </div>
@@ -545,7 +515,7 @@
     <!-- Footer -->
     <footer class="bg-[#1e3a5f] text-white py-12">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white bg-opacity-10 p-6 rounded-lg">
                     <div class="flex items-center gap-3 mb-6">
                         <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="h-12 sm:h-12 h-8 w-auto min-w-8 max-w-8 sm:min-w-12 sm:max-w-12">
@@ -563,22 +533,11 @@
                     </div>
                 </div>
                 
-                <!-- Col: Our Specialism -->
-                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <h4 class="text-base font-semibold mb-5 text-[#2dd4bf]">Our Specialism</h4>
-                    <div class="text-sm space-y-2">
-                        <a href="ai-physio-clinic-automation.html" class="block text-[#2dd4bf] hover:text-white transition-colors font-semibold">Private Physio Clinics</a>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-4">
-                        <a href="ai-automation-services.html" class="hover:text-gray-300 transition-colors underline underline-offset-2">Other industries →</a>
-                    </p>
-                </div>
-                
                 <div class="bg-white bg-opacity-10 p-6 rounded-lg">
                     <h4 class="text-lg font-semibold mb-6 text-[#2dd4bf]">Get Started</h4>
                     <p class="text-gray-300 mb-6">Ready for AI automation plus web design?</p>
-                    <a href="ai-physio-clinic-automation.html#book" class="inline-block bg-[#2dd4bf] text-[#1e3a5f] font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300" onclick="trackCTAClick('footer_book_audit')">
-                        <i class="fas fa-clinic-medical mr-2"></i>Book Audit
+                    <a href="ai-aesthetic-clinic-automation.html#book" class="inline-block bg-[#2dd4bf] text-[#1e3a5f] font-semibold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300" onclick="trackCTAClick('footer_book_audit')">
+                        <i class="fas fa-calendar-check mr-2"></i>Book Audit
                     </a>
                 </div>
             </div>

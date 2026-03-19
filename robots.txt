@@ -20,12 +20,6 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-# Disallow test and development files
-Disallow: /background-test.html
-Disallow: /dropdown-test.html
-Disallow: /test-colors.html
-Disallow: /analytics-snippet.html
-Disallow: /dns-checker.html
 
 # Disallow log files and system files
 Disallow: /*.log$
@@ -36,7 +30,6 @@ Disallow: /server.log
 
 # Allow important SEO files
 Allow: /sitemap.xml
-Allow: /google-site-verification.html
 
 # Sitemap location
 Sitemap: https://ainiseflow.com/sitemap.xml

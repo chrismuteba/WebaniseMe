@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find out how much revenue your aesthetic clinic is leaking each month. Answer 12 questions and get your instant automation score — no email required.">
+    <meta name="robots" content="index, follow">
+    <title>AIniseFlow | Free Clinic Revenue Leak Calculator</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://ainiseflow.com/clinic-revenue-calculator.html" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        :root {
+            --navy:      #1B2A4A;
+            --blue:      #2D7DD2;
+            --light:     #F4F7FB;
+            --teal:      #0d8b9c;
+            --dark-navy: #1e3a5f;
+        }
+
+        body { background-color: var(--light); }
+
+        /* ── section label ── */
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+        }
+
+        /* ── white card ── */
+        .calc-card {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 2px 16px rgba(27,42,74,0.08);
+            padding: 2rem;
+        }
+
+        /* ── number inputs ── */
+        .calc-input {
+            width: 100%;
+            border: 1.5px solid #d1d5db;
+            border-radius: 0.5rem;
+            padding: 0.65rem 0.9rem;
+            font-size: 1rem;
+            color: var(--navy);
+            background: #fff;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .calc-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(45,125,210,0.15); }
+
+        /* ── range slider ── */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #d1d5db;
+            outline: none;
+            cursor: pointer;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: var(--blue);
+            cursor: pointer;
+            box-shadow: 0 1px 4px rgba(45,125,210,0.4);
+        }
+        input[type=range]::-moz-range-thumb {
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: var(--blue);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ── checkboxes ── */
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.6rem 0.75rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .check-item:hover { background: #f0f6ff; }
+        .check-item input[type=checkbox] {
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 18px; height: 18px;
+            accent-color: var(--blue);
+            cursor: pointer;
+        }
+        .check-item label {
+            font-size: 0.95rem;
+            color: #374151;
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        /* ── progress bar ── */
+        .progress-bar-wrap {
+            background: #e5e7eb;
+            border-radius: 999px;
+            height: 8px;
+            overflow: hidden;
+            margin-top: 0.4rem;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: var(--blue);
+            transition: width 0.3s ease;
+        }
+
+        /* ── group heading ── */
+        .group-heading {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--navy);
+            padding: 0.5rem 0 0.25rem;
+            border-bottom: 2px solid var(--light);
+            margin-bottom: 0.25rem;
+        }
+
+        /* ── Calculate button ── */
+        .btn-calculate {
+            display: block;
+            width: 100%;
+            background: var(--blue);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border-radius: 0.6rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+            text-align: center;
+            letter-spacing: 0.02em;
+            box-shadow: 0 4px 16px rgba(45,125,210,0.3);
+        }
+        .btn-calculate:hover  { background: #2266b8; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,125,210,0.4); }
+        .btn-calculate:active { transform: translateY(0); }
+
+        /* ── Teaser total card ── */
+        .teaser-card {
+            background: var(--navy);
+            color: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 6px 28px rgba(27,42,74,0.25);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .teaser-card .tc-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #93c5fd;
+            margin-bottom: 0.75rem;
+        }
+        .teaser-card .tc-value {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ── Gated section wrapper ── */
+        #gatedSection {
+            position: relative;
+            margin-top: 2.5rem;
+        }
+
+        /* ── Blurred content layer ── */
+        #blurredContent {
+            filter: blur(6px);
+            pointer-events: none;
+            user-select: none;
+            transition: filter 0.5s ease, opacity 0.5s ease;
+        }
+        #blurredContent.revealed {
+            filter: none;
+            pointer-events: auto;
+            user-select: auto;
+        }
+
+        /* ── Lock overlay ── */
+        #lockOverlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            padding: 1rem;
+            transition: opacity 0.4s ease;
+        }
+        #lockOverlay.hidden-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .lock-box {
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 8px 40px rgba(27,42,74,0.22);
+            padding: 2.5rem 2rem;
+            max-width: 460px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ── result cards inside gated section ── */
+        .result-card {
+            background: #fff;
+            border-radius: 0.875rem;
+            box-shadow: 0 2px 12px rgba(27,42,74,0.09);
+            padding: 1.5rem 1.25rem;
+            text-align: center;
+        }
+        .result-card .rc-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+        }
+        .result-card .rc-value {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        .rc-blue  { color: var(--blue); }
+        .rc-red   { color: #dc2626; }
+        .rc-amber { color: #d97706; }
+        .rc-green { color: #16a34a; }
+
+        .total-card-full {
+            background: var(--navy);
+            color: #fff;
+            border-radius: 0.875rem;
+            box-shadow: 0 4px 20px rgba(27,42,74,0.22);
+            padding: 1.75rem 1.25rem;
+            text-align: center;
+        }
+        .total-card-full .rc-label { color: #93c5fd; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .total-card-full .rc-value { color: #fff; font-size: 2.5rem; font-weight: 900; }
+
+        /* ── score badge ── */
+        .score-badge {
+            display: inline-block;
+            padding: 0.2rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .badge-red   { background:#fee2e2; color:#b91c1c; }
+        .badge-amber { background:#fef3c7; color:#b45309; }
+        .badge-green { background:#dcfce7; color:#15803d; }
+
+        /* ── recommendation box ── */
+        .rec-box {
+            border-left: 4px solid var(--blue);
+            background: #fff;
+            border-radius: 0 0.75rem 0.75rem 0;
+            padding: 1.5rem 1.75rem;
+            box-shadow: 0 2px 12px rgba(27,42,74,0.07);
+            transition: border-color 0.3s;
+        }
+        .rec-box.score-critical { border-color: #dc2626; }
+        .rec-box.score-moderate { border-color: #d97706; }
+        .rec-box.score-minor    { border-color: var(--blue); }
+        .rec-box.score-strong   { border-color: #16a34a; }
+
+        /* ── form inputs (lock box) ── */
+        .form-input {
+            width: 100%;
+            border: 1.5px solid #d1d5db;
+            border-radius: 0.5rem;
+            padding: 0.65rem 0.9rem;
+            font-size: 0.95rem;
+            color: var(--navy);
+            background: #fff;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(45,125,210,0.15); }
+
+        /* ── unlock button ── */
+        .btn-unlock {
+            display: block;
+            width: 100%;
+            background: var(--blue);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 0.9rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            text-align: center;
+        }
+        .btn-unlock:hover  { background: #2266b8; transform: translateY(-1px); }
+        .btn-unlock:active { transform: translateY(0); }
+
+        /* ── CTA button (post-unlock) ── */
+        .btn-primary {
+            display: inline-block;
+            background: var(--blue);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.85rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            text-decoration: none;
+        }
+        .btn-primary:hover  { background: #2266b8; transform: translateY(-1px); }
+        .btn-primary:active { transform: translateY(0); }
+
+        /* ── hero ── */
+        .hero-calc {
+            background: linear-gradient(135deg, var(--navy) 0%, #2a4a7f 100%);
+            padding: 5.5rem 1.5rem 3.5rem;
+        }
+
+        /* ── fade-in animation for revealed results ── */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.5s ease forwards; }
+
+        /* ── confirmation banner ── */
+        .confirm-banner {
+            background: #dcfce7;
+            border: 1px solid #bbf7d0;
+            border-radius: 0.6rem;
+            padding: 0.85rem 1.25rem;
+            color: #15803d;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        /* ── utility: hidden ── */
+        .is-hidden { display: none !important; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 w-full z-50" id="main-nav" aria-label="Main navigation">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3" aria-label="AIniseFlow homepage">
+                        <picture>
+                            <source srcset="AIniseFlow-Logo.webp" type="image/webp">
+                            <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="h-12 md:h-14 w-auto" width="56" height="56" loading="eager">
+                        </picture>
+                        <span class="text-xl md:text-2xl font-bold whitespace-nowrap">
+                            <span class="text-[#0a3b5c]">AInise</span><span class="text-[#0d8b9c]">Flow</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="ai-aesthetic-clinic-automation.html" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Aesthetic Clinic Automation</a>
+                    <a href="ai-aesthetic-clinic-automation.html#how-it-works" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
+                    <a href="ai-aesthetic-clinic-automation.html#quickstart" class="nav-link text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
+                    <a href="ai-aesthetic-clinic-automation.html#book" class="nav-link bg-[#2A7F83] text-white px-4 py-2 rounded-md hover:bg-[#236e72] transition-colors font-medium text-sm">Book Audit</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 hover:text-[#2A7F83] focus:outline-none focus:ring-2 focus:ring-[#2A7F83] p-2 rounded-md" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden pb-4" role="navigation" aria-label="Mobile navigation">
+                <div class="pt-2 space-y-1 border-t border-gray-100 mt-2">
+                    <a href="ai-aesthetic-clinic-automation.html" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Aesthetic Clinic Automation</a>
+                    <a href="ai-aesthetic-clinic-automation.html#how-it-works" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">How It Works</a>
+                    <a href="ai-aesthetic-clinic-automation.html#quickstart" class="nav-link block py-3 px-2 text-gray-700 hover:text-[#2A7F83] transition-colors font-medium">Packages</a>
+                    <a href="ai-aesthetic-clinic-automation.html#book" class="nav-link block py-3 px-2 text-[#2A7F83] font-semibold">Book Audit &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section class="hero-calc pt-28 pb-16">
+        <div class="container mx-auto px-6 max-w-3xl text-center">
+            <p class="section-label text-[#7ee8f0] mb-3">Free Diagnostic Tool</p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
+                How Much Revenue Is Your Clinic Leaking Each Month?
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Answer 12 questions and get your instant score &mdash; no email required to see your results.
+            </p>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+    <main class="container mx-auto px-4 md:px-6 py-12 max-w-4xl">
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 1 — Your Clinic Numbers
+        ══════════════════════════════════════════════ -->
+        <div class="calc-card mb-8">
+            <p class="section-label mb-1">Section 1</p>
+            <h2 class="text-xl font-bold text-[#1B2A4A] mb-6">Your Clinic Numbers</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div>
+                    <label for="weeklyEnquiries" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Weekly enquiries received
+                    </label>
+                    <input type="number" id="weeklyEnquiries" class="calc-input"
+                           min="0" max="500" placeholder="e.g. 20" inputmode="numeric">
+                </div>
+
+                <div>
+                    <label for="treatmentValue" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Average treatment value (&pound;)
+                    </label>
+                    <input type="number" id="treatmentValue" class="calc-input"
+                           min="0" placeholder="e.g. 350" inputmode="numeric">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label for="outsideHours" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Enquiries arriving outside clinic hours &nbsp;
+                        <span id="outsideHoursVal" class="inline-block bg-[#e8f1fb] text-[#2D7DD2] font-bold px-2 py-0.5 rounded text-sm">50%</span>
+                    </label>
+                    <input type="range" id="outsideHours" min="0" max="100" value="50" step="1">
+                    <div class="flex justify-between text-xs text-gray-400 mt-1">
+                        <span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 md:w-1/2">
+                    <label for="weeklyNoShows" class="block text-sm font-semibold text-gray-700 mb-1">
+                        Weekly no-shows or late cancellations
+                    </label>
+                    <input type="number" id="weeklyNoShows" class="calc-input"
+                           min="0" placeholder="e.g. 3" inputmode="numeric">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 2 — Automation Checklist
+        ══════════════════════════════════════════════ -->
+        <div class="calc-card mb-8">
+            <p class="section-label mb-1">Section 2</p>
+            <h2 class="text-xl font-bold text-[#1B2A4A] mb-2">Automation Checklist</h2>
+            <p class="text-sm text-gray-500 mb-1">Tick every item that is currently in place at your clinic.</p>
+
+            <div class="flex items-center gap-3 mb-6">
+                <div class="progress-bar-wrap flex-1">
+                    <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+                </div>
+                <span id="progressLabel" class="text-sm font-bold text-[#1B2A4A] whitespace-nowrap">0 / 12</span>
+            </div>
+
+            <!-- Group 1 -->
+            <p class="group-heading">Group 1 &mdash; Enquiry Response</p>
+            <div class="space-y-1 mb-5">
+                <div class="check-item"><input type="checkbox" id="c1" class="auto-check"><label for="c1">I have an automated response that replies to new enquiries within 60 seconds, 24/7</label></div>
+                <div class="check-item"><input type="checkbox" id="c2" class="auto-check"><label for="c2">I know exactly how many enquiries arrived outside clinic hours last month</label></div>
+                <div class="check-item"><input type="checkbox" id="c3" class="auto-check"><label for="c3">I have a follow-up sequence for enquiries that never converted to a booking</label></div>
+                <div class="check-item"><input type="checkbox" id="c4" class="auto-check"><label for="c4">Enquiries from Instagram, my website, and email are all captured in one place</label></div>
+            </div>
+
+            <!-- Group 2 -->
+            <p class="group-heading">Group 2 &mdash; No-Shows &amp; Cancellations</p>
+            <div class="space-y-1 mb-5">
+                <div class="check-item"><input type="checkbox" id="c5" class="auto-check"><label for="c5">Patients receive an automated confirmation immediately after booking</label></div>
+                <div class="check-item"><input type="checkbox" id="c6" class="auto-check"><label for="c6">Patients receive at least two reminders before their appointment</label></div>
+                <div class="check-item"><input type="checkbox" id="c7" class="auto-check"><label for="c7">My reminders include a one-click option to confirm, reschedule, or cancel</label></div>
+                <div class="check-item"><input type="checkbox" id="c8" class="auto-check"><label for="c8">An automated follow-up goes out within 2 hours of a missed appointment</label></div>
+            </div>
+
+            <!-- Group 3 -->
+            <p class="group-heading">Group 3 &mdash; Patient Retention</p>
+            <div class="space-y-1">
+                <div class="check-item"><input type="checkbox" id="c9"  class="auto-check"><label for="c9">Patients receive an automated post-treatment message within 48 hours</label></div>
+                <div class="check-item"><input type="checkbox" id="c10" class="auto-check"><label for="c10">Patients who haven&rsquo;t booked in 8&ndash;12 weeks receive an automated reactivation message</label></div>
+                <div class="check-item"><input type="checkbox" id="c11" class="auto-check"><label for="c11">I track my rebooking rate month on month</label></div>
+                <div class="check-item"><input type="checkbox" id="c12" class="auto-check"><label for="c12">Patients receive an automated prompt to leave a Google review after treatment</label></div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             CALCULATE BUTTON
+        ══════════════════════════════════════════════ -->
+        <div class="mb-10">
+            <button id="calculateBtn" class="btn-calculate">
+                <i class="fas fa-calculator mr-2" aria-hidden="true"></i>Calculate My Revenue Leak
+            </button>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 3 — Partial Results (teaser)
+             Hidden until Calculate clicked
+        ══════════════════════════════════════════════ -->
+        <div id="teaserSection" class="is-hidden mb-4">
+            <p class="section-label mb-1">Your Result</p>
+            <h2 class="text-xl font-bold text-[#1B2A4A] mb-6">Estimated Monthly Revenue Leak</h2>
+
+            <div class="teaser-card">
+                <p class="tc-label">Your Total Monthly Revenue Leak</p>
+                <p class="tc-value" id="teaserTotal">&pound;0</p>
+                <p class="text-sm mt-3" style="color:#93c5fd;">Based on your clinic numbers and automation score</p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 4 — Gated full results
+             Hidden until Calculate clicked
+        ══════════════════════════════════════════════ -->
+        <div id="gatedSection" class="is-hidden">
+
+            <!-- Confirmation banner (shown after unlock) -->
+            <div id="confirmBanner" class="confirm-banner mb-6 is-hidden">
+                <i class="fas fa-check-circle text-green-600 text-lg flex-shrink-0" aria-hidden="true"></i>
+                Your personalised recovery plan is on its way &mdash; check your inbox shortly.
+            </div>
+
+            <!-- ── Blurred content ── -->
+            <div id="blurredContent">
+                <p class="section-label mb-1">Full Breakdown</p>
+                <h2 class="text-xl font-bold text-[#1B2A4A] mb-6">Your Detailed Results</h2>
+
+                <!-- Four result cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+
+                    <div class="result-card">
+                        <p class="rc-label">Monthly Enquiry Leak</p>
+                        <p class="rc-value rc-blue" id="enquiryLeak">&pound;0</p>
+                        <p class="text-xs text-gray-400 mt-2">Based on outside-hours enquiry loss</p>
+                    </div>
+
+                    <div class="result-card">
+                        <p class="rc-label">Monthly No-Show Cost</p>
+                        <p class="rc-value rc-blue" id="noShowCost">&pound;0</p>
+                        <p class="text-xs text-gray-400 mt-2">Based on missed appointments &times; treatment value</p>
+                    </div>
+
+                    <div class="total-card-full sm:col-span-2">
+                        <p class="rc-label">Total Monthly Revenue Leak</p>
+                        <p class="rc-value" id="totalLeakFull">&pound;0</p>
+                        <p class="text-xs mt-2" style="color:#93c5fd;">Sum of enquiry leak + no-show cost</p>
+                    </div>
+
+                    <div class="result-card sm:col-span-2">
+                        <p class="rc-label">Automation Score</p>
+                        <div class="flex items-center justify-center gap-3 mt-1">
+                            <p class="rc-value" id="scoreValue" style="color:#1B2A4A;">0 / 12</p>
+                            <span id="scoreBadge" class="score-badge badge-red">Critical</span>
+                        </div>
+                        <div class="progress-bar-wrap mt-3 max-w-xs mx-auto">
+                            <div class="progress-bar-fill" id="scoreBarFill" style="width:0%; background:#dc2626;"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">12 automation checkpoints assessed</p>
+                    </div>
+
+                </div>
+
+                <!-- Personalised recommendation -->
+                <div class="rec-box score-critical mb-8" id="recBox">
+                    <h3 class="text-lg font-bold text-[#1B2A4A] mb-2" id="recHeading">Critical Gaps Identified</h3>
+                    <p class="text-gray-600 leading-relaxed" id="recBody">
+                        Your clinic has significant automation gaps that are costing you revenue every week.
+                    </p>
+                </div>
+
+                <!-- Post-unlock CTA -->
+                <div id="postUnlockCTA" class="text-center pb-4 is-hidden">
+                    <a href="/ai-aesthetic-clinic-automation.html#book" class="btn-primary">
+                        <i class="fas fa-calendar-check mr-2" aria-hidden="true"></i>Book Your Free 15-Min Clinic Audit
+                    </a>
+                </div>
+
+            </div><!-- /#blurredContent -->
+
+            <!-- ── Lock overlay ── -->
+            <div id="lockOverlay">
+                <div class="lock-box">
+                    <div class="text-5xl mb-3" role="img" aria-label="Locked">&#128274;</div>
+                    <h3 class="text-xl font-extrabold text-[#1B2A4A] mb-2">Unlock Your Full Results</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">
+                        See your three biggest revenue gaps ranked by impact, your monthly cost breakdown, and your personalised recovery plan.
+                    </p>
+
+                    <form id="unlockForm" novalidate>
+                        <div class="grid grid-cols-1 gap-3 mb-3 text-left">
+                            <div>
+                                <label for="firstName" class="block text-xs font-semibold text-gray-600 mb-1">First Name</label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" placeholder="e.g. Sarah" autocomplete="given-name" required>
+                            </div>
+                            <div>
+                                <label for="emailAddress" class="block text-xs font-semibold text-gray-600 mb-1">Email Address</label>
+                                <input type="email" id="emailAddress" name="email" class="form-input" placeholder="e.g. sarah@myclinic.co.uk" autocomplete="email" required>
+                            </div>
+                        </div>
+
+                        <!-- Hidden data fields -->
+                        <input type="hidden" name="_subject"       id="formSubject"        value="Clinic Revenue Calculator Results">
+                        <input type="hidden" name="automationScore" id="hiddenScore"        value="0">
+                        <input type="hidden" name="totalRevenueLeak" id="hiddenLeak"        value="£0">
+                        <input type="hidden" name="enquiryLeak"    id="hiddenEnquiryLeak"  value="£0">
+                        <input type="hidden" name="noShowCost"     id="hiddenNoShowCost"   value="£0">
+                        <input type="hidden" name="_gotcha"        value="">
+
+                        <div class="flex items-start gap-2 mb-4 text-left">
+                            <input type="checkbox" id="gdprConsent" name="gdprConsent"
+                                   class="mt-1 w-4 h-4 flex-shrink-0" style="accent-color:var(--blue);" required>
+                            <label for="gdprConsent" class="text-xs text-gray-500 leading-relaxed">
+                                I agree to receive my results report and clinic automation tips from AIniseFlow. Unsubscribe anytime.
+                            </label>
+                        </div>
+
+                        <p id="formError" class="text-red-600 text-xs mb-3 is-hidden text-left"></p>
+
+                        <button type="submit" id="unlockBtn" class="btn-unlock">
+                            <i class="fas fa-unlock-alt mr-2" aria-hidden="true"></i>Unlock My Full Results
+                        </button>
+                    </form>
+                </div>
+            </div><!-- /#lockOverlay -->
+
+        </div><!-- /#gatedSection -->
+
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="bg-[#1e3a5f] text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-5">
+                        <img src="AIniseFlow-Logo.png" alt="AIniseFlow Logo" class="h-10 w-auto" width="40" height="40" loading="lazy">
+                        <span class="text-xl font-bold whitespace-nowrap"><span class="text-white">AInise</span><span class="text-[#0d8b9c]">Flow</span></span>
+                    </div>
+                    <p class="text-gray-300 mb-5 leading-relaxed text-sm">AI booking and follow-up automation for UK aesthetic clinics. Helping clinics reduce admin, cut no-shows, and rebook more patients.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/1B1i9xa3N6/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#2dd4bf] transition-colors" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ainiseflow?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-[#2dd4bf] transition-colors" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-base font-semibold mb-5 text-[#2dd4bf]">Clinic Automation</h4>
+                    <div class="text-sm space-y-2">
+                        <a href="ai-aesthetic-clinic-automation.html#system" class="block text-gray-300 hover:text-white transition-colors">Enquiry &amp; Booking System</a>
+                        <a href="ai-aesthetic-clinic-automation.html#system" class="block text-gray-300 hover:text-white transition-colors">Appointment Reminders</a>
+                        <a href="ai-aesthetic-clinic-automation.html#system" class="block text-gray-300 hover:text-white transition-colors">Post-Visit Follow-Up</a>
+                        <a href="ai-aesthetic-clinic-automation.html#system" class="block text-gray-300 hover:text-white transition-colors">Patient Reactivation</a>
+                        <a href="ai-aesthetic-clinic-automation.html#system" class="block text-gray-300 hover:text-white transition-colors">Review Requests</a>
+                    </div>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h4 class="text-base font-semibold mb-5 text-[#2dd4bf]">Get Started</h4>
+                    <p class="text-gray-300 mb-5 text-sm">Book a 15-minute audit call to see how automation would work in your clinic.</p>
+                    <a href="/ai-aesthetic-clinic-automation.html#book"
+                       class="inline-block bg-[#2dd4bf] text-[#1e3a5f] font-semibold py-2.5 px-5 rounded-lg hover:bg-opacity-90 transition-colors text-sm mb-5">
+                        <i class="fas fa-calendar-check mr-1" aria-hidden="true"></i>Book Clinic Audit
+                    </a>
+                    <div class="text-sm text-gray-300 space-y-1">
+                        <p><i class="fas fa-envelope mr-2" aria-hidden="true"></i><a href="mailto:hello@ainiseflow.co.uk" class="hover:text-white transition-colors">hello@ainiseflow.co.uk</a></p>
+                        <p class="text-xs text-gray-400 mt-2">UK clinics only &middot; GDPR compliant</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-600 mt-10 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 AIniseFlow &mdash; AI Automation for UK Aesthetic Clinics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <div class="scroll-top" id="scrollTop" role="button" aria-label="Scroll to top" tabindex="0">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </div>
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+    <script src="scripts.js"></script>
+    <script>
+    (function () {
+        'use strict';
+
+        /* ─────────────────────────────────────────
+           DOM references
+        ───────────────────────────────────────── */
+        var inpEnquiries  = document.getElementById('weeklyEnquiries');
+        var inpHours      = document.getElementById('outsideHours');
+        var inpHoursVal   = document.getElementById('outsideHoursVal');
+        var inpTV         = document.getElementById('treatmentValue');
+        var inpNoShows    = document.getElementById('weeklyNoShows');
+        var checkboxes    = document.querySelectorAll('.auto-check');
+
+        var calcBtn       = document.getElementById('calculateBtn');
+        var teaserSection = document.getElementById('teaserSection');
+        var gatedSection  = document.getElementById('gatedSection');
+
+        var elTeaserTotal = document.getElementById('teaserTotal');
+
+        var blurredContent = document.getElementById('blurredContent');
+        var lockOverlay    = document.getElementById('lockOverlay');
+        var confirmBanner  = document.getElementById('confirmBanner');
+        var postUnlockCTA  = document.getElementById('postUnlockCTA');
+
+        var elEnquiryLeak = document.getElementById('enquiryLeak');
+        var elNoShowCost  = document.getElementById('noShowCost');
+        var elTotalFull   = document.getElementById('totalLeakFull');
+        var elScoreValue  = document.getElementById('scoreValue');
+        var elScoreBadge  = document.getElementById('scoreBadge');
+        var elScoreBar    = document.getElementById('scoreBarFill');
+        var elProgFill    = document.getElementById('progressFill');
+        var elProgLabel   = document.getElementById('progressLabel');
+        var elRecBox      = document.getElementById('recBox');
+        var elRecHeading  = document.getElementById('recHeading');
+        var elRecBody     = document.getElementById('recBody');
+
+        /* ─────────────────────────────────────────
+           Helpers
+        ───────────────────────────────────────── */
+        function fmtGBP(n) {
+            return '\u00A3' + Math.round(n).toLocaleString('en-GB');
+        }
+        function numVal(el) {
+            var v = parseFloat(el.value);
+            return (isNaN(v) || v < 0) ? 0 : v;
+        }
+        function score() {
+            var s = 0;
+            checkboxes.forEach(function(cb){ if(cb.checked) s++; });
+            return s;
+        }
+
+        /* ─────────────────────────────────────────
+           Core calculation — always uses live
+           input values at the moment it is called
+        ───────────────────────────────────────── */
+        function calculate() {
+            var enq   = numVal(inpEnquiries);
+            var pct   = parseFloat(inpHours.value) / 100;
+            var tv    = numVal(inpTV);
+            var ns    = numVal(inpNoShows);
+            var sc    = score();
+
+            var eLeak = enq * pct * 0.5 * tv * 4;
+            var nLeak = ns * tv * 4;
+            var total = eLeak + nLeak;
+
+            return { eLeak: eLeak, nLeak: nLeak, total: total, score: sc };
+        }
+
+        /* ─────────────────────────────────────────
+           Update checklist progress bar (live)
+        ───────────────────────────────────────── */
+        function updateProgress() {
+            var sc  = score();
+            var pct = (sc / 12) * 100;
+            elProgFill.style.width  = pct + '%';
+            elProgLabel.textContent = sc + ' / 12';
+        }
+
+        /* ─────────────────────────────────────────
+           Render teaser card
+        ───────────────────────────────────────── */
+        function renderTeaser() {
+            var r = calculate();
+            elTeaserTotal.textContent = fmtGBP(r.total);
+        }
+
+        /* ─────────────────────────────────────────
+           Render full gated results
+        ───────────────────────────────────────── */
+        function renderFull() {
+            var r  = calculate();
+            var sc = r.score;
+
+            elEnquiryLeak.textContent = fmtGBP(r.eLeak);
+            elNoShowCost.textContent  = fmtGBP(r.nLeak);
+            elTotalFull.textContent   = fmtGBP(r.total);
+
+            /* Score card */
+            elScoreValue.textContent = sc + ' / 12';
+            var scorePct = (sc / 12) * 100;
+            elScoreBar.style.width = scorePct + '%';
+
+            var bClass, bText, bColour;
+            if (sc <= 4)       { bClass='badge-red';   bText='Critical'; bColour='#dc2626'; }
+            else if (sc <= 8)  { bClass='badge-amber'; bText='Moderate'; bColour='#d97706'; }
+            else               { bClass='badge-green'; bText='Strong';   bColour='#16a34a'; }
+            elScoreBadge.className   = 'score-badge ' + bClass;
+            elScoreBadge.textContent = bText;
+            elScoreBar.style.background = bColour;
+
+            /* Recommendation */
+            var leakStr = fmtGBP(r.total);
+            var rClass, rHead, rBody;
+            if (sc <= 4) {
+                rClass = 'score-critical';
+                rHead  = 'Critical Gaps Identified';
+                rBody  = 'Your clinic has significant automation gaps. Based on your numbers, you could be losing '
+                       + leakStr + ' every month in missed enquiries and preventable no-shows. This is recoverable \u2014 and quickly.';
+            } else if (sc <= 8) {
+                rClass = 'score-moderate';
+                rHead  = 'Moderate Gaps Identified';
+                rBody  = 'You have some automation in place but key touchpoints are still manual. Based on your numbers, your monthly revenue leak is approximately '
+                       + leakStr + '. Closing these gaps is straightforward with the right setup.';
+            } else if (sc <= 11) {
+                rClass = 'score-minor';
+                rHead  = 'Minor Gaps Remaining';
+                rBody  = 'Your clinic has good automation foundations. There are still '
+                       + leakStr + ' of preventable losses each month that a few targeted improvements would recover.';
+            } else {
+                rClass = 'score-strong';
+                rHead  = 'Strong Foundations';
+                rBody  = 'Your clinic is well automated. If you are still seeing no-shows or lapsed patients, the opportunity is in fine-tuning timing and copy rather than building from scratch.';
+            }
+            elRecBox.className      = 'rec-box ' + rClass;
+            elRecHeading.textContent = rHead;
+            elRecBody.textContent   = rBody;
+
+            /* Sync hidden form fields with live values */
+            document.getElementById('hiddenScore').value       = sc + ' / 12';
+            document.getElementById('hiddenLeak').value        = fmtGBP(r.total);
+            document.getElementById('hiddenEnquiryLeak').value = fmtGBP(r.eLeak);
+            document.getElementById('hiddenNoShowCost').value  = fmtGBP(r.nLeak);
+            document.getElementById('formSubject').value       =
+                'Clinic Revenue Calculator \u2014 Score: ' + sc + '/12, Leak: ' + fmtGBP(r.total);
+        }
+
+        /* ─────────────────────────────────────────
+           Slider live label
+        ───────────────────────────────────────── */
+        inpHours.addEventListener('input', function () {
+            inpHoursVal.textContent = this.value + '%';
+        });
+
+        /* ─────────────────────────────────────────
+           Checklist progress — live
+        ───────────────────────────────────────── */
+        checkboxes.forEach(function(cb){
+            cb.addEventListener('change', updateProgress);
+        });
+
+        /* ─────────────────────────────────────────
+           Calculate button — reveal sections 3 & 4
+        ───────────────────────────────────────── */
+        calcBtn.addEventListener('click', function () {
+            /* Reveal teaser */
+            teaserSection.classList.remove('is-hidden');
+            renderTeaser();
+
+            /* Reveal gated section */
+            gatedSection.classList.remove('is-hidden');
+            renderFull();
+
+            /* Smooth scroll to teaser */
+            teaserSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            /* Update button label */
+            calcBtn.innerHTML = '<i class="fas fa-sync-alt mr-2" aria-hidden="true"></i>Recalculate';
+        });
+
+        /* ─────────────────────────────────────────
+           If sections already visible (recalc),
+           keep results live on input changes too
+        ───────────────────────────────────────── */
+        function liveUpdate() {
+            if (!teaserSection.classList.contains('is-hidden')) {
+                renderTeaser();
+            }
+            if (!gatedSection.classList.contains('is-hidden') &&
+                blurredContent.classList.contains('revealed')) {
+                renderFull();
+            }
+        }
+        [inpEnquiries, inpTV, inpNoShows].forEach(function(el){
+            el.addEventListener('input', liveUpdate);
+        });
+        inpHours.addEventListener('input', liveUpdate);
+        checkboxes.forEach(function(cb){
+            cb.addEventListener('change', liveUpdate);
+        });
+
+        /* ─────────────────────────────────────────
+           Unlock form — fetch() submit
+        ───────────────────────────────────────── */
+        document.getElementById('unlockForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var errEl   = document.getElementById('formError');
+            var name    = document.getElementById('firstName').value.trim();
+            var email   = document.getElementById('emailAddress').value.trim();
+            var consent = document.getElementById('gdprConsent').checked;
+
+            /* Client-side validation */
+            errEl.classList.add('is-hidden');
+            if (!name) {
+                errEl.textContent = 'Please enter your first name.';
+                errEl.classList.remove('is-hidden');
+                return;
+            }
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errEl.textContent = 'Please enter a valid email address.';
+                errEl.classList.remove('is-hidden');
+                return;
+            }
+            if (!consent) {
+                errEl.textContent = 'Please tick the consent checkbox to continue.';
+                errEl.classList.remove('is-hidden');
+                return;
+            }
+
+            /* Sync latest live values into hidden fields before submit */
+            renderFull();
+
+            var btn = document.getElementById('unlockBtn');
+            btn.disabled    = true;
+            btn.textContent = 'Sending\u2026';
+
+            fetch('https://formspree.io/f/mpwdodpp', {
+                method:  'POST',
+                body:    new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(function(res) {
+                if (res.ok) {
+                    /* ── SUCCESS: remove blur, hide overlay, show CTA ── */
+                    /* 1. Fade out overlay */
+                    lockOverlay.classList.add('hidden-overlay');
+
+                    /* 2. Remove blur after a short delay to let overlay fade first */
+                    setTimeout(function() {
+                        lockOverlay.style.display = 'none';
+                        blurredContent.classList.add('revealed');
+                        blurredContent.classList.add('fade-in-up');
+
+                        /* Render full results with latest values */
+                        renderFull();
+
+                        /* Show confirmation banner */
+                        confirmBanner.classList.remove('is-hidden');
+
+                        /* Show post-unlock CTA */
+                        postUnlockCTA.classList.remove('is-hidden');
+
+                        /* Scroll to confirmation banner */
+                        confirmBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 350);
+
+                } else {
+                    return res.json().then(function(data) {
+                        throw new Error(data.error || 'Submission failed.');
+                    });
+                }
+            })
+            .catch(function() {
+                errEl.textContent = 'Something went wrong \u2014 please try again or email us at hello@ainiseflow.co.uk';
+                errEl.classList.remove('is-hidden');
+                btn.disabled    = false;
+                btn.innerHTML   = '<i class="fas fa-unlock-alt mr-2"></i>Unlock My Full Results';
+            });
+        });
+
+        /* ─────────────────────────────────────────
+           Mobile menu toggle
+        ───────────────────────────────────────── */
+        var menuBtn    = document.getElementById('menu-btn');
+        var mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', function() {
+                var nowHidden = mobileMenu.classList.toggle('hidden');
+                menuBtn.setAttribute('aria-expanded', String(!nowHidden));
+            });
+        }
+
+        /* ─────────────────────────────────────────
+           Scroll to top
+        ───────────────────────────────────────── */
+        var scrollTopBtn = document.getElementById('scrollTop');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', function() {
+                scrollTopBtn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+            });
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        /* ─────────────────────────────────────────
+           Initial state
+        ───────────────────────────────────────── */
+        updateProgress();
+
+    }());
+    </script>
+</body>
+</html>
