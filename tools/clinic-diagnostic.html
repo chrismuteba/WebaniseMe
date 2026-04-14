@@ -12,6 +12,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- EmailJS SDK — sends personalised report to the user -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
         :root {
@@ -978,6 +980,96 @@
         });
 
         /* ─────────────────────────────────────────
+           EmailJS — initialise with your Public Key
+           Replace EMAILJS_PUBLIC_KEY with the key
+           from emailjs.com → Account → API Keys
+        ───────────────────────────────────────── */
+        (function(){
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init({ publicKey: 'EMAILJS_PUBLIC_KEY' });
+            }
+        })();
+
+        /* ─────────────────────────────────────────
+           Build personalised HTML report email
+           Returns an object with all template vars
+        ───────────────────────────────────────── */
+        function buildReportParams(firstName, email) {
+            var r  = calculate();
+            var sc = r.score;
+
+            /* Score label */
+            var scoreLabel;
+            if (sc <= 4)       scoreLabel = 'Critical';
+            else if (sc <= 8)  scoreLabel = 'Moderate';
+            else if (sc <= 11) scoreLabel = 'Minor Gaps';
+            else               scoreLabel = 'Strong';
+
+            /* Recommendation text */
+            var leakStr = fmtGBP(r.total);
+            var recHead, recBody;
+            if (sc <= 4) {
+                recHead = 'Critical Gaps Identified';
+                recBody = 'Your clinic has significant automation gaps. Based on your numbers, you could be losing '
+                        + leakStr + ' every month in missed enquiries and preventable no-shows. This is recoverable — and quickly.';
+            } else if (sc <= 8) {
+                recHead = 'Moderate Gaps Identified';
+                recBody = 'You have some automation in place but key touchpoints are still manual. Based on your numbers, your monthly revenue leak is approximately '
+                        + leakStr + '. Closing these gaps is straightforward with the right setup.';
+            } else if (sc <= 11) {
+                recHead = 'Minor Gaps Remaining';
+                recBody = 'Your clinic has good automation foundations. There are still '
+                        + leakStr + ' of preventable losses each month that a few targeted improvements would recover.';
+            } else {
+                recHead = 'Strong Foundations';
+                recBody = 'Your clinic is well automated. If you are still seeing no-shows or lapsed patients, the opportunity is in fine-tuning timing and copy rather than building from scratch.';
+            }
+
+            /* Score colour */
+            var scoreColour = sc <= 4 ? '#dc2626' : sc <= 8 ? '#d97706' : '#16a34a';
+
+            /* Three priority actions based on score */
+            var actions;
+            if (sc <= 4) {
+                actions = [
+                    'Set up automated enquiry responses within 15 minutes of each new lead',
+                    'Introduce SMS appointment reminders 48h and 2h before each booking',
+                    'Launch a patient reactivation sequence for anyone who hasn\'t booked in 90+ days'
+                ];
+            } else if (sc <= 8) {
+                actions = [
+                    'Consolidate enquiries from all channels (Instagram, website, email) into one inbox',
+                    'Add a confirmation and preparation email sent immediately after each booking',
+                    'Create a post-treatment follow-up sequence to encourage rebooking'
+                ];
+            } else {
+                actions = [
+                    'Review response time data — are out-of-hours enquiries still being picked up?',
+                    'A/B test subject lines on your reminder and reactivation emails',
+                    'Add a quarterly review trigger to catch lapsed patients before they book elsewhere'
+                ];
+            }
+
+            return {
+                to_name:       firstName,
+                to_email:      email,
+                score:         sc + ' / 12',
+                score_label:   scoreLabel,
+                score_colour:  scoreColour,
+                enquiry_leak:  fmtGBP(r.eLeak),
+                noshow_cost:   fmtGBP(r.nLeak),
+                total_leak:    fmtGBP(r.total),
+                rec_heading:   recHead,
+                rec_body:      recBody,
+                action_1:      actions[0],
+                action_2:      actions[1],
+                action_3:      actions[2],
+                audit_url:     'https://ainiseflow.com/ai-aesthetic-clinic-automation.html#book',
+                tool_url:      'https://ainiseflow.com/tools/clinic-diagnostic.html'
+            };
+        }
+
+        /* ─────────────────────────────────────────
            Unlock form — fetch() submit
         ───────────────────────────────────────── */
         document.getElementById('unlockForm').addEventListener('submit', function(e) {
@@ -1013,41 +1105,53 @@
             btn.disabled    = true;
             btn.textContent = 'Sending\u2026';
 
+            /* ── Step 1: Submit to Formspree (data capture to your inbox) ── */
             fetch('https://formspree.io/f/mpwdodpp', {
                 method:  'POST',
                 body:    new FormData(this),
                 headers: { 'Accept': 'application/json' }
             })
             .then(function(res) {
-                if (res.ok) {
-                    /* ── SUCCESS: remove blur, hide overlay, show CTA ── */
-                    /* 1. Fade out overlay */
-                    lockOverlay.classList.add('hidden-overlay');
-
-                    /* 2. Remove blur after a short delay to let overlay fade first */
-                    setTimeout(function() {
-                        lockOverlay.style.display = 'none';
-                        blurredContent.classList.add('revealed');
-                        blurredContent.classList.add('fade-in-up');
-
-                        /* Render full results with latest values */
-                        renderFull();
-
-                        /* Show confirmation banner */
-                        confirmBanner.classList.remove('is-hidden');
-
-                        /* Show post-unlock CTA */
-                        postUnlockCTA.classList.remove('is-hidden');
-
-                        /* Scroll to confirmation banner */
-                        confirmBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 350);
-
-                } else {
+                if (!res.ok) {
                     return res.json().then(function(data) {
                         throw new Error(data.error || 'Submission failed.');
                     });
                 }
+
+                /* ── Step 2: Send personalised report via EmailJS ── */
+                var reportParams = buildReportParams(name, email);
+
+                if (typeof emailjs !== 'undefined' &&
+                    'EMAILJS_PUBLIC_KEY' !== 'EMAILJS_PUBLIC_KEY') {
+                    /* EmailJS is configured — send the report email */
+                    return emailjs.send(
+                        'EMAILJS_SERVICE_ID',    /* replace with your EmailJS Service ID   */
+                        'EMAILJS_TEMPLATE_ID',   /* replace with your EmailJS Template ID  */
+                        reportParams
+                    ).catch(function(ejsErr) {
+                        /* Non-fatal: log but don't block the user */
+                        console.warn('EmailJS send failed:', ejsErr);
+                    });
+                }
+                /* EmailJS not yet configured — skip silently */
+                return Promise.resolve();
+            })
+            .then(function() {
+                /* ── SUCCESS: unlock results, show confirmation ── */
+                lockOverlay.classList.add('hidden-overlay');
+
+                setTimeout(function() {
+                    lockOverlay.style.display = 'none';
+                    blurredContent.classList.add('revealed');
+                    blurredContent.classList.add('fade-in-up');
+
+                    renderFull();
+
+                    confirmBanner.classList.remove('is-hidden');
+                    postUnlockCTA.classList.remove('is-hidden');
+
+                    confirmBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 350);
             })
             .catch(function() {
                 errEl.textContent = 'Something went wrong \u2014 please try again or email us at hello@ainiseflow.co.uk';
