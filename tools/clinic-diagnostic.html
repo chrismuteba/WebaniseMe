@@ -922,7 +922,7 @@
             document.getElementById('hiddenEnquiryLeak').value = fmtGBP(r.eLeak);
             document.getElementById('hiddenNoShowCost').value  = fmtGBP(r.nLeak);
             document.getElementById('formSubject').value       =
-                'Clinic Revenue Calculator \u2014 Score: ' + sc + '/12, Leak: ' + fmtGBP(r.total);
+                'Clinic Diagnostic: Score ' + sc + ' of 12, Leak: ' + fmtGBP(r.total);
         }
 
         /* ─────────────────────────────────────────
@@ -1053,7 +1053,7 @@
             return {
                 to_name:       firstName,
                 to_email:      email,
-                subject:       'Your Clinic Revenue Report \u2014 Score ' + sc + '/12 (' + scoreLabel + ')',
+                subject:       'Your Clinic Revenue Report: Score ' + sc + ' of 12 (' + scoreLabel + ')',
                 score:         sc + ' / 12',
                 score_label:   scoreLabel,
                 score_colour:  scoreColour,
