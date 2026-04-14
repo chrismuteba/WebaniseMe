@@ -555,7 +555,7 @@
             <!-- Confirmation banner (shown after unlock) -->
             <div id="confirmBanner" class="confirm-banner mb-6 is-hidden">
                 <i class="fas fa-check-circle text-green-600 text-lg flex-shrink-0" aria-hidden="true"></i>
-                Your personalised recovery plan is on its way &mdash; check your inbox shortly.
+                Your report is being prepared and will land in your inbox within the next few minutes. In the meantime, your full results are waiting below.
             </div>
 
             <!-- ── Blurred content ── -->
@@ -619,16 +619,20 @@
             <div id="lockOverlay">
                 <div class="lock-box">
                     <div class="text-5xl mb-3" role="img" aria-label="Locked">&#128274;</div>
-                    <h3 class="text-xl font-extrabold text-[#1B2A4A] mb-2">Unlock Your Full Results</h3>
+                    <h3 class="text-xl font-extrabold text-[#1B2A4A] mb-2">Your Report Is Ready</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed">
-                        See your three biggest revenue gaps ranked by impact, your monthly cost breakdown, and your personalised recovery plan.
+                        Enter your details below and we'll send a personalised revenue report directly to your inbox — complete with your clinic's exact leak figures, score breakdown, and a prioritised action plan.
                     </p>
 
                     <form id="unlockForm" novalidate>
                         <div class="grid grid-cols-1 gap-3 mb-3 text-left">
                             <div>
-                                <label for="firstName" class="block text-xs font-semibold text-gray-600 mb-1">First Name</label>
+                                <label for="firstName" class="block text-xs font-semibold text-gray-600 mb-1">Your First Name</label>
                                 <input type="text" id="firstName" name="firstName" class="form-input" placeholder="e.g. Sarah" autocomplete="given-name" required>
+                            </div>
+                            <div>
+                                <label for="clinicName" class="block text-xs font-semibold text-gray-600 mb-1">Clinic Name</label>
+                                <input type="text" id="clinicName" name="clinicName" class="form-input" placeholder="e.g. Radiance Aesthetics" autocomplete="organization" required>
                             </div>
                             <div>
                                 <label for="emailAddress" class="block text-xs font-semibold text-gray-600 mb-1">Email Address</label>
@@ -637,6 +641,7 @@
                         </div>
 
                         <!-- Hidden data fields -->
+                        <input type="hidden" name="clinicNameHidden" id="clinicNameHidden"  value="">
                         <input type="hidden" name="_subject"       id="formSubject"        value="Clinic Revenue Calculator Results">
                         <input type="hidden" name="automationScore" id="hiddenScore"        value="0">
                         <input type="hidden" name="totalRevenueLeak" id="hiddenLeak"        value="£0">
@@ -921,8 +926,9 @@
             document.getElementById('hiddenLeak').value        = fmtGBP(r.total);
             document.getElementById('hiddenEnquiryLeak').value = fmtGBP(r.eLeak);
             document.getElementById('hiddenNoShowCost').value  = fmtGBP(r.nLeak);
+            var clinicVal = document.getElementById('clinicName') ? document.getElementById('clinicName').value.trim() : '';
             document.getElementById('formSubject').value       =
-                'Clinic Diagnostic: Score ' + sc + ' of 12, Leak: ' + fmtGBP(r.total);
+                (clinicVal ? clinicVal + ' \u2014 ' : '') + 'Clinic Diagnostic: Score ' + sc + ' of 12, Leak: ' + fmtGBP(r.total);
         }
 
         /* ─────────────────────────────────────────
@@ -994,7 +1000,7 @@
            Build personalised HTML report email
            Returns an object with all template vars
         ───────────────────────────────────────── */
-        function buildReportParams(firstName, email) {
+        function buildReportParams(firstName, clinicName, email) {
             var r  = calculate();
             var sc = r.score;
 
@@ -1007,22 +1013,23 @@
 
             /* Recommendation text */
             var leakStr = fmtGBP(r.total);
+            var clinicRef = clinicName || 'your clinic';
             var recHead, recBody;
             if (sc <= 4) {
                 recHead = 'Critical Gaps Identified';
-                recBody = 'Your clinic has significant automation gaps. Based on your numbers, you could be losing '
+                recBody = clinicRef + ' has significant automation gaps. Based on the numbers entered, you could be losing '
                         + leakStr + ' every month in missed enquiries and preventable no-shows. This is recoverable — and quickly.';
             } else if (sc <= 8) {
                 recHead = 'Moderate Gaps Identified';
-                recBody = 'You have some automation in place but key touchpoints are still manual. Based on your numbers, your monthly revenue leak is approximately '
+                recBody = clinicRef + ' has some automation in place but key touchpoints are still manual. Based on the numbers entered, the monthly revenue leak is approximately '
                         + leakStr + '. Closing these gaps is straightforward with the right setup.';
             } else if (sc <= 11) {
                 recHead = 'Minor Gaps Remaining';
-                recBody = 'Your clinic has good automation foundations. There are still '
+                recBody = clinicRef + ' has good automation foundations. There are still '
                         + leakStr + ' of preventable losses each month that a few targeted improvements would recover.';
             } else {
                 recHead = 'Strong Foundations';
-                recBody = 'Your clinic is well automated. If you are still seeing no-shows or lapsed patients, the opportunity is in fine-tuning timing and copy rather than building from scratch.';
+                recBody = clinicRef + ' is well automated. If you are still seeing no-shows or lapsed patients, the opportunity is in fine-tuning timing and copy rather than building from scratch.';
             }
 
             /* Score colour */
@@ -1052,8 +1059,10 @@
 
             return {
                 to_name:       firstName,
+                clinic_name:   clinicName,
                 to_email:      email,
-                subject:       'Your Clinic Revenue Report: Score ' + sc + ' of 12 (' + scoreLabel + ')',
+                subject:       clinicName + ' Revenue Report: Score ' + sc + ' of 12 (' + scoreLabel + ')',
+                subtitle:      'We ran the numbers for ' + clinicName + ' and the results are in. ' + firstName + ', your clinic scored ' + sc + ' out of 12 across our automation health-check — here is exactly where revenue is slipping through the cracks, and the fastest way to recover it.',
                 score:         sc + ' / 12',
                 score_label:   scoreLabel,
                 score_colour:  scoreColour,
@@ -1078,6 +1087,7 @@
 
             var errEl   = document.getElementById('formError');
             var name    = document.getElementById('firstName').value.trim();
+            var clinic  = document.getElementById('clinicName').value.trim();
             var email   = document.getElementById('emailAddress').value.trim();
             var consent = document.getElementById('gdprConsent').checked;
 
@@ -1085,6 +1095,11 @@
             errEl.classList.add('is-hidden');
             if (!name) {
                 errEl.textContent = 'Please enter your first name.';
+                errEl.classList.remove('is-hidden');
+                return;
+            }
+            if (!clinic) {
+                errEl.textContent = 'Please enter your clinic name.';
                 errEl.classList.remove('is-hidden');
                 return;
             }
@@ -1098,6 +1113,9 @@
                 errEl.classList.remove('is-hidden');
                 return;
             }
+
+            /* Sync clinic name into hidden field for Formspree */
+            document.getElementById('clinicNameHidden').value = clinic;
 
             /* Sync latest live values into hidden fields before submit */
             renderFull();
@@ -1120,7 +1138,7 @@
                 }
 
                 /* ── Step 2: Send personalised report via EmailJS ── */
-                var reportParams = buildReportParams(name, email);
+                var reportParams = buildReportParams(name, clinic, email);
 
                 if (typeof emailjs !== 'undefined') {
                     /* EmailJS is configured — send the report email */

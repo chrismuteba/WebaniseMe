@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Clinic Revenue Report — AIniseFlow</title>
+  <title>{{clinic_name}} Revenue Report — AIniseFlow</title>
 </head>
 <body style="margin:0;padding:0;background-color:#e8f7f8;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
 
-  <!-- Preheader (hidden preview text) -->
-  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Your clinic automation score: {{score}} — here is your full personalised revenue report from AIniseFlow.</div>
-  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
+  <!-- Hidden preheader -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">{{clinic_name}} scored {{score}} on the AIniseFlow automation diagnostic. Your full revenue report is inside.</div>
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div>
 
   <!-- Outer wrapper -->
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#e8f7f8;padding:32px 16px;">
@@ -19,33 +19,33 @@
         <!-- Email card -->
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(10,59,92,0.12);">
 
-          <!-- ══ HEADER ══ -->
+          <!-- HEADER -->
           <tr>
-            <td style="background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);padding:36px 40px 32px;text-align:center;">
+            <td style="background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);padding:36px 40px 30px;text-align:center;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td align="center" style="padding-bottom:18px;">
-                    <img src="data:image/png;base64,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" alt="AIniseFlow" width="160" style="display:block;border:0;max-width:160px;">
+                  <td align="center" style="padding-bottom:20px;">
+                    <img src="data:image/png;base64,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" alt="AIniseFlow" width="150" style="display:block;border:0;max-width:150px;">
                   </td>
                 </tr>
                 <tr>
                   <td align="center">
-                    <h1 style="margin:0 0 8px 0;font-size:24px;font-weight:800;color:#ffffff;line-height:1.25;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Your Clinic Revenue Report</h1>
-                    <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.78);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Personalised for <strong style="color:#7ee8f0;">{{to_name}}</strong> &nbsp;&middot;&nbsp; AIniseFlow Diagnostic Tool</p>
+                    <h1 style="margin:0 0 10px 0;font-size:26px;font-weight:900;color:#ffffff;line-height:1.2;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{clinic_name}} Revenue Report</h1>
+                    <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;max-width:440px;">{{subtitle}}</p>
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- ══ SCORE BANNER ══ -->
+          <!-- SCORE BANNER -->
           <tr>
-            <td style="background:#0a3b5c;padding:24px 40px;text-align:center;">
+            <td style="background:#0a3b5c;padding:22px 40px;text-align:center;">
               <p style="margin:0 0 6px 0;font-size:10px;font-weight:700;color:#7ee8f0;letter-spacing:2.5px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Automation Score</p>
-              <p style="margin:0 0 10px 0;font-size:48px;font-weight:900;color:#ffffff;line-height:1;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{score}}</p>
+              <p style="margin:0 0 10px 0;font-size:52px;font-weight:900;color:#ffffff;line-height:1;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{score}}</p>
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
                 <tr>
-                  <td style="background:{{score_colour}};border-radius:20px;padding:5px 18px;">
+                  <td style="background:{{score_colour}};border-radius:20px;padding:5px 20px;">
                     <span style="font-size:11px;font-weight:700;color:#ffffff;text-transform:uppercase;letter-spacing:1.5px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{score_label}}</span>
                   </td>
                 </tr>
@@ -53,51 +53,48 @@
             </td>
           </tr>
 
-          <!-- ══ INTRO ══ -->
+          <!-- INTRO -->
           <tr>
-            <td style="padding:32px 40px 24px;">
+            <td style="padding:30px 40px 22px;">
               <p style="margin:0 0 10px 0;font-size:16px;font-weight:700;color:#0a3b5c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Hi {{to_name}},</p>
-              <p style="margin:0;font-size:15px;color:#4B5563;line-height:1.65;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Thank you for completing the AIniseFlow Clinic Diagnostic. Below is your full personalised revenue report based on the figures and automation checkpoints you submitted.</p>
+              <p style="margin:0;font-size:15px;color:#4B5563;line-height:1.65;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Thank you for completing the AIniseFlow Clinic Diagnostic. Below is the full revenue report for <strong style="color:#0a3b5c;">{{clinic_name}}</strong>, based on the figures and 12 automation checkpoints you submitted.</p>
             </td>
           </tr>
 
           <!-- Divider -->
           <tr><td style="padding:0 40px;"><div style="height:1px;background:#d0eef0;"></div></td></tr>
 
-          <!-- ══ REVENUE BREAKDOWN ══ -->
+          <!-- REVENUE BREAKDOWN HEADING -->
           <tr>
-            <td style="padding:28px 40px 16px;">
+            <td style="padding:26px 40px 14px;">
               <p style="margin:0 0 3px 0;font-size:10px;font-weight:700;color:#0d8b9c;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Revenue Breakdown</p>
-              <h2 style="margin:0;font-size:19px;font-weight:800;color:#0a3b5c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Your Monthly Revenue Leak</h2>
+              <h2 style="margin:0;font-size:19px;font-weight:800;color:#0a3b5c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{clinic_name}} Monthly Revenue Leak</h2>
             </td>
           </tr>
 
-          <!-- Stat cards row -->
+          <!-- STAT CARDS -->
           <tr>
-            <td style="padding:0 40px 28px;">
+            <td style="padding:0 40px 26px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <!-- Enquiry Leak -->
                   <td width="31%" valign="top" style="padding-right:7px;">
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#e8f7f8;border-radius:10px;border:1px solid #b0dde2;">
                       <tr><td style="padding:16px 12px;text-align:center;">
                         <p style="margin:0 0 5px 0;font-size:9px;font-weight:700;color:#2A7F83;text-transform:uppercase;letter-spacing:1px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Enquiry Leak</p>
-                        <p style="margin:0;font-size:21px;font-weight:900;color:#0d8b9c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{enquiry_leak}}</p>
+                        <p style="margin:0;font-size:22px;font-weight:900;color:#0d8b9c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{enquiry_leak}}</p>
                         <p style="margin:4px 0 0 0;font-size:10px;color:#9CA3AF;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">per month</p>
                       </td></tr>
                     </table>
                   </td>
-                  <!-- No-Show Cost -->
                   <td width="31%" valign="top" style="padding-right:7px;">
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#e8f7f8;border-radius:10px;border:1px solid #b0dde2;">
                       <tr><td style="padding:16px 12px;text-align:center;">
                         <p style="margin:0 0 5px 0;font-size:9px;font-weight:700;color:#2A7F83;text-transform:uppercase;letter-spacing:1px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">No-Show Cost</p>
-                        <p style="margin:0;font-size:21px;font-weight:900;color:#0d8b9c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{noshow_cost}}</p>
+                        <p style="margin:0;font-size:22px;font-weight:900;color:#0d8b9c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{noshow_cost}}</p>
                         <p style="margin:4px 0 0 0;font-size:10px;color:#9CA3AF;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">per month</p>
                       </td></tr>
                     </table>
                   </td>
-                  <!-- Total Leak -->
                   <td width="38%" valign="top">
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:linear-gradient(135deg,#0a3b5c,#0d8b9c);border-radius:10px;">
                       <tr><td style="padding:16px 12px;text-align:center;">
@@ -115,10 +112,10 @@
           <!-- Divider -->
           <tr><td style="padding:0 40px;"><div style="height:1px;background:#d0eef0;"></div></td></tr>
 
-          <!-- ══ ASSESSMENT ══ -->
+          <!-- ASSESSMENT -->
           <tr>
-            <td style="padding:28px 40px 8px;">
-              <p style="margin:0 0 3px 0;font-size:10px;font-weight:700;color:#0d8b9c;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Your Assessment</p>
+            <td style="padding:26px 40px 8px;">
+              <p style="margin:0 0 3px 0;font-size:10px;font-weight:700;color:#0d8b9c;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Assessment for {{clinic_name}}</p>
               <h2 style="margin:0 0 14px 0;font-size:19px;font-weight:800;color:#0a3b5c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{rec_heading}}</h2>
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#e8f7f8;border-left:4px solid #0d8b9c;border-radius:0 8px 8px 0;">
                 <tr><td style="padding:16px 20px;">
@@ -128,13 +125,12 @@
             </td>
           </tr>
 
-          <!-- ══ PRIORITY ACTIONS ══ -->
+          <!-- PRIORITY ACTIONS -->
           <tr>
             <td style="padding:24px 40px 8px;">
               <p style="margin:0 0 3px 0;font-size:10px;font-weight:700;color:#0d8b9c;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">What To Do Next</p>
-              <h2 style="margin:0 0 16px 0;font-size:19px;font-weight:800;color:#0a3b5c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Your 3 Priority Actions</h2>
+              <h2 style="margin:0 0 16px 0;font-size:19px;font-weight:800;color:#0a3b5c;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">3 Priority Actions for {{clinic_name}}</h2>
 
-              <!-- Action 1 -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;background:#ffffff;border:1px solid #d0eef0;border-radius:8px;">
                 <tr>
                   <td width="50" valign="middle" style="padding:14px 0 14px 16px;">
@@ -148,7 +144,6 @@
                 </tr>
               </table>
 
-              <!-- Action 2 -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;background:#ffffff;border:1px solid #d0eef0;border-radius:8px;">
                 <tr>
                   <td width="50" valign="middle" style="padding:14px 0 14px 16px;">
@@ -162,7 +157,6 @@
                 </tr>
               </table>
 
-              <!-- Action 3 -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:0;background:#ffffff;border:1px solid #d0eef0;border-radius:8px;">
                 <tr>
                   <td width="50" valign="middle" style="padding:14px 0 14px 16px;">
@@ -178,15 +172,15 @@
             </td>
           </tr>
 
-          <!-- ══ CTA BLOCK ══ -->
+          <!-- CTA BLOCK -->
           <tr>
-            <td style="padding:32px 40px;">
+            <td style="padding:30px 40px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:linear-gradient(135deg,#0a3b5c 0%,#0d8b9c 100%);border-radius:12px;">
                 <tr>
-                  <td style="padding:30px 32px;text-align:center;">
+                  <td style="padding:28px 32px;text-align:center;">
                     <p style="margin:0 0 5px 0;font-size:10px;font-weight:700;color:#7ee8f0;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Ready to recover this revenue?</p>
                     <h3 style="margin:0 0 12px 0;font-size:20px;font-weight:800;color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Book a Free 15-Min Clinic Audit</h3>
-                    <p style="margin:0 0 24px 0;font-size:14px;color:rgba(255,255,255,0.78);line-height:1.55;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">We will map your exact enquiry and booking flow, identify your three biggest leaks, and show you what automated recovery looks like for your clinic. No obligation.</p>
+                    <p style="margin:0 0 22px 0;font-size:14px;color:rgba(255,255,255,0.78);line-height:1.55;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">We will map {{clinic_name}}'s exact enquiry and booking flow, identify the three biggest leaks, and show you what automated recovery looks like in practice. No obligation, no hard sell.</p>
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 16px;">
                       <tr>
                         <td style="background:#7ee8f0;border-radius:8px;padding:14px 32px;">
@@ -204,7 +198,7 @@
           <!-- Divider -->
           <tr><td style="padding:0 40px;"><div style="height:1px;background:#d0eef0;"></div></td></tr>
 
-          <!-- ══ FOOTER ══ -->
+          <!-- FOOTER -->
           <tr>
             <td style="padding:24px 40px 32px;text-align:center;">
               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMcAAABICAYAAABC4+HLAAAQAElEQVR4AexcCXgVRbY+nRB2QhIIIQkkISyBgMoSFgUJYGAcQBBnhMFRcceHy7A5yvt8T5jxc1BQMuqo4KDgsLmyjCIqAjog+xYICZAYEkgCWSAEwhK2OX9zu1O3u29yky/k9g2V79atqlOnqk+fqlN1lrrxuSb/JAckByw54EPyT3JAcsCSA1I4LNkigZIDRFI45CqQHHDBASkcLhgjwZIDNSwckuGSA97DASkc3jNXktIa5oAUjhpmuHyc93BACof3zJWktIY5IIWjhhkuH+c9HKjdwuE98yAptSEHpHDYcFIkSfbggBQOe8yDpMKGHJDCYcNJkSTZgwNSOOwxD5IKG3JACkc1ToocqnZxQApH7ZpP+TbVyAEpHMzMkgsX6cW3F1PAgEeoUb+HaOD4GXT46HFuuTk+n6Wkk//s+aYE+M3BAeu3rJJw/LA1iRrf+bC6kLCYxHTfC7PpQukl66dZQFdv2m05DuAW6NUOunbtGs2Y+zm9+9kaunT5ijr+tuQ0Gv3SHMrOO6nW7fo1dsVa04K2WuRGWMwHS+lY8Vm7vpZt6Kq0cGAxffHjFkJu9RbbktMpMyffqsmWsPxTxWQliIcyc2jv4Uxb0iyJqhkOVFo4Mo8X0Lrt+11Sd4p3pPU7k122y4Zq44Ac6AZzoNLCsT05nXLyT5VL1re/7KbzF0vLxbFLY3CgPw3t281ETofIMLqtfaQJLgE3DwcqJRyXr1yhFRu2OXFHURTyq+PrBIMAZWTnOcHsWlEUhWY8PZqmPHiP/h69Orejz2ZOovAWQXYl2yVdDfzq0N1tI2hUTBuX6bfc3tDPz+UYsuE6ByolHEdPFNLmpEPXezq+O0SG0q2GHfb02XO0ZvMeB4b9swb16tJfWECKNiygko3/ovVzX6H2rVvan3ALCgP4Xd6663ZaeM8glylxcF8KalDPorcEiRyolHDA1jhx8rTYn3rGtqUBPTo7wVD5fvNeOnv+AooySQ54JQfcFg7YEKt+3mF6yUFxXWhgXGdSFMWpbWfqr3Q4K9cJJivezIGbj3a3hQM2BGwJkUUhQU2pV5d2rFZFUAwbsGLbuQulli5SEaeyZbhcxZiKVgYcY50pOU9zFn9DnX4/SY+dtEh4gsa/Nq9cQX3y1bk6vjZmx99NpOOFRRjWlBA0XPbdJho2cSaF//Zpp76Rwyeo8LeXrabC02dMfTUAXOG7D2bQ87M+pnb3Pq+P0aT/w9Rr3P/Sq/O/cvl8bQxP5xfZBkWgcOTnayjqH4so4M2P9LhLxLuLaNDiVTRv9wE64yLudZD5G/3eYr2PFo+ZvPYXy1dL3JZkwo3k5+zNKzThL95/2IQLOi9dvWrCdQVwWzhgQ8CWEAfqGhNFoc0DKci/McXFRotNavmHLUlUzPaHWrnBX1v3p1Hn0VPo5feXURa7m7XHYSEvWv0f6vnwNFr5k/nk0/DcybGgEeNpO/I5evyvH9CGHclUdKbEqWtB0RkVPu3dpQSanBodFQQXh096nfo9/v80f+U6yi0o8/5dvXqNktOP0t8+Xk7tRz2vCrsWnHR093h2hQOn8/emUtv3ltAT32yg9ZnZdPL8RbrKcI24ogsXaUduPk39cTO1f38JvbFlD6Gf1o48gtdNh6AAFJ3SAebH+UuXnWDXuPZL9gn+dv6cvlhKqYzvDCXaedwcaxvIG7ifj9tL3r1/6gbbATaEkYBh/bpT/bp+qko1on+csVkNoqUcyTHBqxuwM+VXGjV1Vrk7NRbYc298RCkZ2VV6PAQjcclqGvfKPwgnVJUG4U67UjPo9kdfJggWV8v9QFAg7FMTP9Gj9+V2qIHGc7xoIRBTeHcv5oXpziPR57VNu+hJFiScNlofeNb6hIdoVT3P4hP3JAuXDuDCiZJzhJOGi04fCOTWHGfPKAQLAiYiNvLzo15hLURQhWW3xCg5/RhtTU5zGqxh/brUvWMbHRYb3YqgZukALpQyIxHz4OIN/by+cCUZTzWrB0LNwU5t1VYRLO3ocfo7q0pWeI3q16NWLZpRWHAg+fg4214iPk60R6e/ZynEAU0aqWNgLLEPyh+tWk/fb9mLYoUpl0/q2HmfmlQKTWVBDlWowoEsELB7Q+X5ku1JLEoLFJcg4H/FauRMjoFhHA2xX6uWVN8QCoBgZPAJrOEg3593knLPlqBoSntOFNBZQXVDfwiYiNjavxFZnVIijrHslnCsZV0PC13s3KNjNLWPCNVBrUOa0e23dtDrWuHHbftMqofWVl05dvUmjRrQW5PH0b5P36QF05+h6HDrXWIr66JGVcgdOrDj46qJiKsoCn08fQKd+OFDOvhVIh1e/jYV/7SQDnw+h54alUB169TR0REjmrlgBaUdO67DUGjWtAn9e86LdGz1++oYud/PoxnjR6NJTzhBZn2yqsZUVP3BhsLajGO0/FCGAUrkw3y4s3UoLbk3gQ48NUbNh3IsxZfhIjIE5INdB2izwIMuHEsKbdxIRCOcNCmFZaomGjdynwuOu2+oi+kInzTZgnqLMtQtEacf09e8YX0RVGG5QuHAQlrzyx7TQH1YEBo3KHtYHV9fGtSziwlv98EjhGRqqEZAy2YB9PO86TT+vgRVKO5P6ENfJ06jNhbHKIzsEtaPK/v47HzzJURfHx9qyU4JRVH04RRFocjQ5jRnyjhK6H2LDj+UmcsB1O16HQVFUeidPz+m8k1Rro/h6+NDT426S3WRA0dLyb8epXQLnVtrv9E5dvsFSakElUV8Vh2m99X4XvT1mKE0vF0ktWI7AvnSUYNpdsIdhHYRv+TSJVqQdFAHhTRqSF34xNUBjsJ2QVXCM7cI796S+0BNcqBSETt/Dp8qCzEc5nCD6AQADYOiwjV0t/MKhQMLG0kcEYIwpM9tIkgt97utIwUyc9SK4wu7+jcbdzlqNyZ7bORAwnUPcXQs0Lvv6CqC1DKEPU9gpAp04ys8OMiEhdNg9LREWvj1TxXu6pv3HTKpft3YoRHfvZNpXP/GDZ1OZSDA+5d13OyVQVtNpBzemXcLjg7tmT1aBtNjPO/XRVuDEqE+NrYdoZ0Mf1CDCs5dUKHAG9E+Sj19VIDjK43nSFOV8hn3SFGxo4UonFWkQFbrNcBl9kCJwmM0xlvwiXFrcDMN3e28QuHAwsYCF0dsx9HjGI6MizCUw0OCqEt0KxSd0nr26kDfdwJWY6VbTBvL0cIsdiRLRDeAuAUAFciICuN8wsx/Uujd4wm/A4FbGca/EQ9OAyMMqprRFay5kpes2WhEp3RWLUxAAwBG7t2s0pR3fSSyaWNDr4qrmay6nOId2og5gD1ADf3qGMFqHfDeFurtKTa2cYKoSPzVNaQ5GSP2R4vPUqEjiJyUX0h5LCCMqn6GtGlFEayOqhXHFzxjOGGQjMZ4TLNACm3S0IHpflaucOTx8fSjxQ3c1CPZFDFsgu6b1yY0ZPCT9J89qaanH8zMISwEU4MXATpGhdGkB4aVS/G25DS6/8W3qPWw/6FvYXgKrk0rgSl3sCo2unN9pHdYSBVHN3drz2qlGVoGgUpTVrteOlt6mWAXXK8RRbC2YTSWC1n13edQZdfxesPpAHyoU/ERYWT0csEAP8lCd7q0lA33c0DVU2VduFrHcoUDv2eojig3Tp5vN+12+RsQjRg754qi0MQHhtLCGc9Q84Am5ZKK02T0S3NoKQcKy0W8SRt9WJcShQannXGxQxj2nigkuItFNak1q1QQpLjQYCd7poBPmRSOd2SdPksF587rnIUwuePC1TsIBZfCgQWNgBdyAb/KxfU7D1D+qTK9scoDebCjoij0+7v6UNqKd+jz1yer12ZckQMP0ytzP6MjHAhzhQNv3/z/e5oW/fU5t9Kwvt1dDeUxOGyR8h6OxW1sb8yxsTC2q0S4lUsXkW+cMFCxNNyYZgEErxNsCNgSGhyerP180hiN8Q7NmrLBH6ShVSp3KRyZbHyts1CpKjW6gHyIVavtB9IFiPcW/dgvP7RvN/aIvURFGxbQsr9NVL1kZPjLLSgiXLsBOJxdlsjFVMK7Hbx+owb2IndSDKt2Yv+aLEeyji8awdqz4WJ1dSUDtoXottX6hHNMJ4BjQ1oduZVLF0b4el43iL4DB6k/q1TIg9nIjgrwR1FPiKDvyM3T6yjAIeBfry6KlU4uhWO7ix81jR58R4W73AsPj7AkBBcXq+sksnyAB4AQlHvu7EHL33zBpG7hXXFhE2TFd48lRWF9AhVHysk/RV+sdf2TYweaLbIWHEeKtfDYbcjMpk8PpJlohOv37e37KKXQfD8NCxynh9gphN2zRpduAW8e3/2apV9LCWSB0lQkK1Usm434JA4WauNCdauKC1frbykccFGu2LBNw9FzuHCfZB98RbvcuOHxpmg5Bvl5VwphN0XZ29L7X3xPz77xEcHoNhrXEILUjGwqLinTdfF+4Bci3yjjV4XdhRsFgCFB9cLFR/y3kyvskgQMCWXcwUJE/55JrxPiM4B7KvlxPGPcLTFU19d5yZReuUrPfbeR/rD8B/o6LVP9xw3Ix3I9kYPHCPyJNAc3bEBjOrUVQWoZ28aASOdYxLlLlymZNxAVgb+i2NZrwycYF9WP0e5IZ3dvJnvV1Eb+gtoF9YuLVfo4v6ljiKNsCBl/1IQmVy5ctImptYtoeRarapv2lgWAxD52L+ME+HjVetVdGzDgEfU2bsx9EwkpcOCjNIbjHcZbBN1ionTXdhC7Tyf/cbjl9RIY7l3HvkD+/cfpHkCUO9z3J/XWbnU4RaqDv0PYTT+MA33GsXChcHV6Fj2wYi3h6gpy1AEXcX345Hw2rgt1ah4ogvUyTgWcDhoAwpEnGNdGFQkLHwLgCj+mii5cbTxL4YCtcYLduBqSluN3G1a+fq1dy7Fjjugfp1Wd8m827iScTE5AL6wgmHgsr5CQjCcJXqcpG5yzJz5ECOihjjQyPo7+Mn4Mil6Z6vn6UuLgvlQVVQWC8XzPWwjJ1cvjVMDpYNWO/rgCIrYFW9gdYvtAjsHgxBNhlSmbhAM7JGwD4yCKotBvbjdHxY14Wr1rhyhTtBxtODmOCXohYLUtRXPgC/el4mKd1QdFKXMH4y6Yu+9dz8+PfH1MU+Vu92rFw86+ZGQCTel9GzVgx4Q7gyPA9+HQeJrRvycZ71uJ/WE443QQYVoZY3Q2nDhWdoeGDzoHVuHKiNYfuYnj8K7AGEejmKAqdY5uLYLKLUeGBVOvzs6LAx1ghG7ddxhFr0qPDB9A7730BA1n4xt3uUTifXwUatsqhCbcP4Q2zJtOe5bOoh6dokUUvawoCsEdnLHqXdWxgftXml2iIeFmLty8GG/136fRjkUzKTjQX2v2eN7Qrw69cmccHXx6LL02oDdB9xe9Tz78jljMgzmSvWjkXSre/WxnwK6oiHicSjCkjXiIbURwsNAIx7Ot8KMM9omxnzt1k3Dg6nnOmrnqPxoo2fgvPU/5Yo56JdudQYGD33l8NWuqaqji/wAAAfNJREFU3l8ca8yQO4CiJrhExTatDLiKIHwBprWLOeACml6Eji/ioZy/dj51M1w3+fDl8SY6U79MJFEIYDOMGx5Pn7LbNn3lO074Z37+hJKWzaZZf3pIvTDo62Niq06TVsA/dYBjY+Wbf6bsbz9wGi9v7T9pz5I31PHie8Tq/xVF66vlS+9NoOKpjzslLNhWFotI62OVj+aFaxwHdcCt8DUYBAI2xLo/jqCsZx/U6Sia8hgdeeZB+vJ3vyHcm4I6pvWpKMelxZOTH9XHAh1Ia/4wjHBSGPu7wv/pwZGEk8iIX5l6xbNYmdEkruRALeJA7RGOWjQp8lXswQEpHPaYB0mFDTkghcOGkyJJsgcHpHDYYx4kFTbkgBQOG06KJMkeHJDCUcV5kN1qPwekcNT+OZZvWEUOSOGoIuNkt9rPASkctX+O5RtWkQNSOKrIONmt9nNACod3zLGk0gMckMLhAabLR3oHB6RweMc8SSo9wAEpHB5gunykd3BACod3zJOk0gMckMLhAabb/5GSQnBACge4IJPkgAUHpHBYMEWCJAfAASkc4IJMkgMWHJDCYcEUCZIcAAekcIALMnmWAzZ9uhQOm06MJMvzHJDC4fk5kBTYlANSOGw6MZIsz3NACofn50BSYFMOSOGw6cRIsm4cB9wd+b8AAAD//53TeLIAAAAGSURBVAMAiWbh/JkHWdcAAAAASUVORK5CYII=" alt="AIniseFlow" width="110" style="display:block;margin:0 auto 10px;border:0;">
@@ -214,17 +208,14 @@
                 &nbsp;&nbsp;&middot;&nbsp;&nbsp;
                 <a href="mailto:hello@ainiseflow.co.uk" style="font-size:12px;color:#0d8b9c;text-decoration:none;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">hello@ainiseflow.co.uk</a>
               </p>
-              <p style="margin:0;font-size:11px;color:#9CA3AF;line-height:1.6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">You received this because you submitted the AIniseFlow Clinic Diagnostic Tool.<br>GDPR compliant &nbsp;&middot;&nbsp; UK based &nbsp;&middot;&nbsp; &copy; 2025 AIniseFlow</p>
+              <p style="margin:0;font-size:11px;color:#9CA3AF;line-height:1.6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">This report was generated for {{clinic_name}} using the AIniseFlow Clinic Diagnostic Tool.<br>GDPR compliant &nbsp;&middot;&nbsp; UK based &nbsp;&middot;&nbsp; &copy; 2025 AIniseFlow</p>
             </td>
           </tr>
 
         </table>
-        <!-- /email card -->
-
       </td>
     </tr>
   </table>
-  <!-- /outer wrapper -->
 
 </body>
 </html>
