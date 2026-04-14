@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Clinic Revenue Report — AIniseFlow</title>
+</head>
+<body style="margin:0;padding:0;background-color:#F4F7FB;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+
+  <!-- Wrapper -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F4F7FB;padding:32px 16px;">
+    <tr>
+      <td align="center">
+
+        <!-- Card -->
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(27,42,74,0.10);">
+
+          <!-- ── HEADER ── -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#1B2A4A 0%,#2D7DD2 100%);padding:36px 40px 28px 40px;text-align:center;">
+              <!-- Logo text (image would go here if hosted) -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="padding-bottom:20px;">
+                    <div style="display:inline-block;background:rgba(255,255,255,0.12);border-radius:10px;padding:10px 22px;">
+                      <span style="font-size:22px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">AI<span style="color:#7DC4F4;">nise</span>Flow</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <h1 style="margin:0 0 8px 0;font-size:26px;font-weight:800;color:#ffffff;line-height:1.2;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Your Clinic Revenue Report</h1>
+                    <p style="margin:0;font-size:15px;color:rgba(255,255,255,0.80);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Personalised for {{to_name}} &nbsp;·&nbsp; AIniseFlow Diagnostic Tool</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── SCORE BANNER ── -->
+          <tr>
+            <td style="background:#1B2A4A;padding:20px 40px;text-align:center;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center">
+                    <p style="margin:0 0 4px 0;font-size:11px;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:1.5px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Automation Score</p>
+                    <p style="margin:0;font-size:42px;font-weight:900;color:#ffffff;line-height:1;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{score}}</p>
+                    <div style="display:inline-block;margin-top:10px;padding:4px 16px;background:{{score_colour}};border-radius:20px;">
+                      <span style="font-size:12px;font-weight:700;color:#ffffff;text-transform:uppercase;letter-spacing:1px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{score_label}}</span>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── INTRO ── -->
+          <tr>
+            <td style="padding:32px 40px 24px 40px;">
+              <p style="margin:0 0 8px 0;font-size:16px;color:#1B2A4A;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Hi {{to_name}},</p>
+              <p style="margin:0;font-size:15px;color:#4B5563;line-height:1.6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Thank you for using the AIniseFlow Clinic Diagnostic Tool. Below is your full personalised revenue report, based on the figures and automation checkpoints you submitted.</p>
+            </td>
+          </tr>
+
+          <!-- ── DIVIDER ── -->
+          <tr>
+            <td style="padding:0 40px;">
+              <div style="height:1px;background:#E5EAF2;"></div>
+            </td>
+          </tr>
+
+          <!-- ── REVENUE BREAKDOWN HEADING ── -->
+          <tr>
+            <td style="padding:28px 40px 16px 40px;">
+              <p style="margin:0 0 4px 0;font-size:10px;font-weight:700;color:#2D7DD2;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Revenue Breakdown</p>
+              <h2 style="margin:0;font-size:20px;font-weight:800;color:#1B2A4A;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Your Monthly Revenue Leak</h2>
+            </td>
+          </tr>
+
+          <!-- ── 3 STAT CARDS ── -->
+          <tr>
+            <td style="padding:0 40px 24px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <!-- Enquiry Leak -->
+                  <td width="30%" style="padding-right:8px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F4F7FB;border-radius:10px;border:1px solid #E5EAF2;">
+                      <tr>
+                        <td style="padding:16px 14px;text-align:center;">
+                          <p style="margin:0 0 6px 0;font-size:10px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:1px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Enquiry Leak</p>
+                          <p style="margin:0;font-size:22px;font-weight:900;color:#2D7DD2;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{enquiry_leak}}</p>
+                          <p style="margin:4px 0 0 0;font-size:10px;color:#9CA3AF;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">per month</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <!-- No-Show Cost -->
+                  <td width="30%" style="padding-right:8px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F4F7FB;border-radius:10px;border:1px solid #E5EAF2;">
+                      <tr>
+                        <td style="padding:16px 14px;text-align:center;">
+                          <p style="margin:0 0 6px 0;font-size:10px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:1px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">No-Show Cost</p>
+                          <p style="margin:0;font-size:22px;font-weight:900;color:#2D7DD2;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{noshow_cost}}</p>
+                          <p style="margin:4px 0 0 0;font-size:10px;color:#9CA3AF;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">per month</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <!-- Total Leak -->
+                  <td width="40%">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#1B2A4A;border-radius:10px;">
+                      <tr>
+                        <td style="padding:16px 14px;text-align:center;">
+                          <p style="margin:0 0 6px 0;font-size:10px;font-weight:700;color:rgba(255,255,255,0.60);text-transform:uppercase;letter-spacing:1px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Total Monthly Leak</p>
+                          <p style="margin:0;font-size:26px;font-weight:900;color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{total_leak}}</p>
+                          <p style="margin:4px 0 0 0;font-size:10px;color:rgba(255,255,255,0.50);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">estimated monthly</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── DIVIDER ── -->
+          <tr>
+            <td style="padding:0 40px;">
+              <div style="height:1px;background:#E5EAF2;"></div>
+            </td>
+          </tr>
+
+          <!-- ── RECOMMENDATION BOX ── -->
+          <tr>
+            <td style="padding:28px 40px 8px 40px;">
+              <p style="margin:0 0 4px 0;font-size:10px;font-weight:700;color:#2D7DD2;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Your Assessment</p>
+              <h2 style="margin:0 0 16px 0;font-size:20px;font-weight:800;color:#1B2A4A;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{rec_heading}}</h2>
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F4F7FB;border-left:4px solid #2D7DD2;border-radius:0 8px 8px 0;">
+                <tr>
+                  <td style="padding:16px 20px;">
+                    <p style="margin:0;font-size:14px;color:#374151;line-height:1.65;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{rec_body}}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── PRIORITY ACTIONS ── -->
+          <tr>
+            <td style="padding:24px 40px 8px 40px;">
+              <p style="margin:0 0 4px 0;font-size:10px;font-weight:700;color:#2D7DD2;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">What To Do Next</p>
+              <h2 style="margin:0 0 18px 0;font-size:20px;font-weight:800;color:#1B2A4A;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Your 3 Priority Actions</h2>
+
+              <!-- Action 1 -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;background:#ffffff;border:1px solid #E5EAF2;border-radius:8px;">
+                <tr>
+                  <td width="48" style="padding:14px 0 14px 16px;vertical-align:top;">
+                    <div style="width:28px;height:28px;background:#2D7DD2;border-radius:50%;text-align:center;line-height:28px;">
+                      <span style="font-size:13px;font-weight:800;color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">1</span>
+                    </div>
+                  </td>
+                  <td style="padding:14px 16px;vertical-align:middle;">
+                    <p style="margin:0;font-size:14px;color:#1B2A4A;line-height:1.5;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{action_1}}</p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Action 2 -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;background:#ffffff;border:1px solid #E5EAF2;border-radius:8px;">
+                <tr>
+                  <td width="48" style="padding:14px 0 14px 16px;vertical-align:top;">
+                    <div style="width:28px;height:28px;background:#2D7DD2;border-radius:50%;text-align:center;line-height:28px;">
+                      <span style="font-size:13px;font-weight:800;color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">2</span>
+                    </div>
+                  </td>
+                  <td style="padding:14px 16px;vertical-align:middle;">
+                    <p style="margin:0;font-size:14px;color:#1B2A4A;line-height:1.5;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{action_2}}</p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Action 3 -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:0;background:#ffffff;border:1px solid #E5EAF2;border-radius:8px;">
+                <tr>
+                  <td width="48" style="padding:14px 0 14px 16px;vertical-align:top;">
+                    <div style="width:28px;height:28px;background:#2D7DD2;border-radius:50%;text-align:center;line-height:28px;">
+                      <span style="font-size:13px;font-weight:800;color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">3</span>
+                    </div>
+                  </td>
+                  <td style="padding:14px 16px;vertical-align:middle;">
+                    <p style="margin:0;font-size:14px;color:#1B2A4A;line-height:1.5;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">{{action_3}}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── CTA BLOCK ── -->
+          <tr>
+            <td style="padding:32px 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:linear-gradient(135deg,#1B2A4A 0%,#243a5e 100%);border-radius:12px;">
+                <tr>
+                  <td style="padding:28px 32px;text-align:center;">
+                    <p style="margin:0 0 6px 0;font-size:10px;font-weight:700;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Ready to recover this revenue?</p>
+                    <h3 style="margin:0 0 12px 0;font-size:20px;font-weight:800;color:#ffffff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Book a Free 15-Min Clinic Audit</h3>
+                    <p style="margin:0 0 24px 0;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.5;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">We'll map your exact enquiry and booking flow, identify your three biggest leaks, and show you what automated recovery looks like for your clinic — no obligation.</p>
+                    <a href="{{audit_url}}" style="display:inline-block;background:#2D7DD2;color:#ffffff;font-size:15px;font-weight:700;text-decoration:none;padding:14px 32px;border-radius:8px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">Book Your Free Audit →</a>
+                    <p style="margin:16px 0 0 0;font-size:11px;color:rgba(255,255,255,0.45);font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">UK aesthetic clinics only &nbsp;·&nbsp; 15 minutes &nbsp;·&nbsp; No sales pressure</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── DIVIDER ── -->
+          <tr>
+            <td style="padding:0 40px;">
+              <div style="height:1px;background:#E5EAF2;"></div>
+            </td>
+          </tr>
+
+          <!-- ── FOOTER ── -->
+          <tr>
+            <td style="padding:24px 40px 32px 40px;text-align:center;">
+              <p style="margin:0 0 6px 0;font-size:13px;font-weight:700;color:#1B2A4A;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">AIniseFlow</p>
+              <p style="margin:0 0 12px 0;font-size:12px;color:#9CA3AF;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">AI Automation for UK Aesthetic Clinics</p>
+              <p style="margin:0 0 12px 0;">
+                <a href="https://ainiseflow.com" style="font-size:12px;color:#2D7DD2;text-decoration:none;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">ainiseflow.com</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="mailto:hello@ainiseflow.co.uk" style="font-size:12px;color:#2D7DD2;text-decoration:none;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">hello@ainiseflow.co.uk</a>
+              </p>
+              <p style="margin:0;font-size:11px;color:#D1D5DB;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">You received this because you submitted the AIniseFlow Clinic Diagnostic Tool.<br>GDPR compliant &nbsp;·&nbsp; UK based &nbsp;·&nbsp; © 2025 AIniseFlow</p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Card -->
+
+      </td>
+    </tr>
+  </table>
+  <!-- /Wrapper -->
+
+</body>
+</html>
