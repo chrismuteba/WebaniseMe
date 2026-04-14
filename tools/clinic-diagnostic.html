@@ -707,7 +707,7 @@
                         <i class="fas fa-calendar-check mr-1" aria-hidden="true"></i>Book Clinic Audit
                     </a>
                     <div class="text-sm text-gray-300 space-y-1">
-                        <p><i class="fas fa-envelope mr-2" aria-hidden="true"></i><a href="mailto:hello@ainiseflow.co.uk" class="hover:text-white transition-colors">hello@ainiseflow.co.uk</a></p>
+                        <p><i class="fas fa-envelope mr-2" aria-hidden="true"></i><a href="/cdn-cgi/l/email-protection#7c14191010133c1d1512150f191a10130b521f13520917" class="hover:text-white transition-colors"><span class="__cf_email__" data-cfemail="7c14191010133c1d1512150f191a10130b521f13520917">[email&#160;protected]</span></a></p>
                         <p class="text-xs text-gray-400 mt-2">UK clinics only &middot; GDPR compliant</p>
                     </div>
                 </div>
@@ -729,7 +729,7 @@
          SCRIPTS
     ====================================================== -->
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     document.addEventListener('DOMContentLoaded', function() {
         // Mobile menu toggle
             const menuBtn = document.getElementById('menu-btn');
@@ -986,7 +986,7 @@
         ───────────────────────────────────────── */
         (function(){
             if (typeof emailjs !== 'undefined') {
-                emailjs.init({ publicKey: 'EMAILJS_PUBLIC_KEY' });
+                emailjs.init({ publicKey: '1Fsvi_TEdTuC7b8Os' });
             }
         })();
 
@@ -1064,7 +1064,7 @@
                 action_1:      actions[0],
                 action_2:      actions[1],
                 action_3:      actions[2],
-                audit_url:     'https://ainiseflow.com/ai-aesthetic-clinic-automation.html#book',
+                audit_url:     'https://calendly.com/christian-muteba-ainiseflow/free-audit',
                 tool_url:      'https://ainiseflow.com/tools/clinic-diagnostic.html'
             };
         }
@@ -1121,12 +1121,11 @@
                 /* ── Step 2: Send personalised report via EmailJS ── */
                 var reportParams = buildReportParams(name, email);
 
-                if (typeof emailjs !== 'undefined' &&
-                    'EMAILJS_PUBLIC_KEY' !== 'EMAILJS_PUBLIC_KEY') {
+                if (typeof emailjs !== 'undefined') {
                     /* EmailJS is configured — send the report email */
                     return emailjs.send(
-                        'EMAILJS_SERVICE_ID',    /* replace with your EmailJS Service ID   */
-                        'EMAILJS_TEMPLATE_ID',   /* replace with your EmailJS Template ID  */
+                        'service_6v4ubgb',    /* replace with your EmailJS Service ID   */
+                        'template_avi3y0q',   /* replace with your EmailJS Template ID  */
                         reportParams
                     ).catch(function(ejsErr) {
                         /* Non-fatal: log but don't block the user */
