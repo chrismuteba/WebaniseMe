@@ -643,13 +643,17 @@
                         <input type="hidden" name="noShowCost"     id="hiddenNoShowCost"   value="£0">
                         <input type="hidden" name="_gotcha"        value="">
 
-                        <div class="flex items-start gap-2 mb-4 text-left">
-                            <input type="checkbox" id="gdprConsent" name="gdprConsent"
-                                   class="mt-1 w-4 h-4 flex-shrink-0" style="accent-color:var(--blue);" required>
-                            <label for="gdprConsent" class="text-xs text-gray-500 leading-relaxed">
-                                I agree to receive my results report and clinic automation tips from AIniseFlow. Unsubscribe anytime.
+                        <div class="flex items-start gap-2 mb-3 text-left">
+                            <input type="checkbox" id="marketingConsent" name="marketingConsent" value="yes"
+                                   class="mt-1 w-4 h-4 flex-shrink-0" style="accent-color:var(--blue);">
+                            <label for="marketingConsent" class="text-xs text-gray-500 leading-relaxed">
+                                Also send me occasional clinic automation tips by email (optional). Unsubscribe anytime.
                             </label>
                         </div>
+                        <p class="text-xs text-gray-400 mb-4 text-left">
+                            By unlocking your results you agree that we'll email you your report.
+                            See our <a href="privacy-policy.html" class="underline hover:text-gray-600">privacy policy</a> for how we handle your data.
+                        </p>
 
                         <p id="formError" class="text-red-600 text-xs mb-3 is-hidden text-left"></p>
 
@@ -715,6 +719,7 @@
 
             <div class="border-t border-gray-600 mt-10 pt-8 text-center">
                 <p class="text-gray-400 text-sm">&copy; 2025 AIniseFlow &mdash; AI Automation for UK Aesthetic Clinics. All rights reserved.</p>
+                <p class="text-gray-500 text-xs mt-2"><a href="privacy-policy.html" class="hover:text-white transition-colors underline">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
@@ -940,7 +945,6 @@
             var errEl   = document.getElementById('formError');
             var name    = document.getElementById('firstName').value.trim();
             var email   = document.getElementById('emailAddress').value.trim();
-            var consent = document.getElementById('gdprConsent').checked;
 
             /* Client-side validation */
             errEl.classList.add('is-hidden');
@@ -951,11 +955,6 @@
             }
             if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                 errEl.textContent = 'Please enter a valid email address.';
-                errEl.classList.remove('is-hidden');
-                return;
-            }
-            if (!consent) {
-                errEl.textContent = 'Please tick the consent checkbox to continue.';
                 errEl.classList.remove('is-hidden');
                 return;
             }
